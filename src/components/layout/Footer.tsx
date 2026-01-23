@@ -60,15 +60,26 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="font-display text-lg text-background mb-4">Get in Touch</h4>
-            <p className="text-sm text-background/60 mb-2">
-              Ready to discuss a partnership?
-            </p>
-            <a
-              href="#contact"
-              className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
-            >
-              Contact Us →
-            </a>
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm text-background/60 mb-1">For businesses:</p>
+                <a
+                  href="#contact"
+                  className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
+                >
+                  Explore a B2B Partnership →
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-background/60 mb-1">General enquiry:</p>
+                <a
+                  href="#contact"
+                  className="text-background/80 hover:text-background text-sm transition-colors"
+                >
+                  General Wheel Enquiry →
+                </a>
+              </div>
+            </div>
           </motion.div>
         </div>
 

@@ -11,9 +11,14 @@ const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
   company: z.string().trim().max(100).optional(),
-  businessType: z.string().trim().max(100).optional(),
+  enquiryType: z.string().trim().max(100),
   message: z.string().trim().min(1, "Message is required").max(2000)
 });
+
+const enquiryTypes = [
+  { value: "b2b", label: "B2B Partnership Enquiry" },
+  { value: "general", label: "General Wheel Enquiry" }
+];
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -21,7 +26,7 @@ export const Contact = () => {
     name: "",
     email: "",
     company: "",
-    businessType: "",
+    enquiryType: "b2b",
     message: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -59,7 +64,7 @@ export const Contact = () => {
       name: "",
       email: "",
       company: "",
-      businessType: "",
+      enquiryType: "b2b",
       message: ""
     });
   };
@@ -159,7 +164,7 @@ export const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium mb-2">
-                    Company
+                    Company <span className="text-secondary-foreground/50">(if applicable)</span>
                   </label>
                   <Input
                     id="company"
@@ -171,17 +176,22 @@ export const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="businessType" className="block text-sm font-medium mb-2">
-                    Business Type
+                  <label htmlFor="enquiryType" className="block text-sm font-medium mb-2">
+                    Enquiry Type
                   </label>
-                  <Input
-                    id="businessType"
-                    name="businessType"
-                    value={formData.businessType}
-                    onChange={handleChange}
-                    placeholder="e.g., Tyre Centre, Workshop"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
+                  <select
+                    id="enquiryType"
+                    name="enquiryType"
+                    value={formData.enquiryType}
+                    onChange={(e) => setFormData(prev => ({ ...prev, enquiryType: e.target.value }))}
+                    className="w-full h-10 px-3 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground rounded-md"
+                  >
+                    {enquiryTypes.map(type => (
+                      <option key={type.value} value={type.value} className="bg-secondary text-secondary-foreground">
+                        {type.label}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
