@@ -63,9 +63,11 @@ export const WhoWeWorkWith = () => {
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
             Built for Automotive Businesses
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl">
-            We partner with businesses across the automotive trade — from independent tyre fitters to multi-site operations. 
-            Our model is designed to integrate with your existing workflow.
+          <p className="text-muted-foreground text-lg max-w-2xl mb-4">
+            We partner with a wide range of automotive businesses that need a reliable, premium wheel supply solution — whether for replacement, upgrade, or resale.
+          </p>
+          <p className="text-muted-foreground max-w-2xl">
+            From independent tyre fitters to multi-site operations, our model is designed to integrate with your existing workflow.
           </p>
         </motion.div>
 

@@ -45,9 +45,14 @@ export const Hero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-10 leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-4 leading-relaxed font-light">
             A flexible wheel supply partner for tyre centres, workshops, and dealers across the UK. 
             Vehicle-specific fitments. Build-to-order or stock. No inventory required.
+          </p>
+          
+          {/* B2C acknowledgement */}
+          <p className="text-sm text-secondary-foreground/60 mb-10 italic">
+            Supplying premium forged wheels to automotive businesses — general wheel enquiries handled by request.
           </p>
 
           {/* CTAs */}

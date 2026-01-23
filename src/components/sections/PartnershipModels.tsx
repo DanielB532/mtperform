@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Package, Warehouse, Tag, Zap } from "lucide-react";
+import { Package, Warehouse, Tag, Zap, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const models = [
   {
@@ -49,7 +50,7 @@ export const PartnershipModels = () => {
         </motion.div>
 
         {/* Models Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           {models.map((model, index) => (
             <motion.div
               key={index}
@@ -69,6 +70,25 @@ export const PartnershipModels = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <Button variant="hero" size="lg" asChild>
+            <a href="#contact">
+              Explore a B2B Partnership
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+          <Button variant="subtle" size="lg" asChild>
+            <a href="#enquiries">General Wheel Enquiry</a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
