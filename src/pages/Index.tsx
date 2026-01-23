@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
+import { UseCases } from "@/components/sections/UseCases";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { TheWheels } from "@/components/sections/TheWheels";
+import { PartnershipModels } from "@/components/sections/PartnershipModels";
+import { FAQ } from "@/components/sections/FAQ";
+import { GeneralEnquiries } from "@/components/sections/GeneralEnquiries";
+import { Contact } from "@/components/sections/Contact";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <WhoWeWorkWith />
+        <UseCases />
+        <HowItWorks />
+        <TheWheels />
+        <PartnershipModels />
+        <FAQ />
+        <GeneralEnquiries />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
