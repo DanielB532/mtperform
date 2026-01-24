@@ -83,13 +83,20 @@ export const Footer = () => {
           </motion.div>
         </div>
 
+        {/* Micro-copy */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-background/50 italic">
+            B2B wheel supply platform | One-off wheel enquiries handled on request
+          </p>
+        </div>
+
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/40">
             © {new Date().getFullYear()} ForgeSupply. All rights reserved.
           </p>
           <p className="text-sm text-background/40">
-            B2B Wheel Supply Partner • United Kingdom
+            United Kingdom
           </p>
         </div>
       </div>

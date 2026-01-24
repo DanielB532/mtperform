@@ -37,12 +37,22 @@ export const Hero = () => {
             </span>
           </motion.div>
 
+          {/* Brand Name & Slogan */}
+          <div className="mb-6">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95]">
+              FORGE<span className="text-primary">SUPPLY</span>
+            </h1>
+            <p className="font-display text-xl md:text-2xl text-secondary-foreground/70 mt-2 tracking-wide">
+              Stop going round in circles.
+            </p>
+          </div>
+
           {/* Headline */}
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95] mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-secondary-foreground leading-[1.1] mb-6">
             Premium Forged Wheels
             <br />
             <span className="text-primary">For Automotive Businesses</span>
-          </h1>
+          </h2>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-4 leading-relaxed font-light">
