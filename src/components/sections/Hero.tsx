@@ -11,7 +11,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 section-padding container-narrow w-full text-primary">
+      <div className="relative z-10 section-padding container-narrow w-full text-primary-foreground">
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -44,7 +44,7 @@ export const Hero = () => {
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95]">
               FORGE<span className="text-primary">SUPPLY</span>
             </h1>
-            <p className="text-xl mt-2 tracking-wide md:text-sm text-primary-foreground font-sans font-semibold">STOP GOING ROUND IN CIRCLES.</p>
+            <p className="text-xl mt-2 tracking-wide md:text-sm font-sans font-semibold text-primary">STOP GOING ROUND IN CIRCLES.</p>
           </div>
 
           {/* Headline */}
@@ -55,15 +55,13 @@ export const Hero = () => {
           </h2>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-4 leading-relaxed font-light">
+          <p className="text-lg md:text-xl max-w-xl mb-4 leading-relaxed font-light text-secondary-foreground">
             A flexible wheel supply partner for tyre centres, workshops, and dealers across the UK. 
             Vehicle-specific fitments. Build-to-order or stock. No inventory required.
           </p>
           
           {/* B2C acknowledgement */}
-          <p className="text-sm text-secondary-foreground/60 mb-10 italic">
-            Supplying premium forged wheels to automotive businesses — general wheel enquiries handled by request.
-          </p>
+          <p className="text-sm mb-10 italic text-primary">Supplying premium forged wheels to automotive businesses. Personal enquiries handled by request.</p>
 
           {/* CTAs */}
           <motion.div initial={{

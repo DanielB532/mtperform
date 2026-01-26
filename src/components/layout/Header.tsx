@@ -46,7 +46,7 @@ export const Header = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.href} href={link.href} className="text-sm transition-colors uppercase tracking-wider text-primary-foreground font-semibold">
+            {navLinks.map(link => <a key={link.href} href={link.href} className="text-sm transition-colors uppercase tracking-wider font-semibold text-primary">
                 {link.label}
               </a>)}
           </nav>
