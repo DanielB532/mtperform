@@ -39,14 +39,14 @@ export const Header = () => {
         <div className="container-narrow flex items-center justify-between px-6 lg:px-12 h-20">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <span className="font-display text-2xl text-secondary-foreground tracking-wider">
+            <span className="font-display text-2xl text-secondary-foreground tracking-wider font-semibold">
               FORGE<span className="text-primary">SUPPLY</span>
             </span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.href} href={link.href} className="text-sm transition-colors uppercase tracking-wider text-primary-foreground">
+            {navLinks.map(link => <a key={link.href} href={link.href} className="text-sm transition-colors uppercase tracking-wider text-primary-foreground font-semibold">
                 {link.label}
               </a>)}
           </nav>

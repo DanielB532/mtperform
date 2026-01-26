@@ -50,7 +50,7 @@ const item = {
   }
 };
 export const WhoWeWorkWith = () => {
-  return <section id="who-we-work-with" className="section-padding bg-background">
+  return <section id="who-we-work-with" className="section-padding bg-background opacity-100 text-secondary">
       <div className="container-narrow">
         {/* Section Header */}
         <motion.div initial={{
@@ -67,13 +67,15 @@ export const WhoWeWorkWith = () => {
           <span className="text-primary font-medium tracking-wider uppercase text-sm">
             Who We Work With
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-6 font-semibold">
             Built for Automotive Businesses
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mb-4">We partner with a wide range of automotive businesses that need a reliable, premium wheel supply solution, whether for replacement, upgrade, or resale.</p>
-          <p className="text-muted-foreground max-w-2xl">
-            From independent tyre fitters to multi-site operations, our model is designed to integrate with your existing workflow.
-          </p>
+          <p className="text-lg max-w-2xl mb-4 text-secondary font-medium">We partner with a wide range of automotive businesses that need a reliable, premium wheel supply solution, whether for replacement, upgrade, or resale. 
+
+
+From independent tyre fitters to multi-site operations, our model is designed to integrate with your existing workflow.</p>
+          <p className="max-w-2xl text-secondary">
+        </p>
         </motion.div>
 
         {/* Business Type Cards */}

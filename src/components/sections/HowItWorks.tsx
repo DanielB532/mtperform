@@ -34,7 +34,7 @@ export const HowItWorks = () => {
           <span className="text-primary font-medium tracking-wider uppercase text-sm">
             How It Works
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl mt-4 mb-6 font-semibold lg:text-5xl">
             A Simple Process
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-white">

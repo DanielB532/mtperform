@@ -95,7 +95,7 @@ export const Contact = () => {
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
               Get Started
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 font-semibold">
+            <h2 className="font-display text-4xl md:text-5xl mt-4 mb-6 font-semibold lg:text-5xl">
               Let's Discuss a Partnership
             </h2>
             <p className="text-lg mb-8 leading-relaxed text-primary-foreground">Whether you're a tyre centre, workshop, or dealer, we'd like to hear about your business and how we can work together.</p>
@@ -135,16 +135,12 @@ export const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name *
-                  </label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name </label>
                   <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                   {errors.name && <p className="text-primary text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email *
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email </label>
                   <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                   {errors.email && <p className="text-primary text-sm mt-1">{errors.email}</p>}
                 </div>
@@ -173,9 +169,7 @@ export const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message *
-                </label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">Message </label>
                 <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your business and what you're looking for..." rows={5} className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40 resize-none" />
                 {errors.message && <p className="text-primary text-sm mt-1">{errors.message}</p>}
               </div>

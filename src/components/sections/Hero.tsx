@@ -44,7 +44,7 @@ export const Hero = () => {
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95]">
               FORGE<span className="text-primary">SUPPLY</span>
             </h1>
-            <p className="text-xl mt-2 tracking-wide font-mono md:text-sm text-primary-foreground">STOP GOING ROUND IN CIRCLES.</p>
+            <p className="text-xl mt-2 tracking-wide md:text-sm text-primary-foreground font-sans font-semibold">STOP GOING ROUND IN CIRCLES.</p>
           </div>
 
           {/* Headline */}
