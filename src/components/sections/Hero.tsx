@@ -83,7 +83,7 @@ export const Hero = () => {
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="#enquiries">General Wheel Enquiries</a>
+              <a href="#enquiries">NOT A BUSINESS? BUY A PERSONAL SET</a>
             </Button>
           </motion.div>
         </motion.div>
