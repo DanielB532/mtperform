@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Premium B2B variants
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-none uppercase tracking-wider font-semibold",
-        heroOutline: "border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary rounded-none uppercase tracking-wider font-semibold",
+        heroOutline: "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none uppercase tracking-wider font-semibold",
         heroDark: "bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-none uppercase tracking-wider font-semibold",
         subtle: "bg-muted text-foreground hover:bg-muted/80 rounded-sm",
       },
