@@ -4,12 +4,12 @@ const businessTypes = [{
   icon: Settings,
   title: "Tyre & Alignment Centres",
   problem: "Customers need replacement wheels, but holding stock is impractical and sourcing one-offs is slow.",
-  solution: "Access vehicle-specific forged wheels on demand — we supply, you fit. Turn damage into revenue without the inventory headache.",
+  solution: "Access vehicle-specific forged wheels on demand. We supply, you fit. Turn damage into revenue without the inventory headache.",
   benefit: "New revenue stream with zero stockholding risk."
 }, {
   icon: Wrench,
   title: "Alloy Repair Specialists",
-  problem: "When repair isn't viable, customers are left without options — or referred elsewhere.",
+  problem: "When repair isn't viable, customers are left without options or are referred elsewhere.",
   solution: "Offer premium replacement as a seamless upsell. We supply the wheel, you complete the job and retain the customer.",
   benefit: "Convert unrepairable jobs into high-margin sales."
 }, {
