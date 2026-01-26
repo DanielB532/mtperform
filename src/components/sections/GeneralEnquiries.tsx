@@ -30,7 +30,7 @@ export const GeneralEnquiries = () => {
               While we primarily work with automotive businesses, we don't want you to feel left out if you're looking for a one-off set of wheels to make your car stand out on the road.
             </p>
             <p>
-              If you have a specific request — whether that's a particular style, size, or finish — simply choose a design you like and get in touch. We'll review the details and come back to you with a tailored quote.
+              If you have a specific request, whether that's a particular style, size, or finish, simply choose a design you like and get in touch. We'll review the details and come back to you with a tailored quote.
             </p>
             <p>
               If it makes more sense to complete the work through a trusted workshop, we'll guide you to the right partner. If not, we'll advise directly.

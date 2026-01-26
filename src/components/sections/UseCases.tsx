@@ -4,7 +4,7 @@ const useCases = [{
   description: "When a wheel is structurally compromised or cosmetically beyond economical repair, offer your customer a premium replacement instead of referring them elsewhere."
 }, {
   title: "Premium Over Aftermarket",
-  description: "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that your customers will thank you for — and that reflect your professional standards."
+  description: "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that your customers will thank you for, and that reflect your professional standards."
 }, {
   title: "Repair to Replacement Upgrade",
   description: "For customers with older or heavily damaged wheels, present replacement as an upgrade path. Better aesthetics, improved safety, and a fresh start."

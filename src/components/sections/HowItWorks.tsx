@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 const steps = [{
   number: "01",
   title: "Replacement Required",
-  description: "Your customer needs a wheel replacement — damage, safety concern, or upgrade request. You identify the need."
+  description: "Your customer needs a wheel replacement due to damage, safety concern, or upgrade request. You identify the need."
 }, {
   number: "02",
   title: "Select Vehicle-Specific Fit",
@@ -10,7 +10,7 @@ const steps = [{
 }, {
   number: "03",
   title: "We Supply, You Fit",
-  description: "Wheels are supplied build-to-order or from stock — delivered to your workshop or direct to your customer. White-label packaging available."
+  description: "Wheels are supplied build-to-order or from stock, delivered to your workshop or direct to your customer. White-label packaging available."
 }, {
   number: "04",
   title: "Complete the Job",
