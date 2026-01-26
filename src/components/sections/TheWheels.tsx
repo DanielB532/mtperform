@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import heroWheel from "@/assets/hero-wheel.jpg";
-const features = ["Premium forged monoblock construction", "Vehicle-specific fitments", "Multiple designs and finishes available", "OEM+ quality standards", "Built for replacement and upgrade scenarios", "Suitable for wheel + tyre packages"];
+const features = ["Premium forged monoblock construction", "18\" to 24\" rim sizes available", "Vehicle-specific fitments", "Multiple designs and finishes available", "OEM+ quality standards", "Built for replacement and upgrade scenarios", "Suitable for wheel + tyre packages"];
 export const TheWheels = () => {
   return <section id="the-wheels" className="section-padding bg-background">
       <div className="container-narrow">
@@ -44,9 +44,16 @@ export const TheWheels = () => {
               Quality Without Compromise
             </h2>
             <p className="text-lg mb-8 leading-relaxed text-secondary">
-              We supply premium forged wheels designed for demanding applications. 
-              Every wheel is engineered to meet strict quality standards — delivering 
-              the strength, finish, and fitment precision your customers expect.
+              Our rims are made from forged 6061-T6 aluminium, a material known for being 
+              strong without feeling heavy — which tends to matter when a wheel has to look 
+              premium and still perform day to day. The finish is designed to stay looking 
+              clean in real use, not just under showroom lights, and the build quality is 
+              the kind you can comfortably put your name behind when supplying customers. 
+              UK driving conditions are a decent reality check as well, because potholes, 
+              uneven surfaces, and rough patches are part of normal driving here, not a 
+              rare event. Put those pieces together and it becomes easier to see why this 
+              material, and this type of build, makes sense for anyone who wants wheels 
+              that hold up, fit properly, and still turn heads.
             </p>
 
             {/* Feature List */}
