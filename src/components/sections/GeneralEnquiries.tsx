@@ -1,28 +1,29 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 export const GeneralEnquiries = () => {
-  return (
-    <section id="enquiries" className="section-padding bg-background">
+  return <section id="enquiries" className="section-padding bg-background">
       <div className="container-narrow max-w-3xl text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }}>
           <span className="text-primary font-medium tracking-wider uppercase text-sm">
             One-Off Enquiries Welcome
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4 font-semibold">
             Looking for a One-Off Set of Wheels?
           </h2>
           
           {/* Confidence notice */}
-          <p className="text-primary font-medium text-lg mb-6">
-            Yes — we do handle single, one-off wheel enquiries.
-          </p>
+          <p className="text-primary font-medium text-lg mb-6">Yes, we do handle single, one-off wheel enquiries.</p>
           
           <div className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-2xl mx-auto space-y-4 text-left">
             <p>
@@ -59,6 +60,5 @@ export const GeneralEnquiries = () => {
           </Button>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
