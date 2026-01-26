@@ -88,9 +88,15 @@ export const PartnershipModels = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
-          <Button variant="subtle" size="lg" asChild>
-            <a href="#enquiries" className="">
-          </a>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            asChild
+            className="bg-white text-primary border-primary hover:bg-primary/5"
+          >
+            <a href="#enquiries">
+              Not a business? Enquire about a one-off set
+            </a>
           </Button>
         </motion.div>
       </div>
