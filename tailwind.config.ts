@@ -64,8 +64,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ['"Bebas Neue"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        display: ['sans-serif'],
+        body: ['sans-serif'],
       },
       boxShadow: {
         'card': 'var(--card-shadow)',
