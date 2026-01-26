@@ -11,7 +11,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 section-padding container-narrow w-full">
+      <div className="relative z-10 section-padding container-narrow w-full text-primary">
         <motion.div initial={{
         opacity: 0,
         y: 30
