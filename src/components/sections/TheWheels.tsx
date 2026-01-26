@@ -55,21 +55,40 @@ export const TheWheels = () => {
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
               The Wheels
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-6 font-semibold">
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-8 font-semibold">
               Quality Without Compromise
             </h2>
-            <p className="text-lg mb-8 leading-relaxed text-muted-foreground">
-              Our rims are made from forged 6061-T6 aluminium, a material known for being 
-              strong without feeling heavy. This matters when a wheel has to look 
-              premium and still perform day to day. The finish is designed to stay looking 
-              clean in real use, not just under showroom lights, and the build quality is 
-              the kind you can comfortably put your name behind when supplying customers. 
-              UK driving conditions are a decent reality check as well, because potholes, 
-              uneven surfaces, and rough patches are part of normal driving here, not a 
-              rare event. Put those pieces together and it becomes easier to see why this 
-              material, and this type of build, makes sense for anyone who wants wheels 
-              that hold up, fit properly, and still turn heads.
-            </p>
+            
+            {/* Key specs highlight */}
+            <div className="bg-primary/5 border-l-4 border-primary p-4 mb-8">
+              <p className="text-foreground font-medium">
+                Forged 6061-T6 Aluminium — Strong without the weight.
+              </p>
+            </div>
+
+            {/* Scannable content blocks */}
+            <div className="space-y-6 mb-8">
+              <div>
+                <h4 className="text-sm uppercase tracking-wider text-primary font-medium mb-2">Built to Perform</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Premium looks that hold up day to day. The finish stays clean in real use, not just under showroom lights.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="text-sm uppercase tracking-wider text-primary font-medium mb-2">Quality You Can Stand Behind</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Build quality you can comfortably put your name behind when supplying customers.
+                </p>
+              </div>
+              
+              <div>
+                <h4 className="text-sm uppercase tracking-wider text-primary font-medium mb-2">UK Road Ready</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Potholes, uneven surfaces, rough patches. Normal driving here, not a rare event. These wheels are built for it.
+                </p>
+              </div>
+            </div>
 
             {/* Feature List */}
             <ul className="space-y-4">
