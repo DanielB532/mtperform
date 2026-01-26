@@ -92,10 +92,11 @@ export const PartnershipModels = () => {
             variant="outline" 
             size="lg" 
             asChild
-            className="bg-white text-primary border-primary hover:bg-primary/5"
+            className="bg-white text-primary border-primary hover:bg-primary/5 uppercase font-bold"
           >
             <a href="#enquiries">
-              Not a business? Enquire about a one-off set
+              NOT A BUSINESS? PURCHASE A SET FOR YOURSELF
+              <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
         </motion.div>
