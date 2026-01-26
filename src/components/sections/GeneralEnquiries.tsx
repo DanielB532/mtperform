@@ -1,64 +1,189 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Car } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const enquirySchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email address").max(255),
+  vehicle: z.string().trim().min(1, "Vehicle is required").max(200),
+  currentSize: z.string().trim().max(100).optional(),
+  desiredSpec: z.string().trim().max(200).optional(),
+  notes: z.string().trim().max(1000).optional()
+});
+
 export const GeneralEnquiries = () => {
-  return <section id="enquiries" className="section-padding bg-background">
-      <div className="container-narrow max-w-3xl text-center">
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }}>
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">
-            One-Off Enquiries Welcome
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4 font-semibold">
-            Looking for a One-Off Set of Wheels?
-          </h2>
-          
-          {/* Confidence notice */}
-          <p className="text-primary font-medium text-lg mb-6">Yes, we do handle single, one-off wheel enquiries.</p>
-          
-          <div className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-2xl mx-auto space-y-4 text-left">
-            <p>
-              While we primarily work with automotive businesses, we don't want you to feel left out if you're looking for a one-off set of wheels to make your car stand out on the road.
-            </p>
-            <p>
-              If you have a specific request, whether that's a particular style, size, or finish, simply choose a design you like and get in touch. We'll review the details and come back to you with a tailored quote.
-            </p>
-            <p>
-              If it makes more sense to complete the work through a trusted workshop, we'll guide you to the right partner. If not, we'll advise directly.
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    vehicle: "",
+    currentSize: "",
+    desiredSpec: "",
+    notes: ""
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = enquirySchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+    toast({
+      title: "Enquiry received",
+      description: "Thank you for your request. We'll be in touch shortly."
+    });
+    setFormData({
+      name: "",
+      email: "",
+      vehicle: "",
+      currentSize: "",
+      desiredSpec: "",
+      notes: ""
+    });
+  };
+
+  return (
+    <section id="enquiries" className="section-padding bg-background">
+      <div className="container-narrow max-w-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="text-center mb-10">
+            <span className="text-primary font-medium tracking-wider uppercase text-sm">
+              One-Off Enquiries
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4 font-semibold">
+              Looking for a One-Off Set of Wheels?
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              Submit your request, confirm fitment, receive options. We handle single wheel set enquiries by request.
             </p>
           </div>
-          
-          {/* For Vehicle Owners */}
-          <div className="bg-muted/50 border border-border p-6 mb-8 text-left max-w-lg mx-auto">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Car className="w-5 h-5 text-primary" />
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-6 bg-muted/50 border border-border p-8">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+                  Name *
+                </label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name"
+                  className="bg-background border-border"
+                />
+                {errors.name && <p className="text-primary text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
-                <h3 className="font-display text-lg text-foreground mb-2">Not sure where to start?</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Send us an enquiry and we'll help point you in the right direction.
-                </p>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                  Email *
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="you@email.com"
+                  className="bg-background border-border"
+                />
+                {errors.email && <p className="text-primary text-sm mt-1">{errors.email}</p>}
               </div>
             </div>
-          </div>
-          
-          <Button variant="hero" size="lg" asChild>
-            <a href="#contact">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Get in Touch
-            </a>
-          </Button>
+
+            <div>
+              <label htmlFor="vehicle" className="block text-sm font-medium mb-2 text-foreground">
+                Vehicle (Year / Make / Model) *
+              </label>
+              <Input
+                id="vehicle"
+                name="vehicle"
+                value={formData.vehicle}
+                onChange={handleChange}
+                placeholder="e.g. 2022 BMW M3"
+                className="bg-background border-border"
+              />
+              {errors.vehicle && <p className="text-primary text-sm mt-1">{errors.vehicle}</p>}
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="currentSize" className="block text-sm font-medium mb-2 text-foreground">
+                  Current Wheel Size <span className="text-muted-foreground">(optional)</span>
+                </label>
+                <Input
+                  id="currentSize"
+                  name="currentSize"
+                  value={formData.currentSize}
+                  onChange={handleChange}
+                  placeholder="e.g. 19x8.5"
+                  className="bg-background border-border"
+                />
+              </div>
+              <div>
+                <label htmlFor="desiredSpec" className="block text-sm font-medium mb-2 text-foreground">
+                  Desired Size/Finish <span className="text-muted-foreground">(optional)</span>
+                </label>
+                <Input
+                  id="desiredSpec"
+                  name="desiredSpec"
+                  value={formData.desiredSpec}
+                  onChange={handleChange}
+                  placeholder="e.g. 20 inch gloss black"
+                  className="bg-background border-border"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="notes" className="block text-sm font-medium mb-2 text-foreground">
+                Notes <span className="text-muted-foreground">(optional)</span>
+              </label>
+              <Textarea
+                id="notes"
+                name="notes"
+                value={formData.notes}
+                onChange={handleChange}
+                placeholder="Any additional details about your requirements..."
+                rows={4}
+                className="bg-background border-border resize-none"
+              />
+            </div>
+
+            <Button type="submit" variant="hero" size="lg" className="w-full">
+              Submit Enquiry
+              <Send className="w-5 h-5 ml-2" />
+            </Button>
+          </form>
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
