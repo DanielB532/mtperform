@@ -95,7 +95,7 @@ export const PartnershipModels = () => {
             className="bg-white text-primary border-primary hover:bg-primary/5 uppercase font-bold"
           >
             <a href="#enquiries">
-              NOT A BUSINESS? PURCHASE A SET FOR YOURSELF
+              NOT A BUSINESS? BUY A PERSONAL SET
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
