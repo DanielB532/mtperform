@@ -40,7 +40,7 @@ export const Header = () => {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <span className="font-display text-2xl text-secondary-foreground tracking-wider font-semibold">
-              FORGE<span className="text-primary">SUPPLY</span>
+              MT <span className="text-primary">PERFORMANCE</span>
             </span>
           </a>
 

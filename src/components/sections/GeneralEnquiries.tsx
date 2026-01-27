@@ -77,7 +77,7 @@ export const GeneralEnquiries = () => {
               One-Off Enquiries
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4 font-semibold">
-              Looking for a One-Off Set of Wheels?
+              Looking for a Personal Set of Wheels?
             </h2>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto">
               Submit your request, confirm fitment, receive options. We handle single wheel set enquiries by request.
