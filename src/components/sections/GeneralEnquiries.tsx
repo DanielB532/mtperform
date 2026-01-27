@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-
 const enquirySchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
@@ -15,9 +14,10 @@ const enquirySchema = z.object({
   desiredSpec: z.string().trim().max(200).optional(),
   notes: z.string().trim().max(1000).optional()
 });
-
 export const GeneralEnquiries = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,21 +27,28 @@ export const GeneralEnquiries = () => {
     notes: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
     }
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const result = enquirySchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((err) => {
+      result.error.errors.forEach(err => {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }
@@ -62,16 +69,19 @@ export const GeneralEnquiries = () => {
       notes: ""
     });
   };
-
-  return (
-    <section id="enquiries" className="section-padding bg-background">
+  return <section id="enquiries" className="section-padding bg-background">
       <div className="container-narrow max-w-2xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }}>
           <div className="text-center mb-10">
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
               One-Off Enquiries
@@ -79,7 +89,7 @@ export const GeneralEnquiries = () => {
             <h2 className="font-display text-4xl md:text-5xl text-foreground mt-4 mb-4 font-semibold">
               Looking for a Personal Set of Wheels?
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-lg max-w-xl mx-auto text-secondary">
               Submit your request, confirm fitment, receive options. We handle single wheel set enquiries by request.
             </p>
           </div>
@@ -91,29 +101,14 @@ export const GeneralEnquiries = () => {
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
                   Name *
                 </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  className="bg-background border-border"
-                />
+                <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" className="bg-background border-border" />
                 {errors.name && <p className="text-primary text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
                   Email *
                 </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="you@email.com"
-                  className="bg-background border-border"
-                />
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@email.com" className="bg-background border-border" />
                 {errors.email && <p className="text-primary text-sm mt-1">{errors.email}</p>}
               </div>
             </div>
@@ -122,14 +117,7 @@ export const GeneralEnquiries = () => {
               <label htmlFor="vehicle" className="block text-sm font-medium mb-2 text-foreground">
                 Vehicle (Year / Make / Model) *
               </label>
-              <Input
-                id="vehicle"
-                name="vehicle"
-                value={formData.vehicle}
-                onChange={handleChange}
-                placeholder="e.g. 2022 BMW M3"
-                className="bg-background border-border"
-              />
+              <Input id="vehicle" name="vehicle" value={formData.vehicle} onChange={handleChange} placeholder="e.g. 2022 BMW M3" className="bg-background border-border" />
               {errors.vehicle && <p className="text-primary text-sm mt-1">{errors.vehicle}</p>}
             </div>
 
@@ -138,27 +126,13 @@ export const GeneralEnquiries = () => {
                 <label htmlFor="currentSize" className="block text-sm font-medium mb-2 text-foreground">
                   Current Wheel Size <span className="text-muted-foreground">(optional)</span>
                 </label>
-                <Input
-                  id="currentSize"
-                  name="currentSize"
-                  value={formData.currentSize}
-                  onChange={handleChange}
-                  placeholder="e.g. 19x8.5"
-                  className="bg-background border-border"
-                />
+                <Input id="currentSize" name="currentSize" value={formData.currentSize} onChange={handleChange} placeholder="e.g. 19x8.5" className="bg-background border-border" />
               </div>
               <div>
                 <label htmlFor="desiredSpec" className="block text-sm font-medium mb-2 text-foreground">
                   Desired Size/Finish <span className="text-muted-foreground">(optional)</span>
                 </label>
-                <Input
-                  id="desiredSpec"
-                  name="desiredSpec"
-                  value={formData.desiredSpec}
-                  onChange={handleChange}
-                  placeholder="e.g. 20 inch gloss black"
-                  className="bg-background border-border"
-                />
+                <Input id="desiredSpec" name="desiredSpec" value={formData.desiredSpec} onChange={handleChange} placeholder="e.g. 20 inch gloss black" className="bg-background border-border" />
               </div>
             </div>
 
@@ -166,15 +140,7 @@ export const GeneralEnquiries = () => {
               <label htmlFor="notes" className="block text-sm font-medium mb-2 text-foreground">
                 Notes <span className="text-muted-foreground">(optional)</span>
               </label>
-              <Textarea
-                id="notes"
-                name="notes"
-                value={formData.notes}
-                onChange={handleChange}
-                placeholder="Any additional details about your requirements..."
-                rows={4}
-                className="bg-background border-border resize-none"
-              />
+              <Textarea id="notes" name="notes" value={formData.notes} onChange={handleChange} placeholder="Any additional details about your requirements..." rows={4} className="bg-background border-border resize-none" />
             </div>
 
             <Button type="submit" variant="hero" size="lg" className="w-full">
@@ -184,6 +150,5 @@ export const GeneralEnquiries = () => {
           </form>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
