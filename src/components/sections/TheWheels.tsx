@@ -20,7 +20,7 @@ const qualityPoints = [
 const features = [
   "Premium forged monoblock construction",
   "Forged 6061-T6 aluminium alloy",
-  "18\" to 24\" rim sizes available",
+  "15\" to 26\" rim sizes available",
   "Vehicle-specific fitments",
   "Multiple designs and finishes",
   "OEM+ quality standards"

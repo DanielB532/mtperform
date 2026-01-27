@@ -45,8 +45,8 @@ export const Hero = () => {
 
           {/* Brand Name & Slogan */}
           <div className="mb-6">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95]">
-              MT <span className="text-primary">PERFORMANCE</span>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[0.95] font-bold">
+              MT PERFORMANCE
             </h1>
           </div>
 
