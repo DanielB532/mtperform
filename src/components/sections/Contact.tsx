@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
-
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   businessName: z.string().trim().min(1, "Business name is required").max(100),
@@ -18,26 +17,45 @@ const contactSchema = z.object({
   preferredContact: z.string().trim().max(20),
   message: z.string().trim().min(1, "Message is required").max(2000)
 });
-
-const businessTypes = [
-  { value: "", label: "Select business type" },
-  { value: "tyre-shop", label: "Tyre Shop" },
-  { value: "refurb-centre", label: "Refurb Centre" },
-  { value: "garage", label: "Garage" },
-  { value: "dealer", label: "Dealer" },
-  { value: "other", label: "Other" }
-];
-
-const volumeOptions = [
-  { value: "", label: "Select monthly volume" },
-  { value: "1-5", label: "1-5 wheels" },
-  { value: "6-20", label: "6-20 wheels" },
-  { value: "21-50", label: "21-50 wheels" },
-  { value: "50+", label: "50+ wheels" }
-];
-
+const businessTypes = [{
+  value: "",
+  label: "Select business type"
+}, {
+  value: "tyre-shop",
+  label: "Tyre Shop"
+}, {
+  value: "refurb-centre",
+  label: "Refurb Centre"
+}, {
+  value: "garage",
+  label: "Garage"
+}, {
+  value: "dealer",
+  label: "Dealer"
+}, {
+  value: "other",
+  label: "Other"
+}];
+const volumeOptions = [{
+  value: "",
+  label: "Select monthly volume"
+}, {
+  value: "1-5",
+  label: "1-5 wheels"
+}, {
+  value: "6-20",
+  label: "6-20 wheels"
+}, {
+  value: "21-50",
+  label: "21-50 wheels"
+}, {
+  value: "50+",
+  label: "50+ wheels"
+}];
 export const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
@@ -50,23 +68,28 @@ export const Contact = () => {
     message: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
     }
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((err) => {
+      result.error.errors.forEach(err => {
         if (err.path[0]) {
           fieldErrors[err.path[0] as string] = err.message;
         }
@@ -90,25 +113,25 @@ export const Contact = () => {
       message: ""
     });
   };
-
   const handleWhatsApp = () => {
-    const text = encodeURIComponent(
-      "Hi, I'm interested in discussing a B2B wheel supply partnership."
-    );
+    const text = encodeURIComponent("Hi, I'm interested in discussing a B2B wheel supply partnership.");
     window.open(`https://wa.me/447000000000?text=${text}`, "_blank");
   };
-
-  return (
-    <section id="contact" className="section-padding bg-secondary text-secondary-foreground">
+  return <section id="contact" className="section-padding bg-secondary text-secondary-foreground">
       <div className="container-narrow">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: -30
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }}>
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
               Get Started
             </span>
@@ -145,12 +168,7 @@ export const Contact = () => {
               <p className="text-sm mb-4 text-secondary-foreground/70">
                 For quick questions or to start a conversation directly.
               </p>
-              <Button
-                variant="hero"
-                size="lg"
-                onClick={handleWhatsApp}
-                className="bg-[#25D366] hover:bg-[#20BA5C]"
-              >
+              <Button variant="hero" size="lg" onClick={handleWhatsApp} className="bg-[#25D366] hover:bg-[#20BA5C]">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Message on WhatsApp
               </Button>
@@ -158,43 +176,32 @@ export const Contact = () => {
           </motion.div>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 30
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }}>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name *
                   </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                   {errors.name && <p className="text-primary text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div>
                   <label htmlFor="businessName" className="block text-sm font-medium mb-2">
                     Business Name *
                   </label>
-                  <Input
-                    id="businessName"
-                    name="businessName"
-                    value={formData.businessName}
-                    onChange={handleChange}
-                    placeholder="Your business name"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
-                  {errors.businessName && (
-                    <p className="text-primary text-sm mt-1">{errors.businessName}</p>
-                  )}
+                  <Input id="businessName" name="businessName" value={formData.businessName} onChange={handleChange} placeholder="Your business name" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
+                  {errors.businessName && <p className="text-primary text-sm mt-1">{errors.businessName}</p>}
                 </div>
               </div>
 
@@ -203,40 +210,18 @@ export const Contact = () => {
                   <label htmlFor="businessType" className="block text-sm font-medium mb-2">
                     Business Type *
                   </label>
-                  <select
-                    id="businessType"
-                    name="businessType"
-                    value={formData.businessType}
-                    onChange={handleChange}
-                    className="w-full h-10 px-3 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground rounded-md"
-                  >
-                    {businessTypes.map((type) => (
-                      <option
-                        key={type.value}
-                        value={type.value}
-                        className="bg-secondary text-secondary-foreground"
-                      >
+                  <select id="businessType" name="businessType" value={formData.businessType} onChange={handleChange} className="w-full h-10 px-3 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground rounded-md">
+                    {businessTypes.map(type => <option key={type.value} value={type.value} className="bg-secondary text-secondary-foreground">
                         {type.label}
-                      </option>
-                    ))}
+                      </option>)}
                   </select>
-                  {errors.businessType && (
-                    <p className="text-primary text-sm mt-1">{errors.businessType}</p>
-                  )}
+                  {errors.businessType && <p className="text-primary text-sm mt-1">{errors.businessType}</p>}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email *
                   </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="you@business.com"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@business.com" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                   {errors.email && <p className="text-primary text-sm mt-1">{errors.email}</p>}
                 </div>
               </div>
@@ -246,70 +231,34 @@ export const Contact = () => {
                   <label htmlFor="phone" className="block text-sm font-medium mb-2">
                     Phone <span className="text-secondary-foreground/50">(optional)</span>
                   </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Your phone number"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="Your phone number" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                 </div>
                 <div>
                   <label htmlFor="location" className="block text-sm font-medium mb-2">
                     Location <span className="text-secondary-foreground/50">(optional)</span>
                   </label>
-                  <Input
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    placeholder="City / Region"
-                    className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40"
-                  />
+                  <Input id="location" name="location" value={formData.location} onChange={handleChange} placeholder="City / Region" className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40" />
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="monthlyVolume" className="block text-sm font-medium mb-2">
+                  <label htmlFor="monthlyVolume" className="block text-sm font-medium mb-2 text-primary-foreground">
                     Monthly Volume <span className="text-secondary-foreground/50">(optional)</span>
                   </label>
-                  <select
-                    id="monthlyVolume"
-                    name="monthlyVolume"
-                    value={formData.monthlyVolume}
-                    onChange={handleChange}
-                    className="w-full h-10 px-3 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground rounded-md"
-                  >
-                    {volumeOptions.map((option) => (
-                      <option
-                        key={option.value}
-                        value={option.value}
-                        className="bg-secondary text-secondary-foreground"
-                      >
+                  <select id="monthlyVolume" name="monthlyVolume" value={formData.monthlyVolume} onChange={handleChange} className="w-full h-10 px-3 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground rounded-md">
+                    {volumeOptions.map(option => <option key={option.value} value={option.value} className="bg-secondary text-secondary-foreground">
                         {option.label}
-                      </option>
-                    ))}
+                      </option>)}
                   </select>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Preferred Contact Method</label>
                   <div className="flex gap-4 h-10 items-center">
-                    {["email", "phone", "whatsapp"].map((method) => (
-                      <label key={method} className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="preferredContact"
-                          value={method}
-                          checked={formData.preferredContact === method}
-                          onChange={handleChange}
-                          className="w-4 h-4 accent-primary"
-                        />
+                    {["email", "phone", "whatsapp"].map(method => <label key={method} className="flex items-center gap-2 cursor-pointer">
+                        <input type="radio" name="preferredContact" value={method} checked={formData.preferredContact === method} onChange={handleChange} className="w-4 h-4 accent-primary" />
                         <span className="capitalize text-sm">{method}</span>
-                      </label>
-                    ))}
+                      </label>)}
                   </div>
                 </div>
               </div>
@@ -318,15 +267,7 @@ export const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message *
                 </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your business and what you're looking for..."
-                  rows={4}
-                  className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40 resize-none"
-                />
+                <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your business and what you're looking for..." rows={4} className="bg-secondary-foreground/10 border-secondary-foreground/20 text-secondary-foreground placeholder:text-secondary-foreground/40 resize-none" />
                 {errors.message && <p className="text-primary text-sm mt-1">{errors.message}</p>}
               </div>
 
@@ -338,6 +279,5 @@ export const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
