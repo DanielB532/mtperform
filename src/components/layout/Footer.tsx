@@ -24,7 +24,7 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="font-display text-2xl text-background tracking-wider">
-              FORGE<span className="text-primary">SUPPLY</span>
+              MT <span className="text-primary">PERFORMANCE</span>
             </span>
             <p className="mt-4 text-sm text-background/60 leading-relaxed">
               Premium forged wheel supply partner for automotive businesses across the UK.
@@ -95,7 +95,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/40">
-            © {new Date().getFullYear()} ForgeSupply. All rights reserved.
+            © {new Date().getFullYear()} MT Performance. All rights reserved.
           </p>
           <p className="text-sm text-background/40">United Kingdom</p>
         </div>
