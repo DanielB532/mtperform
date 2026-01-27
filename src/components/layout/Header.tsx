@@ -69,7 +69,7 @@ export const Header = () => {
 
           {/* Mobile Menu Toggle */}
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="xl:hidden text-secondary-foreground p-2" aria-label="Toggle menu">
-            {isMobileMenuOpen ? <X className="w-6 h-6 text-primary border-primary" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </motion.header>
