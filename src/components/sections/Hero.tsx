@@ -36,14 +36,14 @@ export const Hero = () => {
         }} className="inline-flex items-center gap-2 mb-6">
             <span className="w-12 h-[2px] bg-primary" />
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
-              B2B Wheel Supply Partner
+              Wheel Supply Partner
             </span>
           </motion.div>
 
           {/* Brand Name & Slogan */}
           <div className="mb-6">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-bold text-primary-foreground">
-              MT PERFORMANCE
+              MT <span className="text-primary">PERFORMANCE</span>
             </h1>
           </div>
 
@@ -96,8 +96,8 @@ export const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.5
-        }} className="flex flex-wrap gap-3">
-            {benefitChips.map((chip, index) => <span key={index} className="inline-flex items-center px-4 py-2 bg-secondary-foreground/10 border border-secondary-foreground/20 text-secondary-foreground text-sm font-medium">
+        }} className="flex flex-wrap justify-between gap-4 max-w-xl">
+            {benefitChips.map((chip, index) => <span key={index} className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/30 text-white text-sm font-medium">
                 {chip}
               </span>)}
           </motion.div>
