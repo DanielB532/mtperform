@@ -23,9 +23,6 @@ const navLinks = [{
 }, {
   label: "One-Off Set",
   href: "#enquiries"
-}, {
-  label: "Partnership",
-  href: "#contact"
 }];
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,8 +51,8 @@ export const Header = () => {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-6">
-            {navLinks.map(link => <a key={link.href} href={link.href} className="text-xs transition-colors uppercase tracking-wider font-semibold text-secondary-foreground/80 hover:text-primary">
+          <nav className="hidden xl:flex items-center justify-between flex-1 mx-12">
+            {navLinks.map(link => <a key={link.href} href={link.href} className="text-xs transition-colors uppercase tracking-wider font-semibold text-white hover:text-primary">
                 {link.label}
               </a>)}
           </nav>
