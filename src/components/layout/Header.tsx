@@ -21,7 +21,7 @@ const navLinks = [{
   label: "FAQ",
   href: "#faq"
 }, {
-  label: "One-Off Set",
+  label: "Personal Set",
   href: "#enquiries"
 }];
 export const Header = () => {
@@ -51,8 +51,8 @@ export const Header = () => {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center justify-between flex-1 mx-12">
-            {navLinks.map(link => <a key={link.href} href={link.href} className="text-xs transition-colors uppercase tracking-wider font-semibold text-white hover:text-primary">
+          <nav className="hidden xl:flex items-center justify-between flex-1 mx-16">
+            {navLinks.map(link => <a key={link.href} href={link.href} className="text-xs transition-colors uppercase tracking-wider font-semibold text-white hover:text-primary px-2">
                 {link.label}
               </a>)}
           </nav>

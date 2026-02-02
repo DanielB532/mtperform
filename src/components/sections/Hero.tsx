@@ -56,7 +56,7 @@ export const Hero = () => {
 
           {/* Subheadline - Single line */}
           <p className="text-lg md:text-xl max-w-xl mb-3 leading-relaxed font-light text-secondary-foreground">
-            Trade-first supply for tyre shops, refurb centres, garages and dealers.
+            Trade-first supply for workshops, dealers, automotive specialists and more. Contact us to see if we can form a partnership.
           </p>
 
           {/* Slogan */}
