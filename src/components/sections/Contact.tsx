@@ -97,9 +97,13 @@ export const Contact = () => {
       setErrors(fieldErrors);
       return;
     }
+    const text = encodeURIComponent(
+      `Hi, I'm interested in a B2B partnership.\n\nName: ${formData.name}\nBusiness: ${formData.businessName}\nType: ${formData.businessType}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nLocation: ${formData.location}\nMonthly Volume: ${formData.monthlyVolume}\nPreferred Contact: ${formData.preferredContact}\n\n${formData.message}`
+    );
+    window.open(`https://wa.me/447508855696?text=${text}`, "_blank");
     toast({
-      title: "Message received",
-      description: "Thank you for your enquiry. We'll be in touch shortly."
+      title: "Redirecting to WhatsApp",
+      description: "Opening WhatsApp to send your message."
     });
     setFormData({
       name: "",
@@ -114,8 +118,7 @@ export const Contact = () => {
     });
   };
   const handleWhatsApp = () => {
-    const text = encodeURIComponent("Hi, I'm interested in discussing a B2B wheel supply partnership.");
-    window.open(`https://wa.me/447000000000?text=${text}`, "_blank");
+    window.open("https://wa.me/qr/TRWCW5YU5KKIP1", "_blank");
   };
   return <section id="contact" className="section-padding bg-secondary text-secondary-foreground">
       <div className="container-narrow">
