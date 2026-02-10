@@ -56,9 +56,13 @@ export const GeneralEnquiries = () => {
       setErrors(fieldErrors);
       return;
     }
+    const text = encodeURIComponent(
+      `Hi, I'm looking for a personal set of wheels.\n\nName: ${formData.name}\nEmail: ${formData.email}\nVehicle: ${formData.vehicle}\nCurrent Size: ${formData.currentSize || 'N/A'}\nDesired Spec: ${formData.desiredSpec || 'N/A'}\nNotes: ${formData.notes || 'N/A'}`
+    );
+    window.open(`https://wa.me/447508855696?text=${text}`, "_blank");
     toast({
-      title: "Enquiry received",
-      description: "Thank you for your request. We'll be in touch shortly."
+      title: "Redirecting to WhatsApp",
+      description: "Opening WhatsApp to send your enquiry."
     });
     setFormData({
       name: "",
