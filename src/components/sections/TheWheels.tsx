@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import heroWheel from "@/assets/hero-wheel.jpg";
+import qualityWheels from "@/assets/quality-wheels.jpg";
 const qualityPoints = [{
   label: "Fitment",
   text: "Vehicle-specific specs for accurate installation every time."
