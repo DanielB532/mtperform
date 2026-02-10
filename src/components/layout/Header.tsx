@@ -51,7 +51,7 @@ export const Header = () => {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center justify-between flex-1 mx-16">
+          <nav className="hidden xl:flex items-center justify-evenly flex-1 mx-16">
             {navLinks.map(link => <a key={link.href} href={link.href} className="text-xs transition-colors uppercase tracking-wider font-semibold text-white hover:text-primary px-2">
                 {link.label}
               </a>)}
