@@ -35,7 +35,7 @@ export const TheWheels = () => {
 
             {/* Main image container */}
             <div className="relative overflow-hidden bg-secondary">
-              <img src={qualityWheels} alt="Premium forged wheel detail" className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700" />
+              <img src={qualityWheels} alt="Premium forged wheel detail" className="w-full aspect-[4/5] object-contain hover:scale-105 transition-transform duration-700" />
               {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
