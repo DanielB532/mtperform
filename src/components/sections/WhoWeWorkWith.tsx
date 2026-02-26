@@ -12,9 +12,9 @@ const businessTypes = [{
   idealFor: "Shops handling high volumes of damaged wheels"
 }, {
   icon: Car,
-  title: "Garages & Workshops",
-  bullets: ["One reliable partner for all wheel replacements", "Consistent quality and known lead times", "Simplify your supply chain"],
-  idealFor: "General workshops adding wheel services"
+  title: "Bodykit & Customisation Specialists",
+  bullets: ["Premium forged upgrades for custom builds and widebody projects", "Fitment support for staggered setups and aggressive offsets", "Consistent supply for customer builds and showcase cars"],
+  idealFor: "Kit installers, styling garages, wrap/PPF studios"
 }, {
   icon: Building2,
   title: "Dealers & Prep Centres",
@@ -69,6 +69,9 @@ export const WhoWeWorkWith = () => {
           <p className="text-lg max-w-2xl text-secondary">
             We partner with automotive businesses that need a reliable, premium wheel supply solution. 
             From independent tyre fitters to multi-site operations, our model integrates with your workflow.
+          </p>
+          <p className="text-sm max-w-2xl text-muted-foreground mt-4">
+            Other fits include: performance tuners, wrap/PPF studios, detailing centres, bodyshops, specialist installers and independent retailers. If you fit or want to add wheels to what you offer, contact us as your business is most likely a fit.
           </p>
         </motion.div>
 

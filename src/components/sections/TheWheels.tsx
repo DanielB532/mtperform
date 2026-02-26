@@ -11,7 +11,7 @@ const qualityPoints = [{
   label: "Consistency",
   text: "Workshop-ready delivery, consistent comms, reliable lead times."
 }];
-const features = ["Premium forged monoblock construction", "Forged 6061-T6 aluminium alloy", "15\" to 26\" rim sizes available", "Vehicle-specific fitments", "Multiple designs and finishes", "OEM+ quality standards"];
+const features = ["Premium forged monoblock construction", "Forged 6061-T6 aluminium alloy", "15\" to 26\" rim sizes available", "Vehicle-specific fitments", "Multiple designs and finishes", "OEM+ quality standards", "Construction options: Monoblock, 2-piece, 3-piece, wrapped carbon fibre, full carbon fibre."];
 export const TheWheels = () => {
   return <section id="the-wheels" className="section-padding bg-muted/30">
       <div className="container-narrow">
