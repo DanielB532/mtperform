@@ -1,112 +1,117 @@
 import { motion } from "framer-motion";
 import { Wrench, Settings, Car, Building2 } from "lucide-react";
-const businessTypes = [{
-  icon: Settings,
-  title: "Tyre & Alignment Centres",
-  bullets: ["Access vehicle-specific forged wheels on demand", "We supply, you fit and retain full margin", "No inventory or stockholding required"],
-  idealFor: "Independent fitters to multi-site operations"
-}, {
-  icon: Wrench,
-  title: "Alloy Repair Specialists",
-  bullets: ["Offer premium replacement when repair isn't viable", "Convert unrepairable jobs into high-margin sales", "Retain the customer instead of referring out"],
-  idealFor: "Shops handling high volumes of damaged wheels"
-}, {
-  icon: Car,
-  title: "Bodykit & Customisation Specialists",
-  bullets: ["Premium forged upgrades for custom builds and widebody projects", "Fitment support for staggered setups and aggressive offsets", "Consistent supply for customer builds and showcase cars"],
-  idealFor: "Kit installers, styling garages, wrap/PPF studios"
-}, {
-  icon: Building2,
-  title: "Dealers & Prep Centres",
-  bullets: ["Vehicle-specific OEM+ replacements", "Restore original look for resale presentation", "White-label packaging available"],
-  idealFor: "Used car prep and dealer groups"
-}];
-const container = {
-  hidden: {
-    opacity: 0
+
+const businessTypes = [
+  {
+    icon: Settings,
+    title: "Tyre & Alignment Centres",
+    bullets: [
+      "Access vehicle-specific forged wheels on demand",
+      "We supply, you fit and retain full margin",
+      "No inventory or stockholding required",
+    ],
+    idealFor: "Independent fitters to multi-site operations",
   },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
-const item = {
-  hidden: {
-    opacity: 0,
-    y: 30
+  {
+    icon: Wrench,
+    title: "Alloy Repair Specialists",
+    bullets: [
+      "Offer premium replacement when repair isn't viable",
+      "Convert unrepairable jobs into high-margin sales",
+      "Retain the customer instead of referring out",
+    ],
+    idealFor: "Shops handling high volumes of damaged wheels",
   },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6
-    }
-  }
-};
+  {
+    icon: Car,
+    title: "Bodykit & Customisation Specialists",
+    bullets: [
+      "Premium forged upgrades for custom builds and widebody projects",
+      "Fitment support for staggered setups and aggressive offsets",
+      "Consistent supply for customer builds and showcase cars",
+    ],
+    idealFor: "Kit installers, styling garages, wrap/PPF studios",
+  },
+  {
+    icon: Building2,
+    title: "Dealers & Prep Centres",
+    bullets: [
+      "Vehicle-specific OEM+ replacements",
+      "Restore original look for resale presentation",
+      "White-label packaging available",
+    ],
+    idealFor: "Used car prep and dealer groups",
+  },
+];
+
 export const WhoWeWorkWith = () => {
-  return <section id="who-we-work-with" className="section-padding bg-background">
-      <div className="container-narrow">
-        {/* Section Header */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }} className="mb-16">
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">
-            Who We Work With
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-6 font-semibold text-secondary">
-            Built for Automotive Businesses
-          </h2>
-          <p className="text-lg max-w-2xl text-secondary">
-            We partner with automotive businesses that need a reliable, premium wheel supply solution. 
-            From independent tyre fitters to multi-site operations, our model integrates with your workflow.
+  return (
+    <section id="who-we-work-with" className="bg-background overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-20 lg:mb-28"
+        >
+          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            Built for Trade
           </p>
-          <p className="text-sm max-w-2xl text-muted-foreground mt-4">
-            Other fits include: performance tuners, wrap/PPF studios, detailing centres, bodyshops, specialist installers and independent retailers. If you fit or want to add wheels to what you offer, contact us as your business is most likely a fit.
-          </p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+              Built for Automotive Businesses
+            </h2>
+            <div className="max-w-md">
+              <p className="text-muted-foreground text-base font-light leading-relaxed mb-4">
+                We partner with automotive businesses that need a reliable, premium wheel supply solution. From independent tyre fitters to multi-site operations, our model integrates with your workflow.
+              </p>
+              <p className="text-muted-foreground/70 text-sm font-light leading-relaxed">
+                Other fits include: performance tuners, wrap/PPF studios, detailing centres, bodyshops, specialist installers and independent retailers. If you fit or want to add wheels to what you offer, contact us as your business is most likely a fit.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Business Type Cards */}
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{
-        once: true
-      }} className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {businessTypes.map((business, index) => <motion.div key={index} variants={item} className="group bg-card border border-border p-8 hover:shadow-card-hover transition-all duration-300">
-              {/* Icon */}
-              <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <business.icon className="w-6 h-6 text-primary" />
-              </div>
-
-              {/* Title */}
-              <h3 className="font-display text-2xl text-foreground mb-4">
+        {/* Business Type Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-border">
+          {businessTypes.map((business, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="group p-8 lg:p-10 border-b lg:border-b-0 last:border-b-0 border-r-0 md:border-r border-border hover:bg-muted/40 transition-colors duration-300"
+            >
+              <business.icon
+                className="w-5 h-5 text-primary mb-8"
+                strokeWidth={1.5}
+              />
+              <h3 className="text-foreground font-semibold text-base tracking-tight mb-5 leading-snug">
                 {business.title}
               </h3>
-
-              {/* Bullets */}
-              <ul className="space-y-2 mb-6">
-                {business.bullets.map((bullet, bulletIndex) => <li key={bulletIndex} className="flex items-start gap-2 text-muted-foreground">
-                    <span className="text-primary mt-1.5 text-xs">●</span>
-                    <span>{bullet}</span>
-                  </li>)}
+              <ul className="space-y-3 mb-8">
+                {business.bullets.map((bullet, bulletIndex) => (
+                  <li key={bulletIndex} className="flex items-start gap-2.5">
+                    <span className="text-primary mt-[5px] text-[8px]">●</span>
+                    <span className="text-muted-foreground text-sm font-light leading-relaxed">
+                      {bullet}
+                    </span>
+                  </li>
+                ))}
               </ul>
-
-              {/* Ideal For */}
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm">
-                  <span className="text-muted-foreground">Ideal for:</span>{" "}
-                  <span className="text-primary font-medium">{business.idealFor}</span>
+              <div className="pt-6 border-t border-border">
+                <p className="text-xs text-muted-foreground/60 font-light">
+                  <span className="text-primary font-medium">Ideal for:</span>{" "}
+                  {business.idealFor}
                 </p>
               </div>
-            </motion.div>)}
-        </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
