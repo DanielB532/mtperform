@@ -1,122 +1,102 @@
 import { motion } from "framer-motion";
-const footerLinks = [{
-  label: "Built for Trade",
-  href: "#who-we-work-with"
-}, {
-  label: "Use Cases",
-  href: "#use-cases"
-}, {
-  label: "Process",
-  href: "#how-it-works"
-}, {
-  label: "Quality",
-  href: "#the-wheels"
-}, {
-  label: "Supply Options",
-  href: "#partnership"
-}, {
-  label: "FAQ",
-  href: "#faq"
-}, {
-  label: "One-Off Set",
-  href: "#enquiries"
-}, {
-  label: "Partnership",
-  href: "#contact"
-}];
+import { ArrowUpRight } from "lucide-react";
+
+const footerLinks = [
+  { label: "Who We Work With", href: "#who-we-work-with" },
+  { label: "Wheels", href: "#product-categories" },
+  { label: "Process", href: "#how-it-works" },
+  { label: "Supply Options", href: "#partnership" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Request a Quote", href: "#quote" },
+];
+
 export const Footer = () => {
-  return <footer className="bg-foreground text-background/80">
-      <div className="container-narrow section-padding py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+  return (
+    <footer className="bg-secondary border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 lg:py-24">
+        <div className="grid md:grid-cols-3 gap-16 mb-20">
           {/* Brand */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }}>
-            <span className="font-display text-2xl text-background tracking-wider">
-              MT <span className="text-primary">PERFORMANCE</span>
-            </span>
-            <p className="mt-4 text-sm text-background/60 leading-relaxed">
-              Premium forged wheel supply partner for automotive businesses across the UK.
-              Vehicle-specific fitments. Flexible partnership models.
+          <div className="md:col-span-1">
+            <a href="#" className="inline-block mb-6">
+              <span className="font-semibold text-xl text-white tracking-tight">
+                MT <span className="text-primary">PERFORMANCE</span>
+              </span>
+            </a>
+            <p className="text-white/35 text-sm font-light leading-relaxed max-w-xs">
+              UK-based premium forged wheel supply partner for automotive businesses. Vehicle-specific fitments, flexible partnerships.
             </p>
-          </motion.div>
+          </div>
 
           {/* Links */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6,
-          delay: 0.1
-        }}>
-            <h4 className="font-display text-lg text-background mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {footerLinks.map(link => <li key={link.href}>
-                  <a href={link.href} className="text-sm text-background/60 hover:text-background transition-colors">
+          <div>
+            <p className="text-white/25 text-[11px] font-semibold tracking-[0.15em] uppercase mb-6">
+              Navigation
+            </p>
+            <ul className="space-y-3">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-white/40 text-sm hover:text-white transition-colors duration-200 font-light"
+                  >
                     {link.label}
                   </a>
-                </li>)}
+                </li>
+              ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Contact Info */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6,
-          delay: 0.2
-        }}>
-            <h4 className="font-display text-lg text-background mb-4">Get in Touch</h4>
-            <div className="space-y-3">
+          {/* Contact */}
+          <div>
+            <p className="text-white/25 text-[11px] font-semibold tracking-[0.15em] uppercase mb-6">
+              Get in Touch
+            </p>
+            <div className="space-y-4">
               <div>
-                <p className="text-sm text-background/60 mb-1">For businesses:</p>
-                <a href="#contact" className="text-primary hover:text-primary/80 text-sm font-medium transition-colors">
-                  Explore a B2B Partnership →
+                <p className="text-white/25 text-xs mb-2">Trade partnerships</p>
+                <a
+                  href="#quote"
+                  className="inline-flex items-center gap-1.5 text-white text-sm hover:text-primary transition-colors duration-200"
+                >
+                  Request a Quote
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
               <div>
-                <p className="text-sm text-background/60 mb-1">For yourself:</p>
-                <a href="#enquiries" className="text-background/80 hover:text-background text-sm transition-colors">
-                   Buy a Personal Set →
+                <p className="text-white/25 text-xs mb-2">WhatsApp direct</p>
+                <a
+                  href="https://wa.me/qr/TRWCW5YU5KKIP1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-white/40 text-sm hover:text-white transition-colors duration-200"
+                >
+                  +44 7508 855696
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+              <div>
+                <p className="text-white/25 text-xs mb-2">Personal set enquiries</p>
+                <a
+                  href="#enquiries"
+                  className="text-white/40 text-sm hover:text-white transition-colors duration-200"
+                >
+                  One-off wheel orders →
                 </a>
               </div>
             </div>
-          </motion.div>
-        </div>
-
-        {/* Micro-copy */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-background/50 italic">
-            B2B wheel supply platform | One-off wheel enquiries handled on request
-          </p>
+          </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/40">
-            © {new Date().getFullYear()} MT Performance. All rights reserved.
+        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-white/20 text-xs font-light">
+            © {new Date().getFullYear()} MT Performance. All rights reserved. United Kingdom.
           </p>
-          <p className="text-sm text-background/40">United Kingdom</p>
+          <p className="text-white/20 text-xs font-light">
+            B2B wheel supply · Trade-first · One-off enquiries welcome
+          </p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
