@@ -1,122 +1,73 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import heroWheel from "@/assets/hero-wheel.jpg";
-const benefitChips = ["Spec-accurate fitment", "Premium finishes", "Reliable fulfilment"];
+
 export const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-secondary">
-      {/* Background Image */}
+  return (
+    <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden bg-secondary">
+      {/* Full-bleed background */}
       <div className="absolute inset-0">
-        <img src={heroWheel} alt="Premium forged wheel" className="w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/70" />
+        <img
+          src={heroWheel}
+          alt="Premium forged wheel"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-secondary/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/30 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 section-padding container-narrow w-full text-primary-foreground">
-        <motion.div initial={{
-        opacity: 0,
-        y: 30
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        duration: 0.8,
-        ease: "easeOut"
-      }} className="max-w-3xl">
-          {/* Tag */}
-          <motion.div initial={{
-          opacity: 0,
-          x: -20
-        }} animate={{
-          opacity: 1,
-          x: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.2
-        }} className="inline-flex items-center gap-2 mb-6">
-            <span className="w-12 h-[2px] bg-primary" />
-            <span className="text-primary font-medium tracking-wider uppercase text-sm">
-              Wheel Supply Partner
-            </span>
-          </motion.div>
+      {/* Content — bottom-left anchored */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-16 pb-24 lg:pb-32">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="max-w-2xl"
+        >
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6"
+          >
+            Premium Forged Wheel Supply
+          </motion.p>
 
-          {/* Brand Name & Slogan */}
-          <div className="mb-6">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-bold text-primary-foreground">
-              MT <span className="text-primary">PERFORMANCE</span>
-            </h1>
-          </div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.0] mb-8">
+            The wheel supply partner for serious automotive businesses.
+          </h1>
 
-          {/* Headline */}
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-secondary-foreground leading-[1.1] mb-4">
-            Premium Forged Wheels
-            <br />
-            <span className="text-primary">For Automotive Businesses</span>
-          </h2>
-
-          {/* Subheadline - Single line */}
-          <p className="text-lg md:text-xl max-w-xl mb-3 leading-relaxed font-light text-secondary-foreground">
-            Trade-first supply for workshops, dealers, automotive specialists and more. Contact us to see if we can form a partnership.
+          <p className="text-white/60 text-lg font-light leading-relaxed mb-10 max-w-lg">
+            UK-based premium forged wheel supplier. Trade-first partnerships for workshops, dealers, and automotive specialists.
           </p>
 
-          {/* Slogan */}
-          <p className="text-sm mb-8 font-semibold text-primary uppercase tracking-wide">
-            Stop going round in circles.
-          </p>
-
-          {/* CTAs */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.4
-        }} className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button variant="hero" size="xl" asChild>
-              <a href="#contact">
-                Explore a B2B Partnership
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <a href="#enquiries">NOT A BUSINESS? BUY A PERSONAL SET</a>
-            </Button>
-          </motion.div>
-
-          {/* Benefit Chips */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.5
-        }} className="flex flex-wrap justify-between gap-4 max-w-xl">
-            {benefitChips.map((chip, index) => <span key={index} className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/30 text-white text-sm font-medium">
-                {chip}
-              </span>)}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <a
+              href="#quote"
+              className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200"
+            >
+              Request a Quote
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      delay: 1,
-      duration: 0.6
-    }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <div className="flex flex-col items-center gap-2 text-secondary-foreground/50">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-[1px] h-12 bg-secondary-foreground/30" />
-        </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-8 right-16 hidden lg:flex flex-col items-center gap-3"
+      >
+        <span className="text-white/30 text-[10px] tracking-[0.2em] uppercase rotate-90 origin-center mb-2">Scroll</span>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-white/30 to-transparent" />
       </motion.div>
-    </section>;
+    </section>
+  );
 };
