@@ -151,7 +151,7 @@ export const GeneralEnquiries = () => {
                     name="desiredSpec"
                     value={formData.desiredSpec}
                     onChange={handleChange}
-                    placeholder="e.g. 20\" gloss black"
+                    placeholder="e.g. 20 inch gloss black"
                     className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
                   />
                 </div>
