@@ -1,61 +1,70 @@
 import { motion } from "framer-motion";
-const useCases = [{
-  title: "Beyond Repair",
-  description: "When a wheel is structurally compromised or cosmetically beyond economical repair, offer a premium replacement instead of referring the customer elsewhere."
-}, {
-  title: "Premium Over Aftermarket",
-  description: "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that reflect your professional standards."
-}, {
-  title: "OEM+ Upgrades",
-  description: "Vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications. No main dealer wait times."
-}];
+
+const useCases = [
+  {
+    number: "01",
+    title: "Beyond Repair",
+    description:
+      "When a wheel is structurally compromised or cosmetically beyond economical repair, offer a premium replacement instead of referring the customer elsewhere.",
+  },
+  {
+    number: "02",
+    title: "Premium Over Aftermarket",
+    description:
+      "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that reflect your professional standards.",
+  },
+  {
+    number: "03",
+    title: "OEM+ Upgrades",
+    description:
+      "Vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications. No main dealer wait times.",
+  },
+];
+
 export const UseCases = () => {
-  return <section id="use-cases" className="section-padding bg-background">
-      <div className="container-narrow">
-        {/* Section Header */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }} className="mb-16 text-center">
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">
+  return (
+    <section id="use-cases" className="bg-muted/20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-20 lg:mb-28"
+        >
+          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-5xl text-foreground mt-4 mb-6 font-semibold">
-            When Premium Replacement
-            <br />
-            Makes Sense
+          </p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            When premium replacement makes sense.
           </h2>
         </motion.div>
 
-        {/* Use Cases Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {useCases.map((useCase, index) => <motion.div key={index} initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.5,
-          delay: index * 0.1
-        }} className="border-l-2 border-primary pl-6">
-              <h3 className="font-display text-2xl text-foreground mb-3 font-semibold">
+        {/* Use Cases */}
+        <div className="grid md:grid-cols-3 gap-0 border border-border">
+          {useCases.map((useCase, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="p-8 lg:p-12 border-b md:border-b-0 border-r-0 md:border-r border-border last:border-r-0 hover:bg-background transition-colors duration-300 group"
+            >
+              <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
+                {useCase.number}
+              </span>
+              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
-              <p className="leading-relaxed text-secondary">
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 {useCase.description}
               </p>
-            </motion.div>)}
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
