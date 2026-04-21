@@ -23,15 +23,15 @@ const useCases = [
 
 export const UseCases = () => {
   return (
-    <section id="use-cases" className="bg-muted/20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+    <section id="use-cases" className="bg-background overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 lg:mb-28"
+          className="mb-16 lg:mb-24"
         >
           <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
@@ -50,9 +50,9 @@ export const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b md:border-b-0 border-r-0 md:border-r border-border last:border-r-0 hover:bg-background transition-colors duration-300 group"
+              className="p-8 lg:p-12 border-b md:border-b-0 border-r-0 md:border-r border-border last:border-r-0 hover:bg-muted/30 transition-colors duration-300 group"
             >
-              <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
+              <span className="text-primary text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
               <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">

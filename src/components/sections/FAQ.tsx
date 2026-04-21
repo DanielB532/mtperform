@@ -37,7 +37,7 @@ const faqs = [
 export const FAQ = () => {
   return (
     <section id="faq" className="bg-background overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-16 lg:py-20">
         <div className="grid lg:grid-cols-3 gap-16 lg:gap-24">
           {/* Left label */}
           <motion.div
@@ -49,7 +49,7 @@ export const FAQ = () => {
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               FAQ
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.0]">
+            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-snug">
               Common questions.
             </h2>
           </motion.div>

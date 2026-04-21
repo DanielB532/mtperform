@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
@@ -80,7 +79,7 @@ export const Footer = () => {
                   href="#enquiries"
                   className="text-white/40 text-sm hover:text-white transition-colors duration-200"
                 >
-                  One-off wheel orders →
+                  Buy a personal set →
                 </a>
               </div>
             </div>

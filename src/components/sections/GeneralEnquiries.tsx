@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Send } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
@@ -56,8 +56,8 @@ export const GeneralEnquiries = () => {
   };
 
   return (
-    <section id="enquiries" className="bg-muted/20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+    <section id="enquiries" className="bg-background overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-16 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-start">
           {/* Left */}
           <motion.div
@@ -73,7 +73,7 @@ export const GeneralEnquiries = () => {
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.0] mb-6">
               Looking for a personal set?
             </h2>
-            <p className="text-muted-foreground font-light leading-relaxed max-w-sm">
+            <p className="text-[#111111] font-light leading-relaxed max-w-sm">
               Submit your vehicle details and requirements. We handle single wheel set enquiries by request.
             </p>
           </motion.div>
@@ -88,7 +88,7 @@ export const GeneralEnquiries = () => {
             <form onSubmit={handleSubmit} className="space-y-10">
               <div className="grid sm:grid-cols-2 gap-10">
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                     Name *
                   </label>
                   <input
@@ -96,12 +96,12 @@ export const GeneralEnquiries = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
+                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
                   {errors.name && <p className="text-primary text-xs mt-2">{errors.name}</p>}
                 </div>
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                     Email *
                   </label>
                   <input
@@ -110,14 +110,14 @@ export const GeneralEnquiries = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@email.com"
-                    className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
+                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
                   {errors.email && <p className="text-primary text-xs mt-2">{errors.email}</p>}
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                   Vehicle (Year / Make / Model) *
                 </label>
                 <input
@@ -125,14 +125,14 @@ export const GeneralEnquiries = () => {
                   value={formData.vehicle}
                   onChange={handleChange}
                   placeholder="e.g. 2022 BMW M3"
-                  className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
+                  className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                 />
                 {errors.vehicle && <p className="text-primary text-xs mt-2">{errors.vehicle}</p>}
               </div>
 
               <div className="grid sm:grid-cols-2 gap-10">
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                     Current Wheel Size <span className="normal-case font-normal">(optional)</span>
                   </label>
                   <input
@@ -140,11 +140,11 @@ export const GeneralEnquiries = () => {
                     value={formData.currentSize}
                     onChange={handleChange}
                     placeholder="e.g. 19x8.5"
-                    className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
+                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                     Desired Size/Finish <span className="normal-case font-normal">(optional)</span>
                   </label>
                   <input
@@ -152,13 +152,13 @@ export const GeneralEnquiries = () => {
                     value={formData.desiredSpec}
                     onChange={handleChange}
                     placeholder="e.g. 20 inch gloss black"
-                    className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300"
+                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3">
+                <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
                   Notes <span className="normal-case font-normal">(optional)</span>
                 </label>
                 <textarea
@@ -167,7 +167,7 @@ export const GeneralEnquiries = () => {
                   onChange={handleChange}
                   placeholder="Any additional details..."
                   rows={3}
-                  className="w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/40 pb-3 text-base focus:outline-none focus:border-foreground/40 transition-colors duration-300 resize-none"
+                  className="w-full bg-white border border-foreground/20 text-foreground placeholder:text-foreground/35 px-3 py-2.5 text-base focus:outline-none focus:border-foreground/50 transition-colors duration-300 resize-none"
                 />
               </div>
 

@@ -52,7 +52,7 @@ const FloatingCTA = () => {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-secondary">
       <Header />
       <main>
         {/* 1. Hero */}

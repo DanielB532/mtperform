@@ -5,32 +5,32 @@ const steps = [
     number: "01",
     title: "Replacement Required",
     description:
-      "Your customer needs a wheel replacement due to damage, safety, or upgrade.",
+      "Your customer needs a wheel — damaged beyond repair, unsafe, or due an upgrade. You identify the need.",
   },
   {
     number: "02",
-    title: "Select Vehicle-Specific Fit",
+    title: "Select Vehicle Fit",
     description:
-      "Choose the correct specification for popular platforms including Audi, BMW, Mercedes.",
+      "Share the vehicle make, model, and year. We identify the exact fitment across popular platforms including Audi, BMW, and Mercedes.",
   },
   {
     number: "03",
-    title: "Confirm Spec & Finish",
+    title: "We Confirm & Quote",
     description:
-      "Finalise size, finish, and delivery. Build-to-order or from stock options available.",
+      "We confirm the specification, finish options, and lead time, then send you a clear trade price. No ambiguity.",
   },
   {
     number: "04",
-    title: "Fulfilment & Delivery",
+    title: "Delivered to Your Workshop",
     description:
-      "Wheels delivered to your workshop. You fit, balance, and retain the customer relationship.",
+      "Wheels are dispatched directly to your site. You fit, invoice your customer, and retain the full relationship.",
   },
 ];
 
 export const HowItWorks = () => {
   return (
     <section id="how-it-works" className="bg-secondary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ export const HowItWorks = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 lg:mb-28"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-[hsl(0,84%,60%)] text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0]">
@@ -47,16 +47,12 @@ export const HowItWorks = () => {
           </h2>
         </motion.div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/8">
+        {/* Steps — static render, no per-card animation to guarantee visibility */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-white/8 last:border-r-0"
+              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-white/10 last:border-r-0"
             >
               <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
                 {step.number}
@@ -64,10 +60,10 @@ export const HowItWorks = () => {
               <h3 className="text-white font-semibold text-lg tracking-tight mb-4 leading-snug">
                 {step.title}
               </h3>
-              <p className="text-white/35 text-sm font-light leading-relaxed">
+              <p className="text-white/65 text-sm font-light leading-relaxed">
                 {step.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

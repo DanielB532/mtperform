@@ -40,16 +40,10 @@ export const QuoteForm = () => {
 
   return (
     <section id="quote" className="bg-secondary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left — copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:sticky lg:top-28"
-          >
+          <div className="lg:sticky lg:top-28">
             <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Get Started
             </p>
@@ -73,7 +67,7 @@ export const QuoteForm = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right — form */}
           <motion.div
@@ -99,7 +93,7 @@ export const QuoteForm = () => {
                 {/* Name + Business */}
                 <div className="grid sm:grid-cols-2 gap-10">
                   <div className="group">
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                       Name *
                     </label>
                     <input
@@ -109,11 +103,11 @@ export const QuoteForm = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/25 pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300"
+                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
                     />
                   </div>
                   <div className="group">
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                       Business Name *
                     </label>
                     <input
@@ -123,7 +117,7 @@ export const QuoteForm = () => {
                       value={formData.businessName}
                       onChange={handleChange}
                       placeholder="Your business"
-                      className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/25 pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300"
+                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
                     />
                   </div>
                 </div>
@@ -131,7 +125,7 @@ export const QuoteForm = () => {
                 {/* Email + Phone */}
                 <div className="grid sm:grid-cols-2 gap-10">
                   <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                       Email *
                     </label>
                     <input
@@ -141,11 +135,11 @@ export const QuoteForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@business.com"
-                      className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/25 pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300"
+                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                       Phone <span className="normal-case font-normal text-white/20">(optional)</span>
                     </label>
                     <input
@@ -154,14 +148,14 @@ export const QuoteForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+44 7700 000000"
-                      className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/25 pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300"
+                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
                     />
                   </div>
                 </div>
 
                 {/* Wheel Interest */}
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                     Wheel Interest *
                   </label>
                   <div className="relative">
@@ -170,7 +164,7 @@ export const QuoteForm = () => {
                       required
                       value={formData.wheelInterest}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/15 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer"
+                      className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer"
                       style={{ color: formData.wheelInterest ? "white" : "rgba(255,255,255,0.25)" }}
                     >
                       <option value="" disabled style={{ background: "#1a1a1a" }}>
@@ -192,7 +186,7 @@ export const QuoteForm = () => {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-3">
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
                     Message
                   </label>
                   <textarea
@@ -201,7 +195,7 @@ export const QuoteForm = () => {
                     onChange={handleChange}
                     placeholder="Tell us about your business, vehicle types, typical volumes..."
                     rows={4}
-                    className="w-full bg-transparent border-b border-white/15 text-white placeholder:text-white/25 pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 resize-none"
+                    className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300 resize-none"
                   />
                 </div>
 

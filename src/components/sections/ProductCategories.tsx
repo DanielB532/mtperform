@@ -36,6 +36,13 @@ const categories = [
     image: "https://sc04.alicdn.com/kf/Ha1fef0181e7649fb8039a686e135436fY.jpg",
     span: "col-span-1 row-span-1",
   },
+  {
+    id: "gunmetal-machined",
+    label: "Gunmetal Machined",
+    description: "Dark base with precision-machined face highlights. A bold, premium finish.",
+    image: "/images/1776613416609_image.png",
+    span: "col-span-1 row-span-1",
+  },
 ];
 
 export const ProductCategories = () => {

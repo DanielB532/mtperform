@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import heroWheel from "@/assets/hero-wheel.jpg";
 
 export const Hero = () => {
   return (
@@ -7,12 +6,14 @@ export const Hero = () => {
       {/* Full-bleed background */}
       <div className="absolute inset-0">
         <img
-          src={heroWheel}
+          src="/images/1000021533.jpg"
           alt="Premium forged wheel"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[60%_center]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-secondary/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/80 via-secondary/30 to-transparent" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/55 to-transparent" />
+        {/* Left shield — fades out before centre so wheel face is visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/60 to-transparent" />
       </div>
 
       {/* Content — bottom-left anchored */}
@@ -32,9 +33,14 @@ export const Hero = () => {
             Premium Forged Wheel Supply
           </motion.p>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.0] mb-8">
-            The wheel supply partner for serious automotive businesses.
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.0] mb-3 uppercase">
+            <span className="text-white">MT </span>
+            <span className="text-primary">Performance</span>
           </h1>
+
+          <p className="text-primary text-2xl md:text-3xl font-bold tracking-[0.04em] leading-snug mb-8 uppercase">
+            Stop going round in circles.
+          </p>
 
           <p className="text-white/60 text-lg font-light leading-relaxed mb-10 max-w-lg">
             UK-based premium forged wheel supplier. Trade-first partnerships for workshops, dealers, and automotive specialists.
