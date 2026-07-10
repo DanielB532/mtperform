@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Eye } from "lucide-react";
 
 const categories = [
   {
@@ -49,25 +49,25 @@ const categories = [
 export const ProductCategories = () => {
   return (
     <section id="product-categories" className="bg-secondary overflow-hidden">
-      {/* Catalogue download — at top */}
+      {/* Catalogue link — at top */}
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.05] mb-3">
-              Our Full Range — 140 Styles.
+              Our Full Range — 613 Styles.
             </h2>
             <p className="text-white/40 text-base font-light">
               Every build, covered.
             </p>
           </div>
-          <a
-            href="https://drive.google.com/file/d/1ctnRBUn8zPd5ASnU1QuqqEbKRZniOp_B/view?usp=drive_link"
+          
+            href="/catalogue.html"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200 flex-shrink-0 self-start lg:self-auto"
           >
-            Download Catalogue
-            <Download className="w-4 h-4" />
+            View Catalogue
+            <Eye className="w-4 h-4" />
           </a>
         </div>
       </div>
