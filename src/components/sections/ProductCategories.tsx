@@ -60,7 +60,7 @@ export const ProductCategories = () => {
               Every build, covered.
             </p>
           </div>
-          
+          <a
             href="/catalogue.html"
             target="_blank"
             rel="noopener noreferrer"
