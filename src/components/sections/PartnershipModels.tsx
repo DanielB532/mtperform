@@ -67,13 +67,13 @@ export const PartnershipModels = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 flex flex-col sm:flex-row gap-4"
         >
-          
+          <a
             href="#quote"
             className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200"
           >
             Request a Quote
           </a>
-          
+          <a
             href="#enquiries"
             className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
           >
