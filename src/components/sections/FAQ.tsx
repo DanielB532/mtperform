@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Can you match a specific fitment and finish?",
     answer:
-      "Yes. We supply vehicle-specific fitments with multiple finish options. Share your requirements and we'll confirm availability and lead times.",
+      "Yes. Any design in the catalogue can be adapted to your customer's exact specification. To confirm a build, we'll need the diameter (in inches), rim width (J-value), and offset (ET), along with whether the vehicle has modified brake calipers or has been lowered. If you can't provide the ET, just describe the look or fitment you're after and we'll match it from there.",
   },
   {
     question: "What's the typical turnaround time?",
