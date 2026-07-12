@@ -18,6 +18,11 @@ const faqs = [
       "Get in touch via the quote form or WhatsApp. Tell us about your business and typical fitments, and we'll provide tailored pricing.",
   },
   {
+    question: "Do your prices include VAT?",
+    answer:
+      "For personal purchases, yes. The price you see is the price you pay, plus delivery. Trade and business pricing works differently, with VAT added separately since trade customers can reclaim it. If you're buying for resale, contact us for trade pricing.",
+  },
+  {
     question: "Can you match a specific fitment and finish?",
     answer:
       "Yes. Any design in the catalogue can be adapted to your customer's exact specification. To confirm a build, we'll need the diameter (in inches), rim width (J-value), and offset (ET), along with whether the vehicle has modified brake calipers or has been lowered. If you can't provide the ET, just describe the look or fitment you're after and we'll match it from there.",

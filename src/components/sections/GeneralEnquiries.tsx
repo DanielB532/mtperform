@@ -74,7 +74,7 @@ export const GeneralEnquiries = () => {
               Looking for a personal set?
             </h2>
             <p className="text-[#111111] font-light leading-relaxed max-w-sm mb-10">
-              Submit your vehicle details and requirements. We handle single wheel set enquiries by request, and nothing goes into production until you've approved a 3D rendering of your exact wheel.
+              Submit your vehicle details and requirements. We handle single wheel set enquiries by request, and nothing goes into production until you've approved a 3D rendering of your exact wheel. All personal pricing includes VAT, so the price you see is the price you pay, plus delivery.
             </p>
             <div className="space-y-6 max-w-sm">
               {[
