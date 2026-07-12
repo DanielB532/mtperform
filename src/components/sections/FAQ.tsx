@@ -23,6 +23,11 @@ const faqs = [
       "Yes. Any design in the catalogue can be adapted to your customer's exact specification. To confirm a build, we'll need the diameter (in inches), rim width (J-value), and offset (ET), along with whether the vehicle has modified brake calipers or has been lowered. If you can't provide the ET, just describe the look or fitment you're after and we'll match it from there.",
   },
   {
+    question: "What if the design I want isn't in the catalogue?",
+    answer:
+      "Send us an image of the design you're after and we'll take it to the factory to have it replicated to your specification.",
+  },
+  {
     question: "What's the typical turnaround time?",
     answer:
       "Build-to-order wheels typically ship within 2-4 weeks depending on specification. For partners holding stock, wheels can be dispatched same-day or next-day.",
