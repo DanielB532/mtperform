@@ -23,7 +23,7 @@ const benefits = [
   },
   {
     title: "Protect your finance deal.",
-    text: "On PCP or a lease, you can store your factory wheels at home and run these instead. Refit the originals in perfect condition at handback and avoid any charges. 64% of UK buyers say scraped alloys would put them off a car, and over a third expect £250 to £500 off to cover it.",
+    text: "On PCP or a lease, you can store your factory wheels at home and run these instead. Refit the originals in perfect condition at handback and avoid any charges, since 64% of UK buyers say scraped alloys would put them off a car. Then sell the forged set on, because they hold their value well enough to make back a good chunk of what you paid.",
   },
   {
     title: "Add value when you sell.",
