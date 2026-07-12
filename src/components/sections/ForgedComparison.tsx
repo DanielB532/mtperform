@@ -38,7 +38,7 @@ const benefits = [
 const CellMark = ({ value }: { value: string }) => {
   if (value === "yes") return <Check className="w-5 h-5 text-green-500 mx-auto" strokeWidth={2.5} />;
   if (value === "partial") return <Minus className="w-4 h-4 text-white/30 mx-auto" strokeWidth={2.5} />;
-  return <X className="w-4 h-4 text-white/25 mx-auto" strokeWidth={2.5} />;
+  return <X className="w-4 h-4 text-red-500 mx-auto" strokeWidth={2.5} />;
 };
 
 export const ForgedComparison = () => {
