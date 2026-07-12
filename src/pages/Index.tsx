@@ -5,6 +5,7 @@ import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { UseCases } from "@/components/sections/UseCases";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TheWheels } from "@/components/sections/TheWheels";
+import { ForgedComparison } from "@/components/sections/ForgedComparison";
 import { ProductCategories } from "@/components/sections/ProductCategories";
 import { WhyMT } from "@/components/sections/WhyMT";
 import { PartnershipModels } from "@/components/sections/PartnershipModels";
@@ -65,6 +66,8 @@ const Index = () => {
         <ProductCategories />
         {/* 5. Quality section */}
         <TheWheels />
+        {/* 5b. Why 6061-T6 Forged comparison */}
+        <ForgedComparison />
         {/* 6. Why MT Performance */}
         <WhyMT />
         {/* 7. Process */}
