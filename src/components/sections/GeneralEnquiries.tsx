@@ -73,9 +73,52 @@ export const GeneralEnquiries = () => {
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.0] mb-6">
               Looking for a personal set?
             </h2>
-            <p className="text-[#111111] font-light leading-relaxed max-w-sm">
-              Submit your vehicle details and requirements. We handle single wheel set enquiries by request.
+            <p className="text-[#111111] font-light leading-relaxed max-w-sm mb-10">
+              Submit your vehicle details and requirements. We handle single wheel set enquiries by request, and nothing goes into production until you've approved a 3D rendering of your exact wheel.
             </p>
+            <div className="space-y-6 max-w-sm">
+              {[
+                {
+                  step: "01",
+                  title: "Show us what you're after",
+                  text: "Send a photo of a design you love, a wheel you've spotted on another car, or even an AI-generated concept. We'll confirm whether it can be built.",
+                },
+                {
+                  step: "02",
+                  title: "Give us your fitment details",
+                  text: "We need the diameter in inches, the rim width (J-value), and the offset (ET), plus whether your brakes are modified or your car's been lowered. No ET to hand? Just describe the stance you want.",
+                },
+                {
+                  step: "03",
+                  title: "Approve your 3D rendering",
+                  text: "We send back a 3D rendering showing exactly how your wheel will be built, in your spec and finish. Nothing is made until you've seen it and you're happy.",
+                },
+                {
+                  step: "04",
+                  title: "Choose your finish and add-ons",
+                  text: "Pick your finish, then add extras like custom centre caps, locking bolts, TPMS sensors, or matching valve caps. Everything is optional and priced clearly upfront.",
+                },
+                {
+                  step: "05",
+                  title: "Built and delivered",
+                  text: "Allow up to 6 weeks for production and delivery. We'll keep you updated throughout, and tell you early if anything looks like taking longer. Half the payment starts production and the rest is due before dispatch.",
+                },
+              ].map((item) => (
+                <div key={item.step} className="flex gap-4">
+                  <span className="text-primary text-xs font-semibold tracking-[0.2em] pt-1 flex-shrink-0">
+                    {item.step}
+                  </span>
+                  <div>
+                    <h3 className="text-foreground font-semibold text-sm tracking-tight mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Form */}

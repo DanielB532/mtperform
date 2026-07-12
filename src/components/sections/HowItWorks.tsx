@@ -3,27 +3,33 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Replacement Required",
+    title: "Tell Us What They're After",
     description:
-      "Your customer needs a wheel, whether it's damaged beyond repair, unsafe, or simply due an upgrade. You spot the need and bring it to us.",
+      "Every job starts differently. Maybe a wheel's damaged, maybe a customer has seen a design they want, or maybe you're offering premium wheels as an upgrade option. You bring us the request and we take it from there.",
   },
   {
     number: "02",
-    title: "Select Vehicle Fit",
+    title: "We Confirm the Fit",
     description:
-      "Share the vehicle make, model, and year. We identify the exact fitment across popular platforms including Audi, BMW, and Mercedes.",
+      "Share the vehicle details, or send us the diameter, width, and offset if you already have them. We confirm the exact specification before anything is quoted, so there's no guesswork on either side.",
   },
   {
     number: "03",
-    title: "We Confirm & Quote",
+    title: "Pick the Design",
     description:
-      "We confirm the specification, finish options, and lead time, then send you a clear trade price with nothing left ambiguous.",
+      "Browse the full catalogue or send us an image of a design your customer has in mind. Either way, we match it to the exact specification and confirm what's possible.",
   },
   {
     number: "04",
-    title: "Delivered to Your Workshop",
+    title: "We Quote & Confirm",
     description:
-      "Wheels are dispatched directly to your site. You fit, invoice your customer, and retain the full relationship.",
+      "We confirm the finish, lead time, and a clear trade price with nothing hidden and nothing left ambiguous.",
+  },
+  {
+    number: "05",
+    title: "Delivered, Fitted, Invoiced",
+    description:
+      "Wheels are dispatched directly to your workshop. You fit, invoice your customer, and keep the full relationship from start to finish.",
   },
 ];
 
@@ -43,12 +49,12 @@ export const HowItWorks = () => {
             Process
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0]">
-            Four steps to supply.
+            A premium process, start to finish.
           </h2>
         </motion.div>
 
         {/* Steps — static render, no per-card animation to guarantee visibility */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-white/10">
           {steps.map((step, index) => (
             <div
               key={index}
