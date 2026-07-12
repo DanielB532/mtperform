@@ -30,7 +30,7 @@ const benefits = [
     text: "Keep the wheels on and your car presents better and holds its price in any negotiation. Or sell the set separately, because good forged wheels keep real value on the used market in a way cast and replica wheels don't.",
   },
   {
-    title: "And yes, they look incredible.",
+    title: "They look incredible too.",
     text: "Forging lets us build slimmer, sharper spoke designs that cast wheels can't match at the same strength. The looks are the bonus rather than the whole point, because the same properties that make them look aggressive also make them stronger and lighter.",
   },
 ];

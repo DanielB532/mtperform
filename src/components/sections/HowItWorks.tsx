@@ -5,7 +5,7 @@ const steps = [
     number: "01",
     title: "Replacement Required",
     description:
-      "Your customer needs a wheel — damaged beyond repair, unsafe, or due an upgrade. You identify the need.",
+      "Your customer needs a wheel, whether it's damaged beyond repair, unsafe, or simply due an upgrade. You spot the need and bring it to us.",
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const steps = [
     number: "03",
     title: "We Confirm & Quote",
     description:
-      "We confirm the specification, finish options, and lead time, then send you a clear trade price. No ambiguity.",
+      "We confirm the specification, finish options, and lead time, then send you a clear trade price with nothing left ambiguous.",
   },
   {
     number: "04",

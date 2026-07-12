@@ -43,7 +43,7 @@ export const Hero = () => {
           </p>
 
           <p className="text-white/60 text-lg font-light leading-relaxed mb-10 max-w-lg">
-            UK-based premium forged wheel supplier. Trade-first partnerships for workshops, dealers, and automotive specialists.
+            We're a UK-based premium forged wheel supplier building trade-first partnerships with workshops, dealers, and automotive specialists.
           </p>
 
           <motion.div

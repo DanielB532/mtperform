@@ -6,13 +6,13 @@ const models = [
     icon: Package,
     title: "Build-to-Order Supply",
     description:
-      "Order wheels as you need them. Each wheel is built to specification and shipped directly to your workshop or customer. No minimum orders, no stock risk.",
+      "Order wheels as you need them and each one is built to specification and shipped directly to your workshop or customer. There are no minimum orders and no stock risk.",
   },
   {
     icon: Warehouse,
     title: "Optional Stock Holding",
     description:
-      "For high-demand fitments, hold a small stock of popular wheels. Faster turnaround for common replacements. We advise on which fitments move fastest.",
+      "For high-demand fitments, you can hold a small stock of popular wheels for faster turnaround on common replacements. We'll advise you on which fitments move fastest.",
   },
 ];
 
@@ -36,7 +36,7 @@ export const PartnershipModels = () => {
               Flexible supply options.
             </h2>
             <p className="text-muted-foreground text-base font-light max-w-sm leading-relaxed">
-              We adapt to how you work. Build-to-order flexibility or stock fast-moving fitments.
+              We adapt to how you work, whether that's build-to-order flexibility or stocking fast-moving fitments.
             </p>
           </div>
         </motion.div>

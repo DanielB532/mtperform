@@ -11,13 +11,13 @@ const useCases = [
     number: "02",
     title: "Premium Over Aftermarket",
     description:
-      "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that reflect your professional standards.",
+      "Low-quality aftermarket wheels put your reputation at risk, so offer OEM+ forged alternatives that reflect your professional standards instead.",
   },
   {
     number: "03",
     title: "OEM+ Upgrades",
     description:
-      "Vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications. No main dealer wait times.",
+      "We supply vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications and none of the main dealer wait times.",
   },
 ];
 

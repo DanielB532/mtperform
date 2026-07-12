@@ -54,7 +54,7 @@ export const ProductCategories = () => {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.05] mb-3">
-              Our Full Range — 613 Styles.
+              Our Full Range. 613 Styles.
             </h2>
             <p className="text-white/40 text-base font-light">
               Every build, covered.

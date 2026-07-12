@@ -7,21 +7,21 @@ const pillars = [
     stat: "OEM+",
     label: "Quality Standards",
     description:
-      "Every wheel is manufactured from forged 6061-T6 aluminium alloy to exceed OEM tolerances. Consistent quality on every order.",
+      "Every wheel is manufactured from forged 6061-T6 aluminium alloy to exceed OEM tolerances, so you get consistent quality on every order.",
   },
   {
     icon: TrendingDown,
     stat: "Trade",
     label: "Pricing Structure",
     description:
-      "Built for businesses, not consumers. Our pricing model is designed around margin for our partners — no hidden fees, no surprises.",
+      "We built our pricing for businesses rather than consumers. The model is designed around margin for our partners, with no hidden fees and no surprises.",
   },
   {
     icon: MapPin,
     stat: "UK",
     label: "Based & Supported",
     description:
-      "We're a UK-based team. Real people, real communication. From first enquiry to delivery, you'll always have a contact.",
+      "We're a UK-based team of real people who communicate properly. From first enquiry to delivery, you'll always have a direct contact.",
   },
 ];
 
