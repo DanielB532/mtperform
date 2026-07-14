@@ -118,7 +118,7 @@
   body {
     @apply text-foreground antialiased;
     background-color: hsl(var(--secondary));
-    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -126,8 +126,8 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Barlow Condensed', 'Barlow', -apple-system, sans-serif;
+    letter-spacing: -0.01em;
     line-height: 1.05;
     font-weight: 600;
   }

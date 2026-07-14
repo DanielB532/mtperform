@@ -56,7 +56,7 @@ export const ForgedComparison = () => {
           <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] max-w-2xl">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[0.95] max-w-3xl">
             Why 6061-T6 forged?
           </h2>
         </motion.div>
