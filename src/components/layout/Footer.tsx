@@ -69,7 +69,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-white/40 text-sm hover:text-white transition-colors duration-200"
                 >
-                  +44 7508 855696
+                  Message us on WhatsApp
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
