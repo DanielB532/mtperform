@@ -119,6 +119,14 @@ export const GeneralEnquiries = () => {
                 </div>
               ))}
             </div>
+            <a
+              href="/catalogue.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-8 text-primary text-sm font-medium hover:underline"
+            >
+              Browse the full catalogue for design ideas &rarr;
+            </a>
           </motion.div>
 
           {/* Form */}

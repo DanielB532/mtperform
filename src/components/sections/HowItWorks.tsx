@@ -18,6 +18,7 @@ const steps = [
     title: "Pick the Design",
     description:
       "Browse the full catalogue or send us an image of a design your customer has in mind. Either way, we match it to the exact specification and confirm what's possible.",
+    link: { href: "/catalogue.html", label: "Browse the catalogue" },
   },
   {
     number: "04",
@@ -69,6 +70,16 @@ export const HowItWorks = () => {
               <p className="text-white/65 text-sm font-light leading-relaxed">
                 {step.description}
               </p>
+              {"link" in step && step.link && (
+                <a
+                  href={step.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-primary text-sm font-medium hover:underline"
+                >
+                  {step.link.label} &rarr;
+                </a>
+              )}
             </div>
           ))}
         </div>

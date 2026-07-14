@@ -139,6 +139,24 @@ export const ForgedComparison = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Link to catalogue */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16"
+        >
+          <a
+            href="/catalogue.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200"
+          >
+            Convinced? See the full range
+          </a>
+        </motion.div>
       </div>
     </section>
   );
