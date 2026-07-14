@@ -34,7 +34,7 @@ const useCases = [
 
 export const UseCases = () => {
   return (
-    <section id="use-cases" className="bg-background overflow-hidden">
+    <section id="use-cases" className="bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -47,13 +47,13 @@ export const UseCases = () => {
           <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] max-w-xl">
             When your customer walks in with this.
           </h2>
         </motion.div>
 
         {/* Use Cases */}
-        <div className="grid md:grid-cols-2 gap-0 border border-border">
+        <div className="grid md:grid-cols-2 gap-0 border border-white/10">
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
@@ -61,18 +61,18 @@ export const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/30 transition-colors duration-300 group"
+              className="p-8 lg:p-12 border-b border-white/10 md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-white/5 transition-colors duration-300 group"
             >
               <span className="text-primary text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
-              <p className="text-muted-foreground italic text-sm font-light leading-relaxed mb-4 border-l-2 border-primary/40 pl-4">
+              <p className="text-white/60 italic text-sm font-light leading-relaxed mb-4 border-l-2 border-primary/40 pl-4">
                 Your customer says: "{useCase.quote}"
               </p>
-              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">
+              <h3 className="text-white font-semibold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+              <p className="text-white/60 text-sm font-light leading-relaxed">
                 {useCase.description}
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export const UseCases = () => {
         >
           <a
             href="#forged-comparison"
-            className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
+            className="inline-flex items-center gap-3 text-white text-sm font-medium tracking-wide px-8 py-4 border border-white/10 hover:bg-white/10 transition-colors duration-200"
           >
             Not sure why forged is worth it long term? See how it stacks up
             <ArrowDown className="w-4 h-4" />

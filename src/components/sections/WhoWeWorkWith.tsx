@@ -46,7 +46,7 @@ const businessTypes = [
 
 export const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-work-with" className="bg-secondary overflow-hidden">
+    <section id="who-we-work-with" className="bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -60,14 +60,14 @@ export const WhoWeWorkWith = () => {
             Built for Trade
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
               Built for Automotive Businesses
             </h2>
             <div className="max-w-md">
-              <p className="text-white/60 text-base font-light leading-relaxed mb-4">
+              <p className="text-muted-foreground text-base font-light leading-relaxed mb-4">
                 We partner with automotive businesses that need a reliable, premium wheel supply solution. From independent tyre fitters to multi-site operations, our model integrates with your workflow.
               </p>
-              <p className="text-white/40 text-sm font-light leading-relaxed">
+              <p className="text-muted-foreground text-sm font-light leading-relaxed">
                 Other fits include: performance tuners, wrap/PPF studios, detailing centres, bodyshops, specialist installers and independent retailers. If you fit or want to add wheels to what you offer, contact us as your business is most likely a fit.
               </p>
             </div>
@@ -75,7 +75,7 @@ export const WhoWeWorkWith = () => {
         </motion.div>
 
         {/* Business Type Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-border">
           {businessTypes.map((business, index) => (
             <motion.div
               key={index}
@@ -83,7 +83,7 @@ export const WhoWeWorkWith = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group p-8 lg:p-10 border-b lg:border-b-0 last:border-b-0 border-r-0 md:border-r border-white/10 hover:bg-white/5 transition-colors duration-300"
+              className="group p-8 lg:p-10 border-b lg:border-b-0 last:border-b-0 border-r-0 md:border-r border-border hover:bg-muted/30 transition-colors duration-300"
             >
               <business.icon
                 className="w-5 h-5 text-primary mb-8"
@@ -96,14 +96,14 @@ export const WhoWeWorkWith = () => {
                 {business.bullets.map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="flex items-start gap-2.5">
                     <span className="text-primary mt-[5px] text-[8px]">●</span>
-                    <span className="text-white/65 text-sm font-light leading-relaxed">
+                    <span className="text-muted-foreground text-sm font-light leading-relaxed">
                       {bullet}
                     </span>
                   </li>
                 ))}
               </ul>
-              <div className="pt-6 border-t border-white/10">
-                <p className="text-xs text-white/40 font-light">
+              <div className="pt-6 border-t border-border">
+                <p className="text-xs text-muted-foreground font-light">
                   <span className="text-primary font-medium">Ideal for:</span>{" "}
                   {business.idealFor}
                 </p>

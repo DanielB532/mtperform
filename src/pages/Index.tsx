@@ -62,11 +62,9 @@ const Index = () => {
         <WhoWeWorkWith />
         {/* 3. Use Cases */}
         <UseCases />
-        {/* 4. Product Categories Grid */}
-        <ProductCategories />
-        {/* 5. Quality section */}
+        {/* 4. Quality section */}
         <TheWheels />
-        {/* 5b. Why 6061-T6 Forged comparison */}
+        {/* 5. Why 6061-T6 Forged comparison */}
         <ForgedComparison />
         {/* 6. Why MT Performance */}
         <WhyMT />
@@ -74,11 +72,13 @@ const Index = () => {
         <HowItWorks />
         {/* 8. Supply/Partnership Options */}
         <PartnershipModels />
-        {/* 9. Request a Quote Form */}
-        <QuoteForm />
+        {/* 9. Product Categories / Catalogue */}
+        <ProductCategories />
         {/* 10. FAQ */}
         <FAQ />
-        {/* 11. Personal Enquiries */}
+        {/* 11. Request a Quote Form */}
+        <QuoteForm />
+        {/* 12. Personal Enquiries */}
         <GeneralEnquiries />
       </main>
       <Footer />
