@@ -21,7 +21,7 @@ const pillars = [
     stat: "UK",
     label: "Based & Supported",
     description:
-      "We're a UK-based team of real people who communicate properly. From first enquiry to delivery, you'll always have a direct contact.",
+      "We're UK-based, and you'll always deal with someone who knows your order personally, from first enquiry through to delivery. No call centres and no being passed around.",
   },
 ];
 

@@ -1,23 +1,34 @@
 import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 const useCases = [
   {
     number: "01",
-    title: "Beyond Repair",
+    quote: "I'm on PCP and I'm scared of getting charged for wheel damage when I hand it back.",
+    title: "Protect a Finance Deal",
     description:
-      "When a wheel is structurally compromised or cosmetically beyond economical repair, offer a premium replacement instead of referring the customer elsewhere.",
+      "Use this angle with your customers. Sell them a forged set to run day-to-day while the original wheels stay boxed and pristine for handback, so they dodge the end-of-deal damage charges entirely. At the end of the finance deal they can take the forged set off and sell it on, recouping a good chunk of what they paid. It's an upsell most of your competitors won't be offering.",
   },
   {
     number: "02",
-    title: "Premium Over Aftermarket",
+    quote: "I've cracked another wheel on a pothole and I'm sick of replacing them.",
+    title: "Survive UK Roads",
     description:
-      "Low-quality aftermarket wheels put your reputation at risk, so offer OEM+ forged alternatives that reflect your professional standards instead.",
+      "Cast wheels crack on a hard pothole hit, and a cracked wheel is scrap. Forged 6061-T6 bends before it breaks, so it takes the punishment UK roads dish out and usually survives repairable. For any customer tired of the pothole lottery, this is the practical fix.",
   },
   {
     number: "03",
-    title: "OEM+ Upgrades",
+    quote: "I've seen this exact wheel and I want it on my car.",
+    title: "Build Something Specific",
     description:
-      "We supply vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications and none of the main dealer wait times.",
+      "You're no longer limited to like-for-like replacements. Take a photo of any design your customer wants, send it over, and we'll replicate it and adapt it to fit their vehicle. It means you can say yes to the bespoke jobs you'd normally have to turn away.",
+  },
+  {
+    number: "04",
+    quote: "I just want my car to look sharper and hold its value.",
+    title: "Upgrade & Add Value",
+    description:
+      "Some customers aren't replacing anything, they simply want an upgrade. A clean forged set makes a car present better and hold its value stronger, whether they keep them on or sell the set separately down the line.",
   },
 ];
 
@@ -37,12 +48,12 @@ export const UseCases = () => {
             Use Cases
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
-            When premium replacement makes sense.
+            When your customer walks in with this.
           </h2>
         </motion.div>
 
         {/* Use Cases */}
-        <div className="grid md:grid-cols-3 gap-0 border border-border">
+        <div className="grid md:grid-cols-2 gap-0 border border-border">
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
@@ -50,11 +61,14 @@ export const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b md:border-b-0 border-r-0 md:border-r border-border last:border-r-0 hover:bg-muted/30 transition-colors duration-300 group"
+              className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/30 transition-colors duration-300 group"
             >
               <span className="text-primary text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
+              <p className="text-muted-foreground italic text-sm font-light leading-relaxed mb-4 border-l-2 border-primary/40 pl-4">
+                Your customer says: "{useCase.quote}"
+              </p>
               <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
@@ -64,6 +78,23 @@ export const UseCases = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Link to forged comparison */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12"
+        >
+          <a
+            href="#forged-comparison"
+            className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
+          >
+            Not sure why forged is worth it long term? See how it stacks up
+            <ArrowDown className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

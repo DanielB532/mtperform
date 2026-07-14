@@ -51,7 +51,7 @@ export const QuoteForm = () => {
               Request a Quote
             </h2>
             <p className="text-white/50 text-lg font-light leading-relaxed mb-12 max-w-sm">
-              Tell us about your business and what you need. We'll come back to you directly with options and trade pricing. Trade prices are quoted excluding VAT, which is added separately and reclaimable for VAT-registered businesses.
+              Tell us about your business and what you need. There's a pricing option to suit how you buy, and we'll come back to you directly with options and trade pricing. Trade prices are quoted excluding VAT, which is added separately and reclaimable for VAT-registered businesses.
             </p>
 
             <div className="space-y-6 text-sm">
