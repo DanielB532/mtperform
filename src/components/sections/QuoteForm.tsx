@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
+import { openWhatsApp, sendEnquiryEmail, type EnquiryFields } from "@/lib/enquiries";
 
 const wheelOptions = [
   "Monoblock",
@@ -12,16 +13,35 @@ const wheelOptions = [
   "Not sure yet",
 ];
 
+const finishOptions = ["Gloss Black", "Brushed Silver", "Polished", "Two-Tone", "Other / Discuss"];
+const addonOptions = ["Custom centre caps", "Locking wheel bolts", "TPMS sensors", "Matching valve caps"];
+
+const inputCls =
+  "w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300";
+const labelCls =
+  "block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3";
+
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
     email: "",
     phone: "",
+    intent: "specs",
+    vehicle: "",
+    diameter: "",
+    jValue: "",
+    et: "",
+    brakesModified: "No",
+    lowered: "No",
     wheelInterest: "",
+    styleRef: "",
+    finish: "",
+    quantity: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [addons, setAddons] = useState<string[]>([]);
+  const [status, setStatus] = useState<"idle" | "sending" | "whatsapp" | "emailed" | "error">("idle");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -29,13 +49,49 @@ export const QuoteForm = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const toggleAddon = (a: string) =>
+    setAddons((prev) => (prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]));
+
+  const collectFields = (): EnquiryFields => {
+    const base: EnquiryFields = {
+      Name: formData.name,
+      Business: formData.businessName,
+      Email: formData.email,
+      Phone: formData.phone,
+      "Enquiry type": formData.intent === "specs" ? "Full specs provided" : "Wants to discuss options",
+      Vehicle: formData.vehicle,
+    };
+    if (formData.intent === "specs") {
+      base["Diameter (inches)"] = formData.diameter;
+      base["Rim width (J-value)"] = formData.jValue;
+      base["Offset (ET)"] = formData.et;
+      base["Brakes modified"] = formData.brakesModified;
+      base["Vehicle lowered"] = formData.lowered;
+    }
+    base["Wheel category"] = formData.wheelInterest;
+    base["Style reference"] = formData.styleRef;
+    base["Finish"] = formData.finish;
+    base["Add-ons"] = addons.join(", ");
+    base["Quantity (sets)"] = formData.quantity;
+    base["Message"] = formData.message;
+    return base;
+  };
+
+  const requiredOk = () =>
+    formData.name && formData.businessName && formData.email;
+
+  const submitWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = encodeURIComponent(
-      `*New Quote Request*\n\nName: ${formData.name}\nBusiness: ${formData.businessName}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nWheel Interest: ${formData.wheelInterest}\n\nMessage: ${formData.message}`
-    );
-    window.open(`https://wa.me/447508855696?text=${msg}`, "_blank");
-    setSubmitted(true);
+    if (!requiredOk()) return;
+    openWhatsApp("New Trade Quote Request", collectFields());
+    setStatus("whatsapp");
+  };
+
+  const submitEmail = async () => {
+    if (!requiredOk()) return;
+    setStatus("sending");
+    const ok = await sendEnquiryEmail("New Trade Quote Request - MT Performance", collectFields());
+    setStatus(ok ? "emailed" : "error");
   };
 
   return (
@@ -50,8 +106,11 @@ export const QuoteForm = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] mb-8">
               Request a Quote
             </h2>
-            <p className="text-white/50 text-lg font-light leading-relaxed mb-12 max-w-sm">
+            <p className="text-white/50 text-lg font-light leading-relaxed mb-8 max-w-sm">
               Tell us about your business and what you need. There's a pricing option to suit how you buy, and we'll come back to you directly with options and trade pricing. Trade prices are quoted excluding VAT and delivery. VAT is added separately and reclaimable for VAT-registered businesses.
+            </p>
+            <p className="text-white/40 text-sm font-light leading-relaxed mb-12 max-w-sm border-l-2 border-primary/40 pl-4">
+              Got everything to hand? Fill in the fitment details for a faster quote. Still weighing options for a customer? Just tell us what you're after and we'll talk it through.
             </p>
 
             <div className="space-y-6 text-sm">
@@ -76,142 +135,188 @@ export const QuoteForm = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            {submitted ? (
+            {status === "whatsapp" || status === "emailed" ? (
               <div className="py-20 text-center">
                 <div className="w-12 h-12 bg-primary/20 flex items-center justify-center mx-auto mb-6">
                   <ArrowRight className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-white text-2xl font-semibold tracking-tight mb-3">
-                  Redirecting to WhatsApp
+                  {status === "whatsapp" ? "Redirecting to WhatsApp" : "Enquiry sent"}
                 </h3>
                 <p className="text-white/40 text-base font-light">
-                  We'll get back to you shortly with tailored options.
+                  {status === "whatsapp"
+                    ? "Hit send in WhatsApp to complete your enquiry. We'll get back to you shortly."
+                    : "Your enquiry has landed in our inbox. We'll get back to you shortly."}
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-10">
+              <form onSubmit={submitWhatsApp} className="space-y-10">
                 {/* Name + Business */}
                 <div className="grid sm:grid-cols-2 gap-10">
-                  <div className="group">
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
-                      Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your name"
-                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
-                    />
+                  <div>
+                    <label className={labelCls}>Name *</label>
+                    <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="Your name" className={inputCls} />
                   </div>
-                  <div className="group">
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
-                      Business Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="businessName"
-                      required
-                      value={formData.businessName}
-                      onChange={handleChange}
-                      placeholder="Your business"
-                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
-                    />
+                  <div>
+                    <label className={labelCls}>Business Name *</label>
+                    <input type="text" name="businessName" required value={formData.businessName} onChange={handleChange} placeholder="Your business" className={inputCls} />
                   </div>
                 </div>
 
                 {/* Email + Phone */}
                 <div className="grid sm:grid-cols-2 gap-10">
                   <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="you@business.com"
-                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
-                    />
+                    <label className={labelCls}>Email *</label>
+                    <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="you@business.com" className={inputCls} />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
+                    <label className={labelCls}>
                       Phone <span className="normal-case font-normal text-white/20">(optional)</span>
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+44 7700 000000"
-                      className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300"
-                    />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7700 000000" className={inputCls} />
                   </div>
                 </div>
 
-                {/* Wheel Interest */}
+                {/* Intent */}
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
-                    Wheel Interest *
-                  </label>
-                  <div className="relative">
-                    <select
-                      name="wheelInterest"
-                      required
-                      value={formData.wheelInterest}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer"
-                      style={{ color: formData.wheelInterest ? "white" : "rgba(255,255,255,0.25)" }}
-                    >
-                      <option value="" disabled style={{ background: "#1a1a1a" }}>
-                        Select a category
-                      </option>
-                      {wheelOptions.map((opt) => (
-                        <option key={opt} value={opt} style={{ background: "#1a1a1a", color: "white" }}>
-                          {opt}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="pointer-events-none absolute right-0 bottom-4">
-                      <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                        <path d="M1 1l5 5 5-5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                  <label className={labelCls}>Where are you at? *</label>
+                  <div className="flex flex-col sm:flex-row gap-4 pt-1">
+                    {[
+                      { v: "specs", t: "I have the full specs ready" },
+                      { v: "discuss", t: "I'd like to discuss options first" },
+                    ].map((o) => (
+                      <label key={o.v} className={`flex items-center gap-3 cursor-pointer border px-4 py-3 text-sm transition-colors ${formData.intent === o.v ? "border-primary text-white" : "border-white/20 text-white/50 hover:border-white/40"}`}>
+                        <input type="radio" name="intent" value={o.v} checked={formData.intent === o.v} onChange={handleChange} className="accent-[#a61c1c]" />
+                        {o.t}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Vehicle */}
+                <div>
+                  <label className={labelCls}>Vehicle (Year / Make / Model)</label>
+                  <input name="vehicle" value={formData.vehicle} onChange={handleChange} placeholder="e.g. 2022 BMW M3" className={inputCls} />
+                </div>
+
+                {/* Fitment block — only when specs ready */}
+                {formData.intent === "specs" && (
+                  <>
+                    <div className="grid sm:grid-cols-3 gap-10">
+                      <div>
+                        <label className={labelCls}>Diameter (inches)</label>
+                        <input name="diameter" value={formData.diameter} onChange={handleChange} placeholder="e.g. 19" className={inputCls} />
+                      </div>
+                      <div>
+                        <label className={labelCls}>Rim Width (J)</label>
+                        <input name="jValue" value={formData.jValue} onChange={handleChange} placeholder="e.g. 8.5J" className={inputCls} />
+                      </div>
+                      <div>
+                        <label className={labelCls}>Offset (ET)</label>
+                        <input name="et" value={formData.et} onChange={handleChange} placeholder="e.g. ET35" className={inputCls} />
+                      </div>
                     </div>
+                    <div className="grid sm:grid-cols-2 gap-10">
+                      <div>
+                        <label className={labelCls}>Brakes modified?</label>
+                        <div className="flex gap-4 pt-1">
+                          {["No", "Yes"].map((v) => (
+                            <label key={v} className="flex items-center gap-2 text-sm text-white/60 cursor-pointer">
+                              <input type="radio" name="brakesModified" value={v} checked={formData.brakesModified === v} onChange={handleChange} className="accent-[#a61c1c]" />
+                              {v}
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <label className={labelCls}>Vehicle lowered?</label>
+                        <div className="flex gap-4 pt-1">
+                          {["No", "Yes"].map((v) => (
+                            <label key={v} className="flex items-center gap-2 text-sm text-white/60 cursor-pointer">
+                              <input type="radio" name="lowered" value={v} checked={formData.lowered === v} onChange={handleChange} className="accent-[#a61c1c]" />
+                              {v}
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {/* Category + Finish */}
+                <div className="grid sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelCls}>Wheel Category</label>
+                    <div className="relative">
+                      <select name="wheelInterest" value={formData.wheelInterest} onChange={handleChange} className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.wheelInterest ? "white" : "rgba(255,255,255,0.25)" }}>
+                        <option value="" disabled style={{ background: "#1a1a1a" }}>Select a category</option>
+                        {wheelOptions.map((opt) => (
+                          <option key={opt} value={opt} style={{ background: "#1a1a1a", color: "white" }}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label className={labelCls}>Finish</label>
+                    <div className="relative">
+                      <select name="finish" value={formData.finish} onChange={handleChange} className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.finish ? "white" : "rgba(255,255,255,0.25)" }}>
+                        <option value="" disabled style={{ background: "#1a1a1a" }}>Select a finish</option>
+                        {finishOptions.map((opt) => (
+                          <option key={opt} value={opt} style={{ background: "#1a1a1a", color: "white" }}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Style ref + Quantity */}
+                <div className="grid sm:grid-cols-2 gap-10">
+                  <div>
+                    <label className={labelCls}>Style Reference</label>
+                    <input name="styleRef" value={formData.styleRef} onChange={handleChange} placeholder="Catalogue code (e.g. A-042) or describe it" className={inputCls} />
+                  </div>
+                  <div>
+                    <label className={labelCls}>Quantity (sets)</label>
+                    <input name="quantity" value={formData.quantity} onChange={handleChange} placeholder="e.g. 1" className={inputCls} />
+                  </div>
+                </div>
+
+                {/* Add-ons */}
+                <div>
+                  <label className={labelCls}>Add-ons <span className="normal-case font-normal text-white/20">(optional)</span></label>
+                  <div className="grid sm:grid-cols-2 gap-3 pt-1">
+                    {addonOptions.map((a) => (
+                      <label key={a} className="flex items-center gap-3 text-sm text-white/60 cursor-pointer">
+                        <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#a61c1c]" />
+                        {a}
+                      </label>
+                    ))}
                   </div>
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your business, vehicle types, typical volumes..."
-                    rows={4}
-                    className="w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300 resize-none"
-                  />
+                  <label className={labelCls}>Message</label>
+                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your business, vehicle types, typical volumes..." rows={4} className={`${inputCls} resize-none`} />
                 </div>
 
                 {/* Submit */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="group inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-all duration-200"
-                  >
+                <div className="pt-2 flex flex-col sm:flex-row gap-4">
+                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-all duration-200">
                     Send via WhatsApp
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
-                  <p className="text-white/25 text-xs mt-4 font-light">
-                    You'll be redirected to WhatsApp to complete your enquiry.
-                  </p>
+                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-white text-sm font-semibold tracking-wide px-8 py-4 border border-white/25 hover:bg-white/10 transition-colors duration-200 disabled:opacity-50">
+                    {status === "sending" ? "Sending..." : "Send via Email"}
+                    <Mail className="w-4 h-4" />
+                  </button>
                 </div>
+                {status === "error" && (
+                  <p className="text-primary text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
+                )}
+                <p className="text-white/25 text-xs font-light">
+                  WhatsApp opens a prefilled chat for you to send. Email goes straight to our inbox.
+                </p>
               </form>
             )}
           </motion.div>

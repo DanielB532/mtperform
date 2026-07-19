@@ -1,40 +1,52 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { openWhatsApp, sendEnquiryEmail, type EnquiryFields } from "@/lib/enquiries";
 
 const enquirySchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
+  phone: z.string().trim().max(30).optional(),
   vehicle: z.string().trim().min(1, "Vehicle is required").max(200),
   currentSize: z.string().trim().max(100).optional(),
-  desiredSpec: z.string().trim().max(200).optional(),
+  styleRef: z.string().trim().max(300).optional(),
+  finish: z.string().trim().max(50).optional(),
   notes: z.string().trim().max(1000).optional(),
 });
+
+const personalFinishes = ["Gloss Black", "Brushed Silver", "Polished", "Two-Tone", "Help me choose"];
+const personalAddons = ["Custom centre caps", "Locking wheel bolts", "TPMS sensors", "Matching valve caps"];
 
 export const GeneralEnquiries = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     vehicle: "",
     currentSize: "",
-    desiredSpec: "",
+    styleRef: "",
+    finish: "",
     notes: "",
   });
+  const [addons, setAddons] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [sending, setSending] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const toggleAddon = (a: string) =>
+    setAddons((prev) => (prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]));
+
+  const validate = (): boolean => {
     const result = enquirySchema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -42,17 +54,49 @@ export const GeneralEnquiries = () => {
         if (err.path[0]) fieldErrors[err.path[0] as string] = err.message;
       });
       setErrors(fieldErrors);
-      return;
+      return false;
     }
-    const text = encodeURIComponent(
-      `Hi, I'm looking for a personal set of wheels.\n\nName: ${formData.name}\nEmail: ${formData.email}\nVehicle: ${formData.vehicle}\nCurrent Size: ${formData.currentSize || "N/A"}\nDesired Spec: ${formData.desiredSpec || "N/A"}\nNotes: ${formData.notes || "N/A"}`
-    );
-    window.open(`https://wa.me/447508855696?text=${text}`, "_blank");
+    return true;
+  };
+
+  const collectFields = (): EnquiryFields => ({
+    Name: formData.name,
+    Email: formData.email,
+    Phone: formData.phone,
+    Vehicle: formData.vehicle,
+    "Current wheel size": formData.currentSize,
+    "Style reference": formData.styleRef,
+    Finish: formData.finish,
+    "Add-ons": addons.join(", "),
+    Notes: formData.notes,
+  });
+
+  const resetForm = () =>
+    setFormData({ name: "", email: "", phone: "", vehicle: "", currentSize: "", styleRef: "", finish: "", notes: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+    openWhatsApp("Personal Set Enquiry", collectFields());
     toast({
       title: "Redirecting to WhatsApp",
-      description: "Opening WhatsApp to send your enquiry.",
+      description: "Hit send in WhatsApp to complete your enquiry.",
     });
-    setFormData({ name: "", email: "", vehicle: "", currentSize: "", desiredSpec: "", notes: "" });
+    resetForm();
+  };
+
+  const handleEmail = async () => {
+    if (!validate()) return;
+    setSending(true);
+    const ok = await sendEnquiryEmail("Personal Set Enquiry - MT Performance", collectFields());
+    setSending(false);
+    toast({
+      title: ok ? "Enquiry sent" : "Something went wrong",
+      description: ok
+        ? "Your enquiry has landed in our inbox. We'll get back to you shortly."
+        : "The email didn't send. Please try WhatsApp instead.",
+    });
+    if (ok) resetForm();
   };
 
   return (
@@ -136,6 +180,9 @@ export const GeneralEnquiries = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
+            <p className="text-foreground/70 text-sm font-light leading-relaxed mb-8 border-l-2 border-primary/60 pl-4">
+              Not sure about sizing or specs? Don't worry. Just pick a style you like and send your enquiry, and we'll come back to you to work out the exact fitment together.
+            </p>
             <form onSubmit={handleSubmit} className="space-y-10">
               <div className="grid sm:grid-cols-2 gap-10">
                 <div>
@@ -190,21 +237,67 @@ export const GeneralEnquiries = () => {
                     name="currentSize"
                     value={formData.currentSize}
                     onChange={handleChange}
-                    placeholder="e.g. 19x8.5"
+                    placeholder="e.g. 19x8.5, or leave blank"
                     className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
                 </div>
                 <div>
                   <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
-                    Desired Size/Finish <span className="normal-case font-normal">(optional)</span>
+                    Phone <span className="normal-case font-normal">(optional)</span>
                   </label>
                   <input
-                    name="desiredSpec"
-                    value={formData.desiredSpec}
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
-                    placeholder="e.g. 20 inch gloss black"
+                    placeholder="+44 7700 000000"
                     className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
                   />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-10">
+                <div>
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
+                    Style You Like <span className="normal-case font-normal">(optional)</span>
+                  </label>
+                  <input
+                    name="styleRef"
+                    value={formData.styleRef}
+                    onChange={handleChange}
+                    placeholder="Catalogue code (e.g. A-042) or describe a design"
+                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
+                    Finish <span className="normal-case font-normal">(optional)</span>
+                  </label>
+                  <select
+                    name="finish"
+                    value={formData.finish}
+                    onChange={handleChange}
+                    className="w-full bg-white border border-gray-400 text-foreground px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                  >
+                    <option value="">Select a finish</option>
+                    {personalFinishes.map((f) => (
+                      <option key={f} value={f}>{f}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
+                  Add-ons <span className="normal-case font-normal">(optional)</span>
+                </label>
+                <div className="grid sm:grid-cols-2 gap-3 pt-1">
+                  {personalAddons.map((a) => (
+                    <label key={a} className="flex items-center gap-3 text-sm text-foreground/70 cursor-pointer">
+                      <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#a61c1c]" />
+                      {a}
+                    </label>
+                  ))}
                 </div>
               </div>
 
@@ -222,13 +315,27 @@ export const GeneralEnquiries = () => {
                 />
               </div>
 
+              <div className="flex flex-col sm:flex-row gap-4">
               <button
                 type="submit"
-                className="inline-flex items-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-foreground/90 transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-foreground/90 transition-colors duration-200"
               >
-                Submit Enquiry
+                Send via WhatsApp
                 <ArrowRight className="w-4 h-4" />
               </button>
+              <button
+                type="button"
+                onClick={handleEmail}
+                disabled={sending}
+                className="inline-flex items-center justify-center gap-3 text-foreground text-sm font-semibold tracking-wide px-8 py-4 border border-foreground/30 hover:bg-foreground/5 transition-colors duration-200 disabled:opacity-50"
+              >
+                {sending ? "Sending..." : "Send via Email"}
+                <Mail className="w-4 h-4" />
+              </button>
+              </div>
+              <p className="text-foreground/40 text-xs font-light">
+                WhatsApp opens a prefilled chat for you to send. Email goes straight to our inbox.
+              </p>
             </form>
           </motion.div>
         </div>
