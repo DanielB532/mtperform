@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import qualityWheels from "@/assets/quality-wheels.jpg";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const qualityPoints = [
   {
@@ -25,6 +26,20 @@ const features = [
   "Multiple designs and finishes",
   "OEM+ quality standards",
   "Construction options: Monoblock, 2-piece, 3-piece, wrapped carbon fibre, full carbon fibre.",
+];
+
+const tradePricingRows = [
+  ["15\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["16\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["17\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["18\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["19\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["20\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["21\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["22\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["23\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["24\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
+  ["26\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
 ];
 
 export const TheWheels = () => {
@@ -86,6 +101,41 @@ export const TheWheels = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="mt-12 rounded-2xl border border-border/70 bg-card/50 p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-foreground">Trade Pricing</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Trade pricing available on request. Contact us for a full price list.
+              </p>
+              <div className="mt-6 overflow-x-auto">
+                <Table className="min-w-[620px] text-sm">
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Size</TableHead>
+                      <TableHead>Monoblock</TableHead>
+                      <TableHead>2-Piece</TableHead>
+                      <TableHead>3-Piece</TableHead>
+                      <TableHead>Truck</TableHead>
+                      <TableHead>Wrapped Carbon Fibre</TableHead>
+                      <TableHead>Wrapped Forged Carbon</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {tradePricingRows.map(([size], index) => (
+                      <TableRow key={`${size}-${index}`}>
+                        <TableCell className="font-medium">{size}</TableCell>
+                        <TableCell>Available</TableCell>
+                        <TableCell>Available</TableCell>
+                        <TableCell>Available</TableCell>
+                        <TableCell>Available</TableCell>
+                        <TableCell>Available</TableCell>
+                        <TableCell>Available</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
             </div>
           </motion.div>
         </div>
