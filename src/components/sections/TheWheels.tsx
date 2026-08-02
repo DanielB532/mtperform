@@ -42,7 +42,7 @@ export const TheWheels = () => {
             <img
               src="/mtp-wheel-front.jpg"
               alt="Premium forged wheel detail"
-              className="w-full aspect-[3/4] object-cover"
+              className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain mx-auto"
             />
           </motion.div>
 
@@ -86,14 +86,6 @@ export const TheWheels = () => {
                 ))}
               </ul>
             </div>
-
-            <div className="mt-12 overflow-hidden rounded-2xl">
-              <img
-                src="/mtp-wheel-front-alt.jpg"
-                alt="Premium forged wheel, alternate angle"
-                className="w-full aspect-[3/4] object-cover"
-              />
-            </div>
           </motion.div>
         </div>
 
@@ -109,7 +101,7 @@ export const TheWheels = () => {
             <img
               src="/mtp-forged-stamp.jpg"
               alt="Etched forged wheel spec stamp"
-              className="w-full aspect-[4/3] object-cover"
+              className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain mx-auto"
             />
           </div>
           <div>
@@ -149,14 +141,14 @@ export const TheWheels = () => {
               <img
                 src="/mtp-hub-face.jpg"
                 alt="Wheel hub face detail"
-                className="w-full aspect-square object-cover"
+                className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain mx-auto"
               />
             </div>
             <div className="overflow-hidden">
               <img
                 src="/mtp-barrel-profile.jpg"
                 alt="Wheel barrel profile detail"
-                className="w-full aspect-square object-cover"
+                className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain mx-auto"
               />
             </div>
           </div>
