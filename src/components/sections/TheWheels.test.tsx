@@ -3,21 +3,21 @@ import { describe, expect, it } from "vitest";
 import { TheWheels } from "./TheWheels";
 
 describe("TheWheels", () => {
-  it("renders the trade pricing table with the requested size range and note", () => {
+  it("renders the forged spec stamp caption and build quality images", () => {
     render(<TheWheels />);
 
-    expect(screen.getByText("Trade Pricing")).toBeInTheDocument();
-    expect(screen.getByText("15\"")).toBeInTheDocument();
-    expect(screen.getByText("26\"")).toBeInTheDocument();
-    expect(screen.queryByText("28\"")).not.toBeInTheDocument();
+    expect(screen.getByText("Every wheel is stamped and traceable.")).toBeInTheDocument();
+    expect(screen.getByText("19x8.5J")).toBeInTheDocument();
+    expect(screen.getByText("ET45")).toBeInTheDocument();
+    expect(screen.getByText("PCD 5x112")).toBeInTheDocument();
+    expect(screen.getByText("CB 57.1")).toBeInTheDocument();
+    expect(screen.getByText("Max load 750kg")).toBeInTheDocument();
+    expect(screen.getByText(/Mill test reports available on request/i)).toBeInTheDocument();
 
-    ["Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"].forEach(
-      (construction) => {
-        expect(screen.getByText(construction)).toBeInTheDocument();
-      },
-    );
+    expect(screen.getByAltText("Wheel hub face detail")).toBeInTheDocument();
+    expect(screen.getByAltText("Wheel barrel profile detail")).toBeInTheDocument();
 
-    expect(screen.getByText(/Trade pricing available on request/i)).toBeInTheDocument();
+    expect(screen.queryByText("Trade Pricing")).not.toBeInTheDocument();
     expect(screen.queryByText(/£/)).not.toBeInTheDocument();
   });
 });

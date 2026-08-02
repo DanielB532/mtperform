@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import qualityWheels from "@/assets/quality-wheels.jpg";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const qualityPoints = [
   {
@@ -28,20 +26,6 @@ const features = [
   "Construction options: Monoblock, 2-piece, 3-piece, wrapped carbon fibre, full carbon fibre.",
 ];
 
-const tradePricingRows = [
-  ["15\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["16\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["17\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["18\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["19\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["20\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["21\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["22\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["23\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["24\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-  ["26\"", "Monoblock", "2-Piece", "3-Piece", "Truck", "Wrapped Carbon Fibre", "Wrapped Forged Carbon"],
-];
-
 export const TheWheels = () => {
   return (
     <section id="the-wheels" className="bg-background overflow-hidden">
@@ -56,7 +40,7 @@ export const TheWheels = () => {
             className="relative order-2 lg:order-1 overflow-hidden"
           >
             <img
-              src={qualityWheels}
+              src="/mtp-wheel-front.jpg"
               alt="Premium forged wheel detail"
               className="w-full aspect-[3/4] object-cover"
             />
@@ -103,42 +87,80 @@ export const TheWheels = () => {
               </ul>
             </div>
 
-            <div className="mt-12 rounded-2xl border border-border/70 bg-card/50 p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-foreground">Trade Pricing</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Trade pricing available on request. Contact us for a full price list.
-              </p>
-              <div className="mt-6 overflow-x-auto">
-                <Table className="min-w-[620px] text-sm">
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>Size</TableHead>
-                      <TableHead>Monoblock</TableHead>
-                      <TableHead>2-Piece</TableHead>
-                      <TableHead>3-Piece</TableHead>
-                      <TableHead>Truck</TableHead>
-                      <TableHead>Wrapped Carbon Fibre</TableHead>
-                      <TableHead>Wrapped Forged Carbon</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {tradePricingRows.map(([size], index) => (
-                      <TableRow key={`${size}-${index}`}>
-                        <TableCell className="font-medium">{size}</TableCell>
-                        <TableCell>Available</TableCell>
-                        <TableCell>Available</TableCell>
-                        <TableCell>Available</TableCell>
-                        <TableCell>Available</TableCell>
-                        <TableCell>Available</TableCell>
-                        <TableCell>Available</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
+            <div className="mt-12 overflow-hidden rounded-2xl">
+              <img
+                src="/mtp-wheel-front-alt.jpg"
+                alt="Premium forged wheel, alternate angle"
+                className="w-full aspect-[3/4] object-cover"
+              />
             </div>
           </motion.div>
         </div>
+
+        {/* Forged Stamp */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-24 lg:mt-32 grid lg:grid-cols-2 gap-16 lg:gap-28 items-center"
+        >
+          <div className="overflow-hidden">
+            <img
+              src="/mtp-forged-stamp.jpg"
+              alt="Etched forged wheel spec stamp"
+              className="w-full aspect-[4/3] object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+              Certified Forged
+            </p>
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-6">
+              Every wheel is stamped and traceable.
+            </h3>
+            <ul className="space-y-2 text-foreground text-sm font-light mb-6">
+              <li>Forged</li>
+              <li>19x8.5J</li>
+              <li>ET45</li>
+              <li>PCD 5x112</li>
+              <li>CB 57.1</li>
+              <li>Max load 750kg</li>
+            </ul>
+            <p className="text-sm text-muted-foreground">
+              Mill test reports available on request.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Build Quality */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-24 lg:mt-32"
+        >
+          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
+            Build Quality
+          </p>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="overflow-hidden">
+              <img
+                src="/mtp-hub-face.jpg"
+                alt="Wheel hub face detail"
+                className="w-full aspect-square object-cover"
+              />
+            </div>
+            <div className="overflow-hidden">
+              <img
+                src="/mtp-barrel-profile.jpg"
+                alt="Wheel barrel profile detail"
+                className="w-full aspect-square object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
