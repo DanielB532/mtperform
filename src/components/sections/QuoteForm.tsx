@@ -17,9 +17,9 @@ const finishOptions = ["Gloss Black", "Brushed Silver", "Polished", "Two-Tone", 
 const addonOptions = ["Custom centre caps", "Locking wheel bolts", "TPMS sensors", "Matching valve caps"];
 
 const inputCls =
-  "w-full bg-transparent border-b border-white/30 text-white placeholder:text-white/45 pb-3 text-base focus:outline-none focus:border-white/70 transition-colors duration-300";
+  "w-full bg-transparent border-b border-grey700 text-grey100 placeholder:text-grey500 pb-3 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300";
 const labelCls =
-  "block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/65 mb-3";
+  "block text-[11px] font-semibold tracking-[0.15em] uppercase text-grey300 mb-3";
 
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -83,14 +83,14 @@ export const QuoteForm = () => {
   const submitWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
     if (!requiredOk()) return;
-    openWhatsApp("New Trade Quote Request", collectFields());
+    openWhatsApp("New Trade Sourcing Quote Request", collectFields());
     setStatus("whatsapp");
   };
 
   const submitEmail = async () => {
     if (!requiredOk()) return;
     setStatus("sending");
-    const ok = await sendEnquiryEmail("New Trade Quote Request - MT Performance", collectFields());
+    const ok = await sendEnquiryEmail("New Trade Sourcing Quote Request - MT Sourcing Partners", collectFields());
     setStatus(ok ? "emailed" : "error");
   };
 
@@ -100,29 +100,29 @@ export const QuoteForm = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left — copy */}
           <div className="lg:sticky lg:top-28">
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Get Started
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] mb-8">
-              Request a Quote
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0] mb-8">
+              Request a Sourcing Quote
             </h2>
-            <p className="text-white/50 text-lg font-light leading-relaxed mb-8 max-w-sm">
-              Tell us about your business and what you need. There's a pricing option to suit how you buy, and we'll come back to you directly with options and trade pricing. Trade prices are quoted excluding VAT and delivery. VAT is added separately and reclaimable for VAT-registered businesses.
+            <p className="text-grey300 text-lg font-light leading-relaxed mb-8 max-w-sm">
+              Tell us about your business and what you need. There's a sourcing option to suit how you work, and we'll come back to you directly with options and a flat sourcing fee. Sourcing fees are quoted excluding VAT and delivery. VAT is added separately and reclaimable for VAT-registered businesses.
             </p>
-            <p className="text-white/40 text-sm font-light leading-relaxed mb-12 max-w-sm border-l-2 border-primary/40 pl-4">
+            <p className="text-grey500 text-sm font-light leading-relaxed mb-12 max-w-sm border-l-2 border-grey700 pl-4">
               Got everything to hand? Fill in the fitment details for a faster quote. Still weighing options for a customer? Just tell us what you're after and we'll talk it through.
             </p>
 
             <div className="space-y-6 text-sm">
               {[
-                "No minimum order requirements",
+                "No minimum specification requirements",
                 "Vehicle-specific fitments confirmed",
-                "Trade pricing, no public-facing rates",
+                "Flat sourcing fee, no public-facing rates",
                 "UK-based team, real communication",
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
-                  <span className="text-white/50 font-light">{point}</span>
+                  <div className="w-1 h-1 bg-grey500 rounded-full flex-shrink-0" />
+                  <span className="text-grey300 font-light">{point}</span>
                 </div>
               ))}
             </div>
@@ -137,13 +137,13 @@ export const QuoteForm = () => {
           >
             {status === "whatsapp" || status === "emailed" ? (
               <div className="py-20 text-center">
-                <div className="w-12 h-12 bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                  <ArrowRight className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 bg-grey700/40 flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-5 h-5 text-grey100" />
                 </div>
-                <h3 className="text-white text-2xl font-semibold tracking-tight mb-3">
+                <h3 className="text-grey100 text-2xl font-semibold tracking-tight mb-3">
                   {status === "whatsapp" ? "Redirecting to WhatsApp" : "Enquiry sent"}
                 </h3>
-                <p className="text-white/40 text-base font-light">
+                <p className="text-grey500 text-base font-light">
                   {status === "whatsapp"
                     ? "Hit send in WhatsApp to complete your enquiry. We'll get back to you shortly."
                     : "Your enquiry has landed in our inbox. We'll get back to you shortly."}
@@ -171,7 +171,7 @@ export const QuoteForm = () => {
                   </div>
                   <div>
                     <label className={labelCls}>
-                      Phone <span className="normal-case font-normal text-white/20">(optional)</span>
+                      Phone <span className="normal-case font-normal text-grey700">(optional)</span>
                     </label>
                     <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7700 000000" className={inputCls} />
                   </div>
@@ -185,8 +185,8 @@ export const QuoteForm = () => {
                       { v: "specs", t: "I have the full specs ready" },
                       { v: "discuss", t: "I'd like to discuss options first" },
                     ].map((o) => (
-                      <label key={o.v} className={`flex items-center gap-3 cursor-pointer border px-4 py-3 text-sm transition-colors ${formData.intent === o.v ? "border-primary text-white" : "border-white/20 text-white/50 hover:border-white/40"}`}>
-                        <input type="radio" name="intent" value={o.v} checked={formData.intent === o.v} onChange={handleChange} className="accent-[#a61c1c]" />
+                      <label key={o.v} className={`flex items-center gap-3 cursor-pointer border px-4 py-3 text-sm transition-colors ${formData.intent === o.v ? "border-grey100 text-grey100" : "border-grey700 text-grey500 hover:border-grey500"}`}>
+                        <input type="radio" name="intent" value={o.v} checked={formData.intent === o.v} onChange={handleChange} className="accent-[#E4E4E2]" />
                         {o.t}
                       </label>
                     ))}
@@ -221,8 +221,8 @@ export const QuoteForm = () => {
                         <label className={labelCls}>Brakes modified?</label>
                         <div className="flex gap-4 pt-1">
                           {["No", "Yes"].map((v) => (
-                            <label key={v} className="flex items-center gap-2 text-sm text-white/60 cursor-pointer">
-                              <input type="radio" name="brakesModified" value={v} checked={formData.brakesModified === v} onChange={handleChange} className="accent-[#a61c1c]" />
+                            <label key={v} className="flex items-center gap-2 text-sm text-grey300 cursor-pointer">
+                              <input type="radio" name="brakesModified" value={v} checked={formData.brakesModified === v} onChange={handleChange} className="accent-[#E4E4E2]" />
                               {v}
                             </label>
                           ))}
@@ -232,8 +232,8 @@ export const QuoteForm = () => {
                         <label className={labelCls}>Vehicle lowered?</label>
                         <div className="flex gap-4 pt-1">
                           {["No", "Yes"].map((v) => (
-                            <label key={v} className="flex items-center gap-2 text-sm text-white/60 cursor-pointer">
-                              <input type="radio" name="lowered" value={v} checked={formData.lowered === v} onChange={handleChange} className="accent-[#a61c1c]" />
+                            <label key={v} className="flex items-center gap-2 text-sm text-grey300 cursor-pointer">
+                              <input type="radio" name="lowered" value={v} checked={formData.lowered === v} onChange={handleChange} className="accent-[#E4E4E2]" />
                               {v}
                             </label>
                           ))}
@@ -248,10 +248,10 @@ export const QuoteForm = () => {
                   <div>
                     <label className={labelCls}>Wheel Category</label>
                     <div className="relative">
-                      <select name="wheelInterest" value={formData.wheelInterest} onChange={handleChange} className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.wheelInterest ? "white" : "rgba(255,255,255,0.25)" }}>
-                        <option value="" disabled style={{ background: "#1a1a1a" }}>Select a category</option>
+                      <select name="wheelInterest" value={formData.wheelInterest} onChange={handleChange} className="w-full bg-transparent border-b border-grey700 text-grey100 pb-3 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.wheelInterest ? "#E4E4E2" : "#6E6E6E" }}>
+                        <option value="" disabled style={{ background: "#1A1A1A" }}>Select a category</option>
                         {wheelOptions.map((opt) => (
-                          <option key={opt} value={opt} style={{ background: "#1a1a1a", color: "white" }}>{opt}</option>
+                          <option key={opt} value={opt} style={{ background: "#1A1A1A", color: "#E4E4E2" }}>{opt}</option>
                         ))}
                       </select>
                     </div>
@@ -259,10 +259,10 @@ export const QuoteForm = () => {
                   <div>
                     <label className={labelCls}>Finish</label>
                     <div className="relative">
-                      <select name="finish" value={formData.finish} onChange={handleChange} className="w-full bg-transparent border-b border-white/30 text-white pb-3 text-base focus:outline-none focus:border-white/50 transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.finish ? "white" : "rgba(255,255,255,0.25)" }}>
-                        <option value="" disabled style={{ background: "#1a1a1a" }}>Select a finish</option>
+                      <select name="finish" value={formData.finish} onChange={handleChange} className="w-full bg-transparent border-b border-grey700 text-grey100 pb-3 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300 appearance-none cursor-pointer" style={{ color: formData.finish ? "#E4E4E2" : "#6E6E6E" }}>
+                        <option value="" disabled style={{ background: "#1A1A1A" }}>Select a finish</option>
                         {finishOptions.map((opt) => (
-                          <option key={opt} value={opt} style={{ background: "#1a1a1a", color: "white" }}>{opt}</option>
+                          <option key={opt} value={opt} style={{ background: "#1A1A1A", color: "#E4E4E2" }}>{opt}</option>
                         ))}
                       </select>
                     </div>
@@ -283,11 +283,11 @@ export const QuoteForm = () => {
 
                 {/* Add-ons */}
                 <div>
-                  <label className={labelCls}>Add-ons <span className="normal-case font-normal text-white/20">(optional)</span></label>
+                  <label className={labelCls}>Add-ons <span className="normal-case font-normal text-grey700">(optional)</span></label>
                   <div className="grid sm:grid-cols-2 gap-3 pt-1">
                     {addonOptions.map((a) => (
-                      <label key={a} className="flex items-center gap-3 text-sm text-white/60 cursor-pointer">
-                        <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#a61c1c]" />
+                      <label key={a} className="flex items-center gap-3 text-sm text-grey300 cursor-pointer">
+                        <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#E4E4E2]" />
                         {a}
                       </label>
                     ))}
@@ -302,19 +302,19 @@ export const QuoteForm = () => {
 
                 {/* Submit */}
                 <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-all duration-200">
+                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-all duration-200">
                     Send via WhatsApp
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
-                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-white text-sm font-semibold tracking-wide px-8 py-4 border border-white/25 hover:bg-white/10 transition-colors duration-200 disabled:opacity-50">
+                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-grey100 text-sm font-semibold tracking-wide px-8 py-4 border border-grey700 hover:bg-white/10 transition-colors duration-200 disabled:opacity-50">
                     {status === "sending" ? "Sending..." : "Send via Email"}
                     <Mail className="w-4 h-4" />
                   </button>
                 </div>
                 {status === "error" && (
-                  <p className="text-primary text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
+                  <p className="text-grey100 text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
                 )}
-                <p className="text-white/25 text-xs font-light">
+                <p className="text-grey500 text-xs font-light">
                   WhatsApp opens a prefilled chat for you to send. Email goes straight to our inbox.
                 </p>
               </form>

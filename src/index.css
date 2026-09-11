@@ -2,99 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium B2B Automotive Design System */
+/* MT Sourcing Partners — Design System */
 
 @layer base {
   :root {
-    /* Deep red brand color - #A71C1C converted to HSL */
-    --primary: 0 71% 38%;
-    --primary-foreground: 0 0% 100%;
-    
-    /* Backgrounds */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 8%;
-    
-    /* Cards and surfaces */
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 8%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
-    
-    /* Secondary - charcoal black */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
-    
-    /* Muted - light gray */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    
-    /* Accent - subtle warm gray */
-    --accent: 0 5% 94%;
-    --accent-foreground: 0 0% 8%;
-    
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 71% 38%;
-    
+    /* Gold — accent only. Logo, step numbers, highlighted spec figures, headline stats. Nowhere else. */
+    --primary: 42 44% 51%;
+    --primary-foreground: 0 0% 5.5%;
+
+    /* Gold dim — focus and hover states only */
+    --gold-dim: 41 42% 38%;
+
+    /* Ink — page background */
+    --background: 0 0% 5.5%;
+    --foreground: 60 4% 89%;
+
+    /* Steel — panels */
+    --card: 0 0% 10.2%;
+    --card-foreground: 60 4% 89%;
+
+    --popover: 0 0% 10.2%;
+    --popover-foreground: 60 4% 89%;
+
+    /* Secondary — Steel panels (used for alternating section bands) */
+    --secondary: 0 0% 10.2%;
+    --secondary-foreground: 60 4% 89%;
+
+    /* Muted — Grey 700 surface, Grey 500 label text */
+    --muted: 0 0% 22.7%;
+    --muted-foreground: 0 0% 43.1%;
+
+    /* Accent — Grey 700 */
+    --accent: 0 0% 22.7%;
+    --accent-foreground: 60 4% 89%;
+
+    /* No red anywhere: neutral error treatment */
+    --destructive: 0 0% 22.7%;
+    --destructive-foreground: 60 4% 89%;
+
+    --border: 0 0% 22.7%;
+    --input: 0 0% 22.7%;
+    --ring: 41 42% 38%;
+
     --radius: 0rem;
-    
+
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 5%) 0%, hsl(0 0% 12%) 100%);
-    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.08);
-    --card-shadow-hover: 0 8px 32px -4px hsl(0 0% 0% / 0.12);
-    
-    /* Sidebar (keeping defaults) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 71% 38%;
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 10%) 100%);
+    --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.24);
+    --card-shadow-hover: 0 8px 32px -4px hsl(0 0% 0% / 0.32);
+
+    /* Paper — inverted (light) sections */
+    --paper: 60 11% 96.5%;
+    --paper-foreground: 0 0% 5.5%;
+
+    /* Sidebar (unused, kept in step with the rest of the system) */
+    --sidebar-background: 0 0% 10.2%;
+    --sidebar-foreground: 60 4% 89%;
+    --sidebar-primary: 42 44% 51%;
+    --sidebar-primary-foreground: 0 0% 5.5%;
+    --sidebar-accent: 0 0% 22.7%;
+    --sidebar-accent-foreground: 60 4% 89%;
+    --sidebar-border: 0 0% 22.7%;
+    --sidebar-ring: 41 42% 38%;
   }
 
-  .dark {
-    --primary: 0 71% 48%;
-    --primary-foreground: 0 0% 100%;
-    
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
-    
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 95%;
-    
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 95%;
-    
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
-    
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 95%;
-    
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 95%;
-    
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 71% 48%;
-    
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 71% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 0 71% 48%;
+  /* Paper (inverted) sections opt in with the .paper class instead of a dark-mode toggle */
+  .paper {
+    --background: 60 11% 96.5%;
+    --foreground: 0 0% 5.5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5.5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5.5%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 5.5%;
+
+    --muted: 60 5% 91%;
+    --muted-foreground: 0 0% 43.1%;
+
+    --accent: 60 5% 91%;
+    --accent-foreground: 0 0% 5.5%;
+
+    --destructive: 60 5% 88%;
+    --destructive-foreground: 0 0% 5.5%;
+
+    --border: 60 5% 85%;
+    --input: 60 5% 85%;
   }
 }
 
@@ -106,7 +102,7 @@
   html,
   body,
   #root {
-    background-color: hsl(var(--secondary));
+    background-color: hsl(var(--background));
     margin: 0;
     padding: 0;
   }
@@ -117,16 +113,16 @@
 
   body {
     @apply text-foreground antialiased;
-    background-color: hsl(var(--secondary));
-    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: hsl(var(--background));
+    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.02em;
     line-height: 1.05;
     font-weight: 600;
@@ -141,7 +137,7 @@
   .section-padding-sm {
     @apply px-6 py-16 md:px-12 lg:px-24 lg:py-24;
   }
-  
+
   .container-narrow {
     @apply max-w-6xl mx-auto;
   }
@@ -149,14 +145,14 @@
   .container-wide {
     @apply max-w-7xl mx-auto;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Premium label style */
+  /* Neutral label style — gold is reserved, labels use Grey 500 */
   .label-tag {
-    @apply text-xs font-semibold tracking-[0.15em] uppercase text-primary;
+    @apply text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground;
   }
 
   /* Large editorial headings */
@@ -170,7 +166,17 @@
 
   /* Premium input style */
   .input-premium {
-    @apply w-full bg-transparent border-0 border-b border-white/20 text-white placeholder:text-white/40 
-           pb-3 pt-2 text-base focus:outline-none focus:border-white/60 transition-colors duration-300;
+    @apply w-full bg-transparent border-0 border-b border-white/20 text-white placeholder:text-white/40
+           pb-3 pt-2 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300;
+  }
+
+  /* Figures only — sizes, offsets, load ratings, spec tables */
+  .font-figure {
+    font-family: 'Roboto Mono', ui-monospace, monospace;
+  }
+
+  /* Gold, reserved for logo / step numbers / highlighted spec figures / headline stats */
+  .text-gold {
+    color: hsl(var(--primary));
   }
 }

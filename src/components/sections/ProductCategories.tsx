@@ -53,10 +53,10 @@ export const ProductCategories = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.05] mb-3">
-              Our Full Range. 613 Styles.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-grey100 tracking-tight leading-[1.05] mb-3">
+              Our Full Range. <span className="text-gold font-figure">613</span> Styles.
             </h2>
-            <p className="text-white/40 text-base font-light">
+            <p className="text-grey500 text-base font-light">
               Every build, covered.
             </p>
           </div>
@@ -64,7 +64,7 @@ export const ProductCategories = () => {
             href="/catalogue.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200 flex-shrink-0 self-start lg:self-auto"
+            className="inline-flex items-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200 flex-shrink-0 self-start lg:self-auto"
           >
             View Catalogue
             <Eye className="w-4 h-4" />
@@ -91,10 +91,10 @@ export const ProductCategories = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8">
-                <p className="text-primary text-xs font-semibold tracking-[0.15em] uppercase mb-2">
+                <p className="text-grey300 text-xs font-semibold tracking-[0.15em] uppercase mb-2">
                   {categories[0].label}
                 </p>
-                <h3 className="text-white text-2xl lg:text-3xl font-semibold tracking-tight mb-2">
+                <h3 className="text-grey100 text-2xl lg:text-3xl font-semibold tracking-tight mb-2">
                   {categories[0].description}
                 </h3>
               </div>
@@ -119,10 +119,10 @@ export const ProductCategories = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-5">
-                  <p className="text-primary text-[10px] font-semibold tracking-[0.15em] uppercase mb-1">
+                  <p className="text-grey300 text-[10px] font-semibold tracking-[0.15em] uppercase mb-1">
                     {cat.label}
                   </p>
-                  <p className="text-white/70 text-xs leading-relaxed hidden lg:block">
+                  <p className="text-grey300/80 text-xs leading-relaxed hidden lg:block">
                     {cat.description}
                   </p>
                 </div>

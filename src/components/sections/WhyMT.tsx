@@ -7,21 +7,21 @@ const pillars = [
     stat: "OEM+",
     label: "Quality Standards",
     description:
-      "Every wheel is manufactured from forged 6061-T6 aluminium alloy to exceed OEM tolerances, so you get consistent quality on every order.",
+      "Every wheel is manufactured from forged 6061-T6 aluminium alloy to exceed OEM tolerances, so you get consistent quality on every specification we source.",
   },
   {
     icon: TrendingDown,
-    stat: "Trade",
-    label: "Pricing Structure",
+    stat: "Flat Fee",
+    label: "Fee Structure",
     description:
-      "We built our pricing for businesses rather than consumers. The model is designed around margin for our partners, with no hidden fees and no surprises.",
+      "Our fee is flat and transparent, agreed upfront regardless of volume. You pay the factory directly; our fee covers sourcing, specification and coordination only.",
   },
   {
     icon: MapPin,
     stat: "UK",
     label: "Based & Supported",
     description:
-      "We're UK-based, and you'll always deal with someone who knows your order personally, from first enquiry through to delivery. No call centres and no being passed around.",
+      "We're UK-based, and you'll always deal with someone who knows your specification personally, from first enquiry through to delivery. No call centres and no being passed around.",
   },
 ];
 
@@ -37,16 +37,16 @@ export const WhyMT = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
-            Why MT Performance
+          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            Why MT Sourcing Partners
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
-            Premium product. Simple supply.
+            Premium product. Simple sourcing.
           </h2>
         </motion.div>
 
         {/* Pillars */}
-        <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+        <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -57,8 +57,9 @@ export const WhyMT = () => {
               className="group px-0 md:px-12 first:pl-0 last:pr-0 py-12 md:py-0"
             >
               <div className="mb-8">
-                <pillar.icon className="w-6 h-6 text-primary mb-6" strokeWidth={1.5} />
-                <span className="text-5xl lg:text-6xl font-semibold text-foreground tracking-tight">
+                <pillar.icon className="w-6 h-6 text-muted-foreground mb-6" strokeWidth={1.5} />
+                {/* Headline stat — one of the four permitted places for gold */}
+                <span className="text-5xl lg:text-6xl font-semibold text-gold tracking-tight font-figure">
                   {pillar.stat}
                 </span>
                 <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase mt-2">

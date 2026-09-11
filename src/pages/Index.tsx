@@ -38,9 +38,9 @@ const FloatingCTA = () => {
         >
           <a
             href="#quote"
-            className="inline-flex items-center gap-2.5 bg-primary text-white text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-primary/90 transition-all duration-200"
+            className="inline-flex items-center gap-2.5 bg-grey100 text-ink text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-all duration-200"
           >
-            Request a Quote
+            Request a Sourcing Quote
             <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
               <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -53,7 +53,7 @@ const FloatingCTA = () => {
 
 const Index = () => {
   return (
-    <div className="bg-secondary">
+    <div className="bg-background">
       <Header />
       <main>
         {/* 1. Hero */}
@@ -66,11 +66,11 @@ const Index = () => {
         <TheWheels />
         {/* 5. Why 6061-T6 Forged comparison */}
         <ForgedComparison />
-        {/* 6. Why MT Performance */}
+        {/* 6. Why MT Sourcing Partners */}
         <WhyMT />
         {/* 7. Process */}
         <HowItWorks />
-        {/* 8. Supply/Partnership Options */}
+        {/* 8. Sourcing Model */}
         <PartnershipModels />
         {/* 9. Product Categories / Catalogue */}
         <ProductCategories />

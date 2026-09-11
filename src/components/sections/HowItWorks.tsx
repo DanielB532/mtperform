@@ -11,26 +11,26 @@ const steps = [
     number: "02",
     title: "We Confirm the Fit",
     description:
-      "Share the vehicle details, or send us the diameter, width, and offset if you already have them. We confirm the exact specification before anything is quoted, so there's no guesswork on either side.",
+      "Share the vehicle details, or send us the diameter, width, and offset if you already have them. We confirm the exact specification before anything is costed, so there's no guesswork on either side.",
   },
   {
     number: "03",
     title: "Pick the Design",
     description:
-      "Browse the full catalogue or send us an image of a design your customer has in mind. Either way, we match it to the exact specification and confirm what's possible.",
+      "Browse the full catalogue or send us an image of a design your customer has in mind. Either way, we match it to the exact specification and confirm what's possible with the factory.",
     link: { href: "/catalogue.html", label: "Browse the catalogue" },
   },
   {
     number: "04",
-    title: "We Quote & Confirm",
+    title: "We Confirm the Fee",
     description:
-      "We confirm the finish, lead time, and a clear trade price with nothing hidden and nothing left ambiguous.",
+      "We confirm the finish, lead time, and a clear flat sourcing fee, with nothing hidden and nothing left ambiguous. Specification is locked before anything goes to production.",
   },
   {
     number: "05",
     title: "Delivered, Fitted, Invoiced",
     description:
-      "Wheels are dispatched directly to your workshop. You fit, invoice your customer, and keep the full relationship from start to finish.",
+      "Wheels are dispatched directly from the factory to your workshop, with you as the importer of record throughout. You fit, invoice your customer, and keep the full relationship from start to finish.",
   },
 ];
 
@@ -46,28 +46,28 @@ export const HowItWorks = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 lg:mb-28"
         >
-          <p className="text-[hsl(0,84%,60%)] text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0]">
-            A premium process, start to finish.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0]">
+            A specified process, start to finish.
           </h2>
         </motion.div>
 
         {/* Steps — static render, no per-card animation to guarantee visibility */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-grey700/60">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-white/10 last:border-r-0"
+              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-grey700/60 last:border-r-0"
             >
-              <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
+              <span className="text-gold font-figure text-xs font-semibold tracking-[0.2em] block mb-8">
                 {step.number}
               </span>
-              <h3 className="text-white font-semibold text-lg tracking-tight mb-4 leading-snug">
+              <h3 className="text-grey100 font-semibold text-lg tracking-tight mb-4 leading-snug">
                 {step.title}
               </h3>
-              <p className="text-white/65 text-sm font-light leading-relaxed">
+              <p className="text-grey300 text-sm font-light leading-relaxed">
                 {step.description}
               </p>
               {"link" in step && step.link && (
@@ -75,7 +75,7 @@ export const HowItWorks = () => {
                   href={step.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-4 text-primary text-sm font-medium hover:underline"
+                  className="inline-block mt-4 text-grey300 text-sm font-medium hover:text-[hsl(var(--gold-dim))] hover:underline"
                 >
                   {step.link.label} &rarr;
                 </a>

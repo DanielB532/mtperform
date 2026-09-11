@@ -7,7 +7,7 @@ const useCases = [
     quote: "I'm on PCP and I'm scared of getting charged for wheel damage when I hand it back.",
     title: "Protect a Finance Deal",
     description:
-      "Use this angle with your customers. Sell them a forged set to run day-to-day while the original wheels stay boxed and pristine for handback, so they dodge the end-of-deal damage charges entirely. At the end of the finance deal they can take the forged set off and sell it on, recouping a good chunk of what they paid. It's an upsell most of your competitors won't be offering.",
+      "Use this angle with your customers. Offer them a forged set to run day-to-day while the original wheels stay boxed and pristine for handback, so they dodge the end-of-deal damage charges entirely. At the end of the finance deal they can take the forged set off and pass it on, recouping a good chunk of what they paid. It's an add-on most of your competitors won't be offering.",
   },
   {
     number: "02",
@@ -21,14 +21,14 @@ const useCases = [
     quote: "I've seen this exact wheel and I want it on my car.",
     title: "Build Something Specific",
     description:
-      "You're no longer limited to like-for-like replacements. Take a photo of any design your customer wants, send it over, and we'll replicate it and adapt it to fit their vehicle. It means you can say yes to the bespoke jobs you'd normally have to turn away.",
+      "You're no longer limited to like-for-like replacements. Take a photo of any design your customer wants, send it over, and we'll take it to the factory to have it replicated and adapted to fit their vehicle. It means you can say yes to the bespoke jobs you'd normally have to turn away.",
   },
   {
     number: "04",
     quote: "I just want my car to look sharper and hold its value.",
     title: "Upgrade & Add Value",
     description:
-      "Some customers aren't replacing anything, they simply want an upgrade. A clean forged set makes a car present better and hold its value stronger, whether they keep them on or sell the set separately down the line.",
+      "Some customers aren't replacing anything, they simply want an upgrade. A clean forged set makes a car present better and hold its value stronger, whether they keep them on or move the set on separately down the line.",
   },
 ];
 
@@ -44,16 +44,16 @@ export const UseCases = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0] max-w-xl">
             When your customer walks in with this.
           </h2>
         </motion.div>
 
         {/* Use Cases */}
-        <div className="grid md:grid-cols-2 gap-0 border border-white/10">
+        <div className="grid md:grid-cols-2 gap-0 border border-grey700/60">
           {useCases.map((useCase, index) => (
             <motion.div
               key={index}
@@ -61,18 +61,18 @@ export const UseCases = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b border-white/10 md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-white/5 transition-colors duration-300 group"
+              className="p-8 lg:p-12 border-b border-grey700/60 md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-white/5 transition-colors duration-300 group"
             >
-              <span className="text-primary text-5xl font-bold block mb-6 leading-none tracking-tight">
+              <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
-              <p className="text-white/60 italic text-sm font-light leading-relaxed mb-4 border-l-2 border-primary/40 pl-4">
+              <p className="text-grey300 italic text-sm font-light leading-relaxed mb-4 border-l-2 border-grey700 pl-4">
                 Your customer says: "{useCase.quote}"
               </p>
-              <h3 className="text-white font-semibold text-xl tracking-tight mb-4 leading-snug">
+              <h3 className="text-grey100 font-semibold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
-              <p className="text-white/60 text-sm font-light leading-relaxed">
+              <p className="text-grey300 text-sm font-light leading-relaxed">
                 {useCase.description}
               </p>
             </motion.div>
@@ -89,7 +89,7 @@ export const UseCases = () => {
         >
           <a
             href="#forged-comparison"
-            className="inline-flex items-center gap-3 text-white text-sm font-medium tracking-wide px-8 py-4 border border-white/10 hover:bg-white/10 transition-colors duration-200"
+            className="inline-flex items-center gap-3 text-grey100 text-sm font-medium tracking-wide px-8 py-4 border border-grey700/60 hover:bg-white/10 transition-colors duration-200"
           >
             Not sure why forged is worth it long term? See how it stacks up
             <ArrowDown className="w-4 h-4" />

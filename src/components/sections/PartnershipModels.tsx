@@ -4,15 +4,15 @@ import { Package, Warehouse } from "lucide-react";
 const models = [
   {
     icon: Package,
-    title: "Build-to-Order Supply",
+    title: "Per-Vehicle Sourcing",
     description:
-      "Order wheels as you need them and each one is built to specification and shipped directly to your workshop or customer. There are no minimum orders and no stock risk.",
+      "Specify wheels as you need them and each one is sourced, specified with the factory, and dispatched directly to your workshop or customer. There's no minimum batch size and no stock risk.",
   },
   {
     icon: Warehouse,
     title: "Optional Stock Holding",
     description:
-      "For high-demand fitments, you can hold a small stock of popular wheels for faster turnaround on common replacements. We'll advise you on which fitments move fastest.",
+      "For high-demand fitments, you can hold a small stock of popular wheels sourced in batches for faster turnaround on common replacements. We'll advise you on which fitments move fastest.",
   },
 ];
 
@@ -28,15 +28,15 @@ export const PartnershipModels = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
-            Supply Options
+          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            Sourcing Model
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
-              Flexible supply options.
+              Flexible sourcing options.
             </h2>
             <p className="text-muted-foreground text-base font-light max-w-sm leading-relaxed">
-              We adapt to how you work, whether that's build-to-order flexibility or stocking fast-moving fitments.
+              We adapt to how you work, whether that's per-vehicle sourcing or holding fast-moving fitments in stock.
             </p>
           </div>
         </motion.div>
@@ -48,7 +48,7 @@ export const PartnershipModels = () => {
               key={index}
               className="group p-10 lg:p-16 border-r-0 md:border-r border-border last:border-r-0 hover:bg-muted/30 transition-colors duration-300"
             >
-              <model.icon className="w-5 h-5 text-primary mb-10" strokeWidth={1.5} />
+              <model.icon className="w-5 h-5 text-muted-foreground mb-10" strokeWidth={1.5} />
               <h3 className="text-foreground font-semibold text-2xl tracking-tight mb-4">
                 {model.title}
               </h3>
@@ -69,15 +69,15 @@ export const PartnershipModels = () => {
         >
           <a
             href="#quote"
-            className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200"
+            className="inline-flex items-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
           >
-            Request a Quote
+            Request a Sourcing Quote
           </a>
           <a
             href="#enquiries"
             className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
           >
-            Not a business? Buy a personal set →
+            Not a business? Personal sourcing enquiries →
           </a>
         </motion.div>
       </div>

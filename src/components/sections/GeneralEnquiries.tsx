@@ -88,7 +88,7 @@ export const GeneralEnquiries = () => {
   const handleEmail = async () => {
     if (!validate()) return;
     setSending(true);
-    const ok = await sendEnquiryEmail("Personal Set Enquiry - MT Performance", collectFields());
+    const ok = await sendEnquiryEmail("Personal Set Enquiry - MT Sourcing Partners", collectFields());
     setSending(false);
     toast({
       title: ok ? "Enquiry sent" : "Something went wrong",
@@ -100,7 +100,7 @@ export const GeneralEnquiries = () => {
   };
 
   return (
-    <section id="enquiries" className="bg-background overflow-hidden">
+    <section id="enquiries" className="paper bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-start">
           {/* Left */}
@@ -111,13 +111,13 @@ export const GeneralEnquiries = () => {
             transition={{ duration: 0.7 }}
             className="lg:sticky lg:top-28"
           >
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Personal Enquiries
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-[1.0] mb-6">
               Looking for a personal set?
             </h2>
-            <p className="text-[#111111] font-light leading-relaxed max-w-sm mb-10">
+            <p className="text-foreground/80 font-light leading-relaxed max-w-sm mb-10">
               Submit your vehicle details and requirements. We handle single wheel set enquiries by request, and nothing goes into production until you've approved a 3D rendering of your exact wheel. All personal pricing includes VAT, so the price you see is the price you pay, plus delivery.
             </p>
             <div className="space-y-6 max-w-sm">
@@ -149,7 +149,7 @@ export const GeneralEnquiries = () => {
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4">
-                  <span className="text-primary text-xs font-semibold tracking-[0.2em] pt-1 flex-shrink-0">
+                  <span className="text-gold font-figure text-xs font-semibold tracking-[0.2em] pt-1 flex-shrink-0">
                     {item.step}
                   </span>
                   <div>
@@ -167,7 +167,7 @@ export const GeneralEnquiries = () => {
               href="/catalogue.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-8 text-primary text-sm font-medium hover:underline"
+              className="inline-block mt-8 text-muted-foreground text-sm font-medium hover:text-[hsl(var(--gold-dim))] hover:underline"
             >
               Browse the full catalogue for design ideas &rarr;
             </a>
@@ -180,7 +180,7 @@ export const GeneralEnquiries = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <p className="text-foreground/70 text-sm font-light leading-relaxed mb-8 border-l-2 border-primary/60 pl-4">
+            <p className="text-foreground/70 text-sm font-light leading-relaxed mb-8 border-l-2 border-border pl-4">
               Not sure about sizing or specs? Don't worry. Just pick a style you like and send your enquiry, and we'll come back to you to work out the exact fitment together.
             </p>
             <form onSubmit={handleSubmit} className="space-y-10">
@@ -194,9 +194,9 @@ export const GeneralEnquiries = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   />
-                  {errors.name && <p className="text-primary text-xs mt-2">{errors.name}</p>}
+                  {errors.name && <p className="text-foreground font-medium text-xs mt-2">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-foreground font-semibold mb-3">
@@ -208,9 +208,9 @@ export const GeneralEnquiries = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@email.com"
-                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   />
-                  {errors.email && <p className="text-primary text-xs mt-2">{errors.email}</p>}
+                  {errors.email && <p className="text-foreground font-medium text-xs mt-2">{errors.email}</p>}
                 </div>
               </div>
 
@@ -223,9 +223,9 @@ export const GeneralEnquiries = () => {
                   value={formData.vehicle}
                   onChange={handleChange}
                   placeholder="e.g. 2022 BMW M3"
-                  className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                  className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                 />
-                {errors.vehicle && <p className="text-primary text-xs mt-2">{errors.vehicle}</p>}
+                {errors.vehicle && <p className="text-foreground font-medium text-xs mt-2">{errors.vehicle}</p>}
               </div>
 
               <div className="grid sm:grid-cols-2 gap-10">
@@ -238,7 +238,7 @@ export const GeneralEnquiries = () => {
                     value={formData.currentSize}
                     onChange={handleChange}
                     placeholder="e.g. 19x8.5, or leave blank"
-                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   />
                 </div>
                 <div>
@@ -251,7 +251,7 @@ export const GeneralEnquiries = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+44 7700 000000"
-                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   />
                 </div>
               </div>
@@ -266,7 +266,7 @@ export const GeneralEnquiries = () => {
                     value={formData.styleRef}
                     onChange={handleChange}
                     placeholder="Catalogue code (e.g. A-042) or describe a design"
-                    className="w-full bg-white border border-gray-400 text-foreground placeholder:text-foreground/45 px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground placeholder:text-foreground/40 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   />
                 </div>
                 <div>
@@ -277,7 +277,7 @@ export const GeneralEnquiries = () => {
                     name="finish"
                     value={formData.finish}
                     onChange={handleChange}
-                    className="w-full bg-white border border-gray-400 text-foreground px-3 py-2.5 text-base focus:outline-none focus:border-foreground transition-colors duration-300"
+                    className="w-full bg-background border border-border text-foreground px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300"
                   >
                     <option value="">Select a finish</option>
                     {personalFinishes.map((f) => (
@@ -294,7 +294,7 @@ export const GeneralEnquiries = () => {
                 <div className="grid sm:grid-cols-2 gap-3 pt-1">
                   {personalAddons.map((a) => (
                     <label key={a} className="flex items-center gap-3 text-sm text-foreground/70 cursor-pointer">
-                      <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#a61c1c]" />
+                      <input type="checkbox" checked={addons.includes(a)} onChange={() => toggleAddon(a)} className="accent-[#0E0E0E]" />
                       {a}
                     </label>
                   ))}
@@ -311,7 +311,7 @@ export const GeneralEnquiries = () => {
                   onChange={handleChange}
                   placeholder="Any additional details..."
                   rows={3}
-                  className="w-full bg-white border border-foreground/20 text-foreground placeholder:text-foreground/35 px-3 py-2.5 text-base focus:outline-none focus:border-foreground/50 transition-colors duration-300 resize-none"
+                  className="w-full bg-background border border-border text-foreground placeholder:text-foreground/30 px-3 py-2.5 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300 resize-none"
                 />
               </div>
 

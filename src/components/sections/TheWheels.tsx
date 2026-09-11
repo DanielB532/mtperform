@@ -54,7 +54,7 @@ export const TheWheels = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 lg:order-2"
           >
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Quality
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-12">
@@ -65,7 +65,7 @@ export const TheWheels = () => {
             <div className="space-y-8 mb-12">
               {qualityPoints.map((point, index) => (
                 <div key={index}>
-                  <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-primary mb-2">
+                  <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-2">
                     {point.label}
                   </p>
                   <p className="text-muted-foreground font-light leading-relaxed">
@@ -80,7 +80,7 @@ export const TheWheels = () => {
               <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="w-3.5 h-3.5 text-primary mt-1 flex-shrink-0" strokeWidth={2.5} />
+                    <Check className="w-3.5 h-3.5 text-muted-foreground mt-1 flex-shrink-0" strokeWidth={2.5} />
                     <span className="text-foreground text-sm font-light">{feature}</span>
                   </li>
                 ))}
@@ -105,19 +105,20 @@ export const TheWheels = () => {
             />
           </div>
           <div>
-            <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Certified Forged
             </p>
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-6">
               Every wheel is stamped and traceable.
             </h3>
-            <ul className="space-y-2 text-foreground text-sm font-light mb-6">
-              <li>Forged</li>
-              <li>19x8.5J</li>
-              <li>ET45</li>
-              <li>PCD 5x112</li>
-              <li>CB 57.1</li>
-              <li>Max load 750kg</li>
+            {/* Highlighted spec figures — one of the four permitted places for gold */}
+            <ul className="space-y-2 text-sm font-light mb-6">
+              <li className="text-foreground">Forged</li>
+              <li className="text-gold font-figure font-medium">19x8.5J</li>
+              <li className="text-gold font-figure font-medium">ET45</li>
+              <li className="text-gold font-figure font-medium">PCD 5x112</li>
+              <li className="text-gold font-figure font-medium">CB 57.1</li>
+              <li className="text-gold font-figure font-medium">Max load 750kg</li>
             </ul>
             <p className="text-sm text-muted-foreground">
               Mill test reports available on request.
@@ -133,7 +134,7 @@ export const TheWheels = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mt-24 lg:mt-32"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
+          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
             Build Quality
           </p>
           <div className="grid sm:grid-cols-2 gap-6">

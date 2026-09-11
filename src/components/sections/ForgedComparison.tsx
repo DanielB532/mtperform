@@ -23,22 +23,22 @@ const benefits = [
   },
   {
     title: "Protect your finance deal.",
-    text: "On PCP or a lease, you can store your factory wheels at home and run these instead. Refit the originals in perfect condition at handback and avoid any charges, since 64% of UK buyers say scraped alloys would put them off a car. Then sell the forged set on, because they hold their value well enough to make back a good chunk of what you paid.",
+    text: "On PCP or a lease, you can store your factory wheels at home and run these instead. Refit the originals in perfect condition at handback and avoid any charges, since 64% of UK buyers say scraped alloys would put them off a car. The forged set holds its value well enough to recoup a good chunk of what you paid for it.",
   },
   {
-    title: "Add value when you sell.",
-    text: "Keep the wheels on and your car presents better and holds its price in any negotiation. Or sell the set separately, because good forged wheels keep real value on the used market in a way cast and replica wheels don't.",
+    title: "Add value when you move the car on.",
+    text: "Keep the wheels on and your car presents better and holds its price in any negotiation. Or pass the set on separately, because good forged wheels keep real value on the used market in a way cast and replica wheels don't.",
   },
   {
     title: "They look incredible too.",
-    text: "Forging lets us build slimmer, sharper spoke designs that cast wheels can't match at the same strength. The looks are the bonus rather than the whole point, because the same properties that make them look aggressive also make them stronger and lighter.",
+    text: "Forging lets us specify slimmer, sharper spoke designs that cast wheels can't match at the same strength. The looks are the bonus rather than the whole point, because the same properties that make them look aggressive also make them stronger and lighter.",
   },
 ];
 
 const CellMark = ({ value }: { value: string }) => {
-  if (value === "yes") return <Check className="w-5 h-5 text-green-500 mx-auto" strokeWidth={2.5} />;
-  if (value === "partial") return <Minus className="w-4 h-4 text-white/30 mx-auto" strokeWidth={2.5} />;
-  return <X className="w-4 h-4 text-red-500 mx-auto" strokeWidth={2.5} />;
+  if (value === "yes") return <Check className="w-5 h-5 text-grey100 mx-auto" strokeWidth={2.5} />;
+  if (value === "partial") return <Minus className="w-4 h-4 text-grey500 mx-auto" strokeWidth={2.5} />;
+  return <X className="w-4 h-4 text-grey500 mx-auto" strokeWidth={2.5} />;
 };
 
 export const ForgedComparison = () => {
@@ -53,10 +53,10 @@ export const ForgedComparison = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 lg:mb-20"
         >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[0.95] max-w-3xl">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-grey100 tracking-tight leading-[0.95] max-w-3xl">
             Why 6061-T6 forged?
           </h2>
         </motion.div>
@@ -71,21 +71,21 @@ export const ForgedComparison = () => {
         >
           <table className="w-full min-w-[640px] border-collapse text-sm">
             <thead>
-              <tr className="border-b border-white/15">
-                <th className="text-left py-4 pr-4 font-medium text-white/50 text-xs tracking-wide uppercase w-[38%]">
+              <tr className="border-b border-grey700/70">
+                <th className="text-left py-4 pr-4 font-medium text-grey500 text-xs tracking-wide uppercase w-[38%]">
                   Criteria
                 </th>
-                <th className="text-center py-4 px-3 bg-primary/10 border-t-2 border-t-primary">
-                  <span className="block text-white font-semibold">6061-T6 Forged</span>
-                  <span className="block text-primary text-[11px] font-medium mt-0.5">MT Performance</span>
+                <th className="text-center py-4 px-3 bg-grey700/30 border-t-2 border-t-grey100">
+                  <span className="block text-grey100 font-semibold">6061-T6 Forged</span>
+                  <span className="block text-grey500 text-[11px] font-medium mt-0.5">What we source</span>
                 </th>
                 <th className="text-center py-4 px-3">
-                  <span className="block text-white/70 font-medium">Cast</span>
-                  <span className="block text-white/35 text-[11px] mt-0.5">Most OEM &amp; budget</span>
+                  <span className="block text-grey300 font-medium">Cast</span>
+                  <span className="block text-grey500 text-[11px] mt-0.5">Most OEM &amp; budget</span>
                 </th>
                 <th className="text-center py-4 px-3">
-                  <span className="block text-white/70 font-medium">Flow-formed</span>
-                  <span className="block text-white/35 text-[11px] mt-0.5">Mid-tier</span>
+                  <span className="block text-grey300 font-medium">Flow-formed</span>
+                  <span className="block text-grey500 text-[11px] mt-0.5">Mid-tier</span>
                 </th>
               </tr>
             </thead>
@@ -93,15 +93,15 @@ export const ForgedComparison = () => {
               {criteria.map((row, i) => (
                 <tr
                   key={i}
-                  className={`border-b border-white/8 ${row.highlight ? "bg-primary/5" : ""}`}
+                  className={`border-b border-grey700/40 ${row.highlight ? "bg-grey700/10" : ""}`}
                 >
-                  <td className={`py-4 pr-4 ${row.highlight ? "text-white font-semibold" : "text-white/80"}`}>
+                  <td className={`py-4 pr-4 ${row.highlight ? "text-grey100 font-semibold" : "text-grey300"}`}>
                     {row.highlight && (
-                      <AlertTriangle className="w-4 h-4 text-primary inline-block mr-2 -mt-0.5" strokeWidth={2} />
+                      <AlertTriangle className="w-4 h-4 text-grey500 inline-block mr-2 -mt-0.5" strokeWidth={2} />
                     )}
                     {row.label}
                   </td>
-                  <td className="py-4 px-3 bg-primary/10">
+                  <td className="py-4 px-3 bg-grey700/20">
                     <CellMark value={row.forged} />
                   </td>
                   <td className="py-4 px-3">
@@ -114,7 +114,7 @@ export const ForgedComparison = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-white/30 text-xs mt-4">
+          <p className="text-grey500 text-xs mt-4">
             Partial marks: flow-formed wheels only strengthen the outer barrel. The centre of the wheel is still cast.
           </p>
         </motion.div>
@@ -130,10 +130,10 @@ export const ForgedComparison = () => {
               transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}
             >
-              <h3 className="text-white font-semibold text-xl tracking-tight mb-3">
+              <h3 className="text-grey100 font-semibold text-xl tracking-tight mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-white/60 font-light leading-relaxed">
+              <p className="text-grey300 font-light leading-relaxed">
                 {benefit.text}
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ export const ForgedComparison = () => {
             href="/catalogue.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-primary text-white text-sm font-semibold tracking-wide px-8 py-4 hover:bg-primary/90 transition-colors duration-200"
+            className="inline-flex items-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
           >
             Convinced? See the full range
           </a>
