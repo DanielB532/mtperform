@@ -24,7 +24,7 @@ const steps = [
     number: "04",
     title: "We Confirm the Fee",
     description:
-      "We confirm the finish, lead time, and a clear flat sourcing fee, with nothing hidden and nothing left ambiguous. Specification is locked before anything goes to production.",
+      "We confirm the finish, your freight choice of air or sea, the lead time that follows from it, and a clear flat sourcing fee, with nothing hidden and nothing left ambiguous. Specification is locked before anything goes to production.",
   },
   {
     number: "05",

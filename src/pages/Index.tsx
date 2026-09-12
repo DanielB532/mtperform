@@ -9,8 +9,8 @@ import { ForgedComparison } from "@/components/sections/ForgedComparison";
 import { ProductCategories } from "@/components/sections/ProductCategories";
 import { WhyMT } from "@/components/sections/WhyMT";
 import { PartnershipModels } from "@/components/sections/PartnershipModels";
+import { WorkshopObjections } from "@/components/sections/WorkshopObjections";
 import { FAQ } from "@/components/sections/FAQ";
-import { GeneralEnquiries } from "@/components/sections/GeneralEnquiries";
 import { QuoteForm } from "@/components/sections/QuoteForm";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -72,14 +72,14 @@ const Index = () => {
         <HowItWorks />
         {/* 8. Sourcing Model */}
         <PartnershipModels />
-        {/* 9. Product Categories / Catalogue */}
+        {/* 9. Workshop objections — working with us */}
+        <WorkshopObjections />
+        {/* 10. Product Categories / Catalogue */}
         <ProductCategories />
         {/* 10. FAQ */}
         <FAQ />
         {/* 11. Request a Quote Form */}
         <QuoteForm />
-        {/* 12. Personal Enquiries */}
-        <GeneralEnquiries />
       </main>
       <Footer />
       <FloatingCTA />

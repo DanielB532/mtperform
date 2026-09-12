@@ -5,7 +5,7 @@ const faqs = [
   {
     question: "Is this trade-only?",
     answer:
-      "We primarily work with automotive businesses, but we also handle one-off wheel enquiries for individual vehicle owners on a request basis.",
+      "Yes. We work exclusively with automotive businesses — workshops, tyre centres, repair specialists and dealers. We don't handle enquiries from private individuals.",
   },
   {
     question: "What vehicles do you support?",
@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Does the price include VAT?",
     answer:
-      "Our sourcing fee is quoted separately from the factory price. For personal enquiries, the figures we send include VAT, so the price you see is the price you pay, plus delivery. Trade sourcing is quoted excluding VAT, since VAT-registered workshops reclaim it separately. If you're sourcing for resale, contact us for trade terms.",
+      "Our sourcing fee is quoted separately from the factory price, excluding VAT, since VAT-registered workshops reclaim it separately. If you're sourcing for resale, contact us for trade terms.",
   },
   {
     question: "Can you match a specific fitment and finish?",
@@ -33,14 +33,40 @@ const faqs = [
       "Send us an image of the design you're after and we'll take it to the factory to have it replicated to your specification.",
   },
   {
-    question: "What's the typical turnaround time?",
-    answer:
-      "Specification-led wheels typically ship within 2-4 weeks depending on the build. For partners holding stock, wheels can be dispatched same-day or next-day.",
+    question: "What are the lead times?",
+    answer: (
+      <div className="space-y-4">
+        <p>
+          Air or sea freight is your choice on every specification — sea keeps the cost down, air gets the set to you faster.
+        </p>
+        <div>
+          <p className="text-foreground font-medium mb-1">Ready-made sets, in stock at the factory — the fastest route</p>
+          <p>
+            Around <span className="font-figure">5 weeks</span> by air, <span className="font-figure">8 to 10 weeks</span> by sea. No production wait.
+          </p>
+        </div>
+        <div>
+          <p className="text-foreground font-medium mb-1">Built to specification, sea freight</p>
+          <p>
+            <span className="font-figure">8 to 12 weeks</span> door to door. Add roughly <span className="font-figure">10 days</span> for polished or brushed finishes. Carbon takes longer and is quoted individually.
+          </p>
+        </div>
+        <div>
+          <p className="text-foreground font-medium mb-1">Built to specification, air freight</p>
+          <p>
+            Roughly <span className="font-figure">5 to 6 weeks</span>. Costs significantly more, quoted individually.
+          </p>
+        </div>
+        <p className="text-sm">
+          These timings reflect current shipping conditions. Sea freight has been running longer than normal, and we expect it to shorten as conditions ease.
+        </p>
+      </div>
+    ),
   },
   {
     question: "Do you handle one-off sets?",
     answer:
-      "Yes. Individual enquiries are welcome. Submit your request and we'll review the details and come back with options.",
+      "Yes. Most sourcing starts as a single set for a specific customer vehicle, and there's no minimum. Send the details through the quote form and we'll come back with options.",
   },
 ];
 

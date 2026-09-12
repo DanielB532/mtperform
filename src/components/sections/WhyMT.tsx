@@ -14,7 +14,7 @@ const pillars = [
     stat: "Flat Fee",
     label: "Fee Structure",
     description:
-      "Our fee is flat and transparent, agreed upfront regardless of volume. You pay the factory directly; our fee covers sourcing, specification and coordination only.",
+      "Fees agreed upfront, with nothing hidden. You pay the factory directly; our fee covers sourcing, specification and coordination only.",
   },
   {
     icon: MapPin,

@@ -73,15 +73,6 @@ export const Footer = () => {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-              <div>
-                <p className="text-grey500 text-xs mb-2">Personal set enquiries</p>
-                <a
-                  href="#enquiries"
-                  className="text-grey300 text-sm hover:text-grey100 transition-colors duration-200"
-                >
-                  Personal sourcing enquiries →
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -96,7 +87,7 @@ export const Footer = () => {
               © {new Date().getFullYear()} MT Sourcing Partners. All rights reserved. United Kingdom.
             </p>
             <p className="text-grey500/70 text-xs font-light">
-              Wheel sourcing &amp; specification · Trade-first · One-off enquiries welcome
+              Wheel sourcing &amp; specification · Trade only
             </p>
           </div>
         </div>

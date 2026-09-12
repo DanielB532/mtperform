@@ -73,12 +73,6 @@ export const PartnershipModels = () => {
           >
             Request a Sourcing Quote
           </a>
-          <a
-            href="#enquiries"
-            className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
-          >
-            Not a business? Personal sourcing enquiries →
-          </a>
         </motion.div>
       </div>
     </section>
