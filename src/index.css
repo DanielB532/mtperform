@@ -13,24 +13,24 @@
     /* Gold dim: focus and hover states only */
     --gold-dim: 41 42% 38%;
 
-    /* Ink: page background */
+    /* Ink: page background. Headings pure white on dark. */
     --background: 0 0% 5.5%;
-    --foreground: 60 4% 89%;
+    --foreground: 0 0% 100%;
 
     /* Steel: panels */
     --card: 0 0% 10.2%;
-    --card-foreground: 60 4% 89%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 10.2%;
-    --popover-foreground: 60 4% 89%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Secondary: Steel panels (used for alternating section bands) */
-    --secondary: 0 0% 10.2%;
-    --secondary-foreground: 60 4% 89%;
+    /* Secondary: #242424, the lighter band in the ink/dark alternation */
+    --secondary: 0 0% 14.1%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted: Grey 700 surface; body text on dark lifted to #B8B8B8 for readability */
+    /* Muted: Grey 700 surface; body text on dark lifted to #C4C4C4 for readability */
     --muted: 0 0% 22.7%;
-    --muted-foreground: 0 0% 72.2%;
+    --muted-foreground: 0 0% 76.9%;
 
     /* Accent: Grey 700 */
     --accent: 0 0% 22.7%;
@@ -81,7 +81,7 @@
     --secondary-foreground: 0 0% 5.5%;
 
     --muted: 60 5% 91%;
-    --muted-foreground: 0 0% 43.1%;
+    --muted-foreground: 0 0% 22.7%;
 
     --accent: 60 5% 91%;
     --accent-foreground: 0 0% 5.5%;

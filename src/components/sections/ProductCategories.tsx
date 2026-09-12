@@ -48,7 +48,7 @@ const categories = [
 
 export const ProductCategories = () => {
   return (
-    <section id="product-categories" className="bg-secondary overflow-hidden">
+    <section id="product-categories" className="bg-secondary border-t border-grey700 overflow-hidden">
       {/* Catalogue link: at top */}
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">

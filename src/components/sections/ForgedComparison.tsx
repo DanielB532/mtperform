@@ -36,14 +36,14 @@ const benefits = [
 ];
 
 const CellMark = ({ value }: { value: string }) => {
-  if (value === "yes") return <Check className="w-5 h-5 text-grey100 mx-auto" strokeWidth={2.5} />;
-  if (value === "partial") return <Minus className="w-4 h-4 text-grey500 mx-auto" strokeWidth={2.5} />;
-  return <X className="w-4 h-4 text-grey500 mx-auto" strokeWidth={2.5} />;
+  if (value === "yes") return <Check className="w-5 h-5 text-foreground mx-auto" strokeWidth={2.5} />;
+  if (value === "partial") return <Minus className="w-4 h-4 text-foreground/40 mx-auto" strokeWidth={2.5} />;
+  return <X className="w-4 h-4 text-foreground/40 mx-auto" strokeWidth={2.5} />;
 };
 
 export const ForgedComparison = () => {
   return (
-    <section id="forged-comparison" className="bg-background overflow-hidden">
+    <section id="forged-comparison" className="paper bg-background border-t border-grey700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -56,12 +56,12 @@ export const ForgedComparison = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-grey100 tracking-tight leading-[0.95] max-w-3xl">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-[0.95] max-w-3xl">
             Why 6061-T6 forged?
           </h2>
         </motion.div>
 
-        {/* Comparison table */}
+        {/* Comparison table: dark on light */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,21 +71,21 @@ export const ForgedComparison = () => {
         >
           <table className="w-full min-w-[640px] border-collapse text-sm">
             <thead>
-              <tr className="border-b border-grey700/70">
-                <th className="text-left py-4 pr-4 font-medium text-grey500 text-xs tracking-wide uppercase w-[38%]">
+              <tr className="border-b border-border">
+                <th className="text-left py-4 pr-4 font-medium text-muted-foreground text-xs tracking-wide uppercase w-[38%]">
                   Criteria
                 </th>
-                <th className="text-center py-4 px-3 bg-grey700/30 border-t-2 border-t-grey100">
-                  <span className="block text-grey100 font-semibold">6061-T6 Forged</span>
-                  <span className="block text-grey500 text-[11px] font-medium mt-0.5">What we source</span>
+                <th className="text-center py-4 px-3 bg-muted/70 border-t-2 border-t-foreground">
+                  <span className="block text-foreground font-semibold">6061-T6 Forged</span>
+                  <span className="block text-muted-foreground text-[11px] font-medium mt-0.5">What we source</span>
                 </th>
                 <th className="text-center py-4 px-3">
-                  <span className="block text-grey300 font-medium">Cast</span>
-                  <span className="block text-grey500 text-[11px] mt-0.5">Most OEM &amp; budget</span>
+                  <span className="block text-foreground/80 font-medium">Cast</span>
+                  <span className="block text-muted-foreground text-[11px] mt-0.5">Most OEM &amp; budget</span>
                 </th>
                 <th className="text-center py-4 px-3">
-                  <span className="block text-grey300 font-medium">Flow-formed</span>
-                  <span className="block text-grey500 text-[11px] mt-0.5">Mid-tier</span>
+                  <span className="block text-foreground/80 font-medium">Flow-formed</span>
+                  <span className="block text-muted-foreground text-[11px] mt-0.5">Mid-tier</span>
                 </th>
               </tr>
             </thead>
@@ -93,15 +93,15 @@ export const ForgedComparison = () => {
               {criteria.map((row, i) => (
                 <tr
                   key={i}
-                  className={`border-b border-grey700/40 ${row.highlight ? "bg-grey700/10" : ""}`}
+                  className={`border-b border-border ${row.highlight ? "bg-muted/40" : ""}`}
                 >
-                  <td className={`py-4 pr-4 ${row.highlight ? "text-grey100 font-semibold" : "text-grey300"}`}>
+                  <td className={`py-4 pr-4 ${row.highlight ? "text-foreground font-semibold" : "text-muted-foreground"}`}>
                     {row.highlight && (
-                      <AlertTriangle className="w-4 h-4 text-grey500 inline-block mr-2 -mt-0.5" strokeWidth={2} />
+                      <AlertTriangle className="w-4 h-4 text-foreground/50 inline-block mr-2 -mt-0.5" strokeWidth={2} />
                     )}
                     {row.label}
                   </td>
-                  <td className="py-4 px-3 bg-grey700/20">
+                  <td className="py-4 px-3 bg-muted/50">
                     <CellMark value={row.forged} />
                   </td>
                   <td className="py-4 px-3">
@@ -114,7 +114,7 @@ export const ForgedComparison = () => {
               ))}
             </tbody>
           </table>
-          <p className="text-grey500 text-xs mt-4">
+          <p className="text-muted-foreground text-xs mt-4">
             Partial marks: flow-formed wheels only strengthen the outer barrel. The centre of the wheel is still cast.
           </p>
         </motion.div>
@@ -130,10 +130,10 @@ export const ForgedComparison = () => {
               transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}
             >
-              <h3 className="text-grey100 font-semibold text-xl tracking-tight mb-3">
+              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-grey300 font-light leading-relaxed">
+              <p className="text-muted-foreground font-light leading-relaxed">
                 {benefit.text}
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ export const ForgedComparison = () => {
             href="/catalogue.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
+            className="inline-flex items-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
           >
             Convinced? See the full range
           </a>

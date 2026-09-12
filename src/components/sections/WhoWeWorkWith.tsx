@@ -46,7 +46,7 @@ const businessTypes = [
 
 export const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-work-with" className="bg-secondary overflow-hidden">
+    <section id="who-we-work-with" className="bg-secondary border-t border-grey700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div

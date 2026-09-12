@@ -34,7 +34,7 @@ const useCases = [
 
 export const UseCases = () => {
   return (
-    <section id="use-cases" className="bg-background overflow-hidden">
+    <section id="use-cases" className="bg-background border-t border-grey700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div

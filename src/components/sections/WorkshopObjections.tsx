@@ -33,7 +33,7 @@ const objections = [
 
 export const WorkshopObjections = () => {
   return (
-    <section id="working-with-us" className="bg-background overflow-hidden">
+    <section id="working-with-us" className="bg-background border-t border-grey700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
