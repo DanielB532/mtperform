@@ -46,7 +46,7 @@ const businessTypes = [
 
 export const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-work-with" className="bg-background overflow-hidden">
+    <section id="who-we-work-with" className="bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -56,7 +56,7 @@ export const WhoWeWorkWith = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Built for Trade
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -111,6 +111,26 @@ export const WhoWeWorkWith = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Catch-all */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 text-muted-foreground text-sm font-light"
+        >
+          Can't see your business here?{" "}
+          <a
+            href="https://wa.me/qr/TRWCW5YU5KKIP1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline underline-offset-4 hover:text-[hsl(var(--gold-dim))] transition-colors duration-200"
+          >
+            Message us on WhatsApp
+          </a>{" "}
+          anyway. We can probably accommodate you.
+        </motion.p>
       </div>
     </section>
   );

@@ -66,7 +66,7 @@ export default {
         steel: "#1A1A1A",
         grey700: "#3A3A3A",
         grey500: "#6E6E6E",
-        grey300: "#A8A8A8",
+        grey300: "#B8B8B8",
         grey100: "#E4E4E2",
         gold: {
           DEFAULT: "#B8974A",

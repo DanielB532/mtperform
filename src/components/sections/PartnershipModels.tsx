@@ -18,7 +18,7 @@ const models = [
 
 export const PartnershipModels = () => {
   return (
-    <section id="partnership" className="bg-background overflow-hidden">
+    <section id="partnership" className="bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -28,7 +28,7 @@ export const PartnershipModels = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Sourcing Model
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -41,7 +41,7 @@ export const PartnershipModels = () => {
           </div>
         </motion.div>
 
-        {/* Models — static render; per-card animation caused second card to stay at partial opacity */}
+        {/* Models: static render; per-card animation caused second card to stay at partial opacity */}
         <div className="grid md:grid-cols-2 gap-0 border border-border">
           {models.map((model, index) => (
             <div

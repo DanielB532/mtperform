@@ -43,7 +43,7 @@ const CellMark = ({ value }: { value: string }) => {
 
 export const ForgedComparison = () => {
   return (
-    <section id="forged-comparison" className="bg-secondary overflow-hidden">
+    <section id="forged-comparison" className="bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -53,7 +53,7 @@ export const ForgedComparison = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-14 lg:mb-20"
         >
-          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-grey100 tracking-tight leading-[0.95] max-w-3xl">

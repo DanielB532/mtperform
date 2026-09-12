@@ -2,37 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* MT Sourcing Partners — Design System */
+/* MT Sourcing Partners: Design System */
 
 @layer base {
   :root {
-    /* Gold — accent only. Logo, step numbers, highlighted spec figures, headline stats. Nowhere else. */
+    /* Gold: accent only. Logo, step numbers, highlighted spec figures, headline stats. Nowhere else. */
     --primary: 42 44% 51%;
     --primary-foreground: 0 0% 5.5%;
 
-    /* Gold dim — focus and hover states only */
+    /* Gold dim: focus and hover states only */
     --gold-dim: 41 42% 38%;
 
-    /* Ink — page background */
+    /* Ink: page background */
     --background: 0 0% 5.5%;
     --foreground: 60 4% 89%;
 
-    /* Steel — panels */
+    /* Steel: panels */
     --card: 0 0% 10.2%;
     --card-foreground: 60 4% 89%;
 
     --popover: 0 0% 10.2%;
     --popover-foreground: 60 4% 89%;
 
-    /* Secondary — Steel panels (used for alternating section bands) */
+    /* Secondary: Steel panels (used for alternating section bands) */
     --secondary: 0 0% 10.2%;
     --secondary-foreground: 60 4% 89%;
 
-    /* Muted — Grey 700 surface, Grey 500 label text */
+    /* Muted: Grey 700 surface; body text on dark lifted to #B8B8B8 for readability */
     --muted: 0 0% 22.7%;
-    --muted-foreground: 0 0% 43.1%;
+    --muted-foreground: 0 0% 72.2%;
 
-    /* Accent — Grey 700 */
+    /* Accent: Grey 700 */
     --accent: 0 0% 22.7%;
     --accent-foreground: 60 4% 89%;
 
@@ -51,7 +51,7 @@
     --card-shadow: 0 4px 24px -4px hsl(0 0% 0% / 0.24);
     --card-shadow-hover: 0 8px 32px -4px hsl(0 0% 0% / 0.32);
 
-    /* Paper — inverted (light) sections */
+    /* Paper: inverted (light) sections */
     --paper: 60 11% 96.5%;
     --paper-foreground: 0 0% 5.5%;
 
@@ -150,7 +150,7 @@
     text-wrap: balance;
   }
 
-  /* Neutral label style — gold is reserved, labels use Grey 500 */
+  /* Neutral label style: gold is reserved, labels use Grey 500 */
   .label-tag {
     @apply text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground;
   }
@@ -170,7 +170,7 @@
            pb-3 pt-2 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300;
   }
 
-  /* Figures only — sizes, offsets, load ratings, spec tables */
+  /* Figures only: sizes, offsets, load ratings, spec tables */
   .font-figure {
     font-family: 'Roboto Mono', ui-monospace, monospace;
   }

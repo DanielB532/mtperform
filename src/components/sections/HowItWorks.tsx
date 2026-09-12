@@ -5,38 +5,38 @@ const steps = [
     number: "01",
     title: "Tell Us What They're After",
     description:
-      "Every job starts differently. Maybe a wheel's damaged, maybe a customer has seen a design they want, or maybe you're offering premium wheels as an upgrade option. You bring us the request and we take it from there.",
+      "Bring us the request, whether it's a damaged wheel, a design a customer wants, or an upgrade you'd like to offer. We take it from there.",
   },
   {
     number: "02",
     title: "We Confirm the Fit",
     description:
-      "Share the vehicle details, or send us the diameter, width, and offset if you already have them. We confirm the exact specification before anything is costed, so there's no guesswork on either side.",
+      "Send the vehicle details, or the diameter, width and offset if you have them. The exact specification is confirmed before anything is costed.",
   },
   {
     number: "03",
     title: "Pick the Design",
     description:
-      "Browse the full catalogue or send us an image of a design your customer has in mind. Either way, we match it to the exact specification and confirm what's possible with the factory.",
+      "Browse the catalogue or send us an image. We match it to the specification and confirm what's possible with the factory.",
     link: { href: "/catalogue.html", label: "Browse the catalogue" },
   },
   {
     number: "04",
     title: "We Confirm the Fee",
     description:
-      "We confirm the finish, your freight choice of air or sea, the lead time that follows from it, and a clear flat sourcing fee, with nothing hidden and nothing left ambiguous. Specification is locked before anything goes to production.",
+      "Finish, freight choice of air or sea, lead time and our sourcing fee, all confirmed in writing before anything goes to production.",
   },
   {
     number: "05",
     title: "Delivered, Fitted, Invoiced",
     description:
-      "Wheels are dispatched directly from the factory to your workshop, with you as the importer of record throughout. You fit, invoice your customer, and keep the full relationship from start to finish.",
+      "Wheels are dispatched from the factory to your workshop. You fit, invoice your customer, and keep the relationship.",
   },
 ];
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="bg-secondary overflow-hidden">
+    <section id="how-it-works" className="bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -46,7 +46,7 @@ export const HowItWorks = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 lg:mb-28"
         >
-          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0]">
@@ -54,7 +54,7 @@ export const HowItWorks = () => {
           </h2>
         </motion.div>
 
-        {/* Steps — static render, no per-card animation to guarantee visibility */}
+        {/* Steps: static render, no per-card animation to guarantee visibility */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-grey700/60">
           {steps.map((step, index) => (
             <div

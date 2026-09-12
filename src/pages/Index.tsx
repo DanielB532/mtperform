@@ -72,7 +72,7 @@ const Index = () => {
         <HowItWorks />
         {/* 8. Sourcing Model */}
         <PartnershipModels />
-        {/* 9. Workshop objections — working with us */}
+        {/* 9. Workshop objections: working with us */}
         <WorkshopObjections />
         {/* 10. Product Categories / Catalogue */}
         <ProductCategories />

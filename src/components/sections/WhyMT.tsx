@@ -11,10 +11,11 @@ const pillars = [
   },
   {
     icon: TrendingDown,
-    stat: "Flat Fee",
+    stat: "No margin on the goods, ever.",
+    statement: true,
     label: "Fee Structure",
     description:
-      "Fees agreed upfront, with nothing hidden. You pay the factory directly; our fee covers sourcing, specification and coordination only.",
+      "Our fee is agreed upfront and varies by product. You always see exactly what we charge.",
   },
   {
     icon: MapPin,
@@ -27,7 +28,7 @@ const pillars = [
 
 export const WhyMT = () => {
   return (
-    <section id="why-mt" className="bg-background overflow-hidden">
+    <section id="why-mt" className="bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -37,7 +38,7 @@ export const WhyMT = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Why MT Sourcing Partners
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
@@ -58,8 +59,14 @@ export const WhyMT = () => {
             >
               <div className="mb-8">
                 <pillar.icon className="w-6 h-6 text-muted-foreground mb-6" strokeWidth={1.5} />
-                {/* Headline stat — one of the four permitted places for gold */}
-                <span className="text-5xl lg:text-6xl font-semibold text-gold tracking-tight font-figure">
+                {/* Headline stat, one of the four permitted places for gold */}
+                <span
+                  className={
+                    "statement" in pillar && pillar.statement
+                      ? "block text-3xl lg:text-4xl font-semibold text-gold tracking-tight leading-tight"
+                      : "text-5xl lg:text-6xl font-semibold text-gold tracking-tight font-figure"
+                  }
+                >
                   {pillar.stat}
                 </span>
                 <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase mt-2">

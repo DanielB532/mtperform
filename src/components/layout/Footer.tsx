@@ -11,7 +11,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-secondary border-t border-grey700/60">
+    <footer className="bg-background border-t border-grey700/60">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-20 lg:py-24">
         <div className="grid md:grid-cols-3 gap-16 mb-20">
           {/* Brand */}
@@ -22,7 +22,7 @@ export const Footer = () => {
               </span>
             </a>
             <p className="text-grey500 text-sm font-light leading-relaxed max-w-xs">
-              We source and specify forged wheels for UK workshops. Every specification is confirmed before production. Workshops import directly from the factory as the importer of record; we never take title to the goods.
+              A sourcing partner for the automotive trade, currently specialising in forged wheels. Every specification is confirmed before production. We never take title to the goods.
             </p>
           </div>
 

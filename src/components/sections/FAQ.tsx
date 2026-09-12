@@ -5,12 +5,17 @@ const faqs = [
   {
     question: "Is this trade-only?",
     answer:
-      "Yes. We work exclusively with automotive businesses — workshops, tyre centres, repair specialists and dealers. We don't handle enquiries from private individuals.",
+      "Yes. We work exclusively with automotive businesses: workshops, tyre centres, repair specialists and dealers. We don't handle enquiries from private individuals.",
   },
   {
     question: "What vehicles do you support?",
     answer:
-      "We focus on popular European platforms including Audi/VAG, BMW, and Mercedes. Coverage is expanding based on partner demand. Contact us for specific vehicle requirements.",
+      "Any vehicle. Every design can be customised to fit any car, from common platforms to rare and heavily modified builds. Send the vehicle details and we'll confirm the specification.",
+  },
+  {
+    question: "Who is the importer of record?",
+    answer:
+      "You are. The factory invoices you directly, your freight forwarder handles clearance and duty, and the delivered price covers it. We never take title to the goods; our fee covers sourcing, specification and coordination only.",
   },
   {
     question: "How do I request a sourcing quote?",
@@ -37,10 +42,10 @@ const faqs = [
     answer: (
       <div className="space-y-4">
         <p>
-          Air or sea freight is your choice on every specification — sea keeps the cost down, air gets the set to you faster.
+          Air or sea freight is your choice on every specification. Sea keeps the cost down, air gets the set to you faster.
         </p>
         <div>
-          <p className="text-foreground font-medium mb-1">Ready-made sets, in stock at the factory — the fastest route</p>
+          <p className="text-foreground font-medium mb-1">Ready-made sets, in stock at the factory. The fastest route.</p>
           <p>
             Around <span className="font-figure">5 weeks</span> by air, <span className="font-figure">8 to 10 weeks</span> by sea. No production wait.
           </p>
@@ -82,7 +87,7 @@ export const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               FAQ
             </p>
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-snug">

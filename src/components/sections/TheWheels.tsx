@@ -28,7 +28,7 @@ const features = [
 
 export const TheWheels = () => {
   return (
-    <section id="the-wheels" className="bg-background overflow-hidden">
+    <section id="the-wheels" className="bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* Image */}
@@ -54,7 +54,7 @@ export const TheWheels = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="order-1 lg:order-2"
           >
-            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Quality
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-12">
@@ -105,13 +105,13 @@ export const TheWheels = () => {
             />
           </div>
           <div>
-            <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Certified Forged
             </p>
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-6">
               Every wheel is stamped and traceable.
             </h3>
-            {/* Highlighted spec figures — one of the four permitted places for gold */}
+            {/* Highlighted spec figures: one of the four permitted places for gold */}
             <ul className="space-y-2 text-sm font-light mb-6">
               <li className="text-foreground">Forged</li>
               <li className="text-gold font-figure font-medium">19x8.5J</li>
@@ -134,7 +134,7 @@ export const TheWheels = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mt-24 lg:mt-32"
         >
-          <p className="text-muted-foreground text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
             Build Quality
           </p>
           <div className="grid sm:grid-cols-2 gap-6">

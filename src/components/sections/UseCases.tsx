@@ -34,7 +34,7 @@ const useCases = [
 
 export const UseCases = () => {
   return (
-    <section id="use-cases" className="bg-secondary overflow-hidden">
+    <section id="use-cases" className="bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -44,7 +44,7 @@ export const UseCases = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 lg:mb-24"
         >
-          <p className="text-grey500 text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0] max-w-xl">
