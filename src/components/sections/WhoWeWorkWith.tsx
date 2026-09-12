@@ -46,7 +46,7 @@ const businessTypes = [
 
 export const WhoWeWorkWith = () => {
   return (
-    <section id="who-we-work-with" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="who-we-work-with" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -60,14 +60,14 @@ export const WhoWeWorkWith = () => {
             Built for Trade
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
               Built for Automotive Businesses
             </h2>
             <div className="max-w-md">
-              <p className="text-muted-foreground text-base font-light leading-relaxed mb-4">
+              <p className="text-muted-foreground text-base font-medium leading-relaxed mb-4">
                 We partner with automotive businesses that need a reliable, premium wheel sourcing solution. From independent tyre fitters to multi-site operations, our model integrates with your workflow.
               </p>
-              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 Other fits include: performance tuners, wrap/PPF studios, detailing centres, bodyshops, specialist installers and independent retailers. If you fit or want to add wheels to what you offer, contact us as your business is most likely a fit.
               </p>
             </div>
@@ -89,21 +89,21 @@ export const WhoWeWorkWith = () => {
                 className="w-5 h-5 text-muted-foreground mb-8"
                 strokeWidth={1.5}
               />
-              <h3 className="text-foreground font-semibold text-base tracking-tight mb-5 leading-snug">
+              <h3 className="text-foreground font-bold text-base tracking-tight mb-5 leading-snug">
                 {business.title}
               </h3>
               <ul className="space-y-3 mb-8">
                 {business.bullets.map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="flex items-start gap-2.5">
                     <span className="text-muted-foreground mt-[5px] text-[8px]">●</span>
-                    <span className="text-muted-foreground text-sm font-light leading-relaxed">
+                    <span className="text-muted-foreground text-sm font-medium leading-relaxed">
                       {bullet}
                     </span>
                   </li>
                 ))}
               </ul>
               <div className="pt-6 border-t border-border">
-                <p className="text-xs text-muted-foreground font-light">
+                <p className="text-xs text-muted-foreground font-medium">
                   <span className="text-foreground font-medium">Ideal for:</span>{" "}
                   {business.idealFor}
                 </p>
@@ -118,7 +118,7 @@ export const WhoWeWorkWith = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-10 text-muted-foreground text-sm font-light"
+          className="mt-10 text-muted-foreground text-sm font-medium"
         >
           Can't see your business here?{" "}
           <a

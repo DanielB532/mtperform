@@ -68,9 +68,10 @@ export default {
         grey500: "#6E6E6E",
         grey300: "#C4C4C4",
         grey100: "#FFFFFF",
+        /* Gold rides --primary so .paper sections automatically darken it to #8A7038 */
         gold: {
-          DEFAULT: "#B8974A",
-          dim: "#8A7038",
+          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          dim: "hsl(var(--gold-dim) / <alpha-value>)",
         },
       },
       borderRadius: {

@@ -24,7 +24,7 @@ export const Hero = () => {
             <span className="text-gold">Sourcing Partners</span>
           </h1>
 
-          <p className="text-grey300 text-lg font-light leading-relaxed mb-10 max-w-2xl">
+          <p className="text-grey300 text-lg font-medium leading-relaxed mb-10 max-w-2xl">
             Currently specialising in forged wheels. We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
           </p>
 

@@ -77,7 +77,7 @@ const faqs = [
 
 export const FAQ = () => {
   return (
-    <section id="faq" className="paper bg-background border-t border-grey700 overflow-hidden">
+    <section id="faq" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-3 gap-16 lg:gap-24">
           {/* Left label */}
@@ -90,7 +90,7 @@ export const FAQ = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               FAQ
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-snug">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-snug">
               Common questions.
             </h2>
           </motion.div>
@@ -113,7 +113,7 @@ export const FAQ = () => {
                   <AccordionTrigger className="text-base font-medium text-foreground hover:text-[hsl(var(--gold-dim))] text-left py-6 tracking-tight">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground font-light leading-relaxed pb-6">
+                  <AccordionContent className="text-muted-foreground font-medium leading-relaxed pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

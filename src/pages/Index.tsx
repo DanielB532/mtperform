@@ -38,7 +38,7 @@ const FloatingCTA = () => {
         >
           <a
             href="#quote"
-            className="inline-flex items-center gap-2.5 bg-grey100 text-ink text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-all duration-200"
+            className="inline-flex items-center gap-2.5 bg-ink text-white border border-grey700 text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-[hsl(var(--gold-dim))] hover:text-white transition-all duration-200"
           >
             Request a Sourcing Quote
             <svg width="12" height="12" viewBox="0 0 14 14" fill="none">

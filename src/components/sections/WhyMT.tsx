@@ -28,7 +28,7 @@ const pillars = [
 
 export const WhyMT = () => {
   return (
-    <section id="why-mt" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="why-mt" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -41,7 +41,7 @@ export const WhyMT = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Why MT Sourcing Partners
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
             Premium product. Simple sourcing.
           </h2>
         </motion.div>
@@ -73,7 +73,7 @@ export const WhyMT = () => {
                   {pillar.label}
                 </p>
               </div>
-              <p className="text-muted-foreground text-base leading-relaxed font-light">
+              <p className="text-muted-foreground text-base leading-relaxed font-medium">
                 {pillar.description}
               </p>
             </motion.div>

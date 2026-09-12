@@ -28,7 +28,7 @@ const features = [
 
 export const TheWheels = () => {
   return (
-    <section id="the-wheels" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="the-wheels" className="bg-background border-t border-grey700 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* Image */}
@@ -57,7 +57,7 @@ export const TheWheels = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Quality
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-12">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] mb-12">
               Quality without compromise.
             </h2>
 
@@ -68,7 +68,7 @@ export const TheWheels = () => {
                   <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-2">
                     {point.label}
                   </p>
-                  <p className="text-muted-foreground font-light leading-relaxed">
+                  <p className="text-muted-foreground font-medium leading-relaxed">
                     {point.text}
                   </p>
                 </div>
@@ -81,7 +81,7 @@ export const TheWheels = () => {
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="w-3.5 h-3.5 text-muted-foreground mt-1 flex-shrink-0" strokeWidth={2.5} />
-                    <span className="text-foreground text-sm font-light">{feature}</span>
+                    <span className="text-foreground text-sm font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -108,11 +108,11 @@ export const TheWheels = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Certified Forged
             </p>
-            <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight mb-6">
               Every wheel is stamped and traceable.
             </h3>
             {/* Highlighted spec figures: one of the four permitted places for gold */}
-            <ul className="space-y-2 text-sm font-light mb-6">
+            <ul className="space-y-2 text-sm font-medium mb-6">
               <li className="text-foreground">Forged</li>
               <li className="text-gold font-figure font-medium">19x8.5J</li>
               <li className="text-gold font-figure font-medium">ET45</li>

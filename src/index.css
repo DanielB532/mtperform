@@ -66,10 +66,13 @@
     --sidebar-ring: 41 42% 38%;
   }
 
-  /* Paper (inverted) sections opt in with the .paper class instead of a dark-mode toggle */
+  /* Paper (light) sections opt in with the .paper class instead of a dark-mode toggle */
   .paper {
     --background: 60 11% 96.5%;
     --foreground: 0 0% 5.5%;
+
+    /* Gold darkens on light backgrounds; #B8974A goes muddy on white */
+    --primary: 41 42% 38%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 5.5%;
@@ -89,8 +92,9 @@
     --destructive: 60 5% 88%;
     --destructive-foreground: 0 0% 5.5%;
 
-    --border: 60 5% 85%;
-    --input: 60 5% 85%;
+    /* Borders and rules on light: #D8D8D6 */
+    --border: 60 2.5% 84.3%;
+    --input: 60 2.5% 84.3%;
   }
 }
 
@@ -116,6 +120,7 @@
     background-color: hsl(var(--background));
     font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 16px;
+    font-weight: 500;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -125,7 +130,7 @@
     font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.02em;
     line-height: 1.05;
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 

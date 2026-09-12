@@ -21,7 +21,7 @@ export const Footer = () => {
                 MT <span className="text-gold">SOURCING PARTNERS</span>
               </span>
             </a>
-            <p className="text-grey500 text-sm font-light leading-relaxed max-w-xs">
+            <p className="text-grey500 text-sm font-medium leading-relaxed max-w-xs">
               A sourcing partner for the automotive trade, currently specialising in forged wheels. Every specification is confirmed before production. We never take title to the goods.
             </p>
           </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-grey300 text-sm hover:text-grey100 transition-colors duration-200 font-light"
+                    className="text-grey300 text-sm hover:text-grey100 transition-colors duration-200 font-medium"
                   >
                     {link.label}
                   </a>
@@ -83,10 +83,10 @@ export const Footer = () => {
             Sourcing agent, not a manufacturer or importer.
           </p>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-grey500/70 text-xs font-light">
+            <p className="text-grey500/70 text-xs font-medium">
               © {new Date().getFullYear()} MT Sourcing Partners. All rights reserved. United Kingdom.
             </p>
-            <p className="text-grey500/70 text-xs font-light">
+            <p className="text-grey500/70 text-xs font-medium">
               Wheel sourcing &amp; specification · Trade only
             </p>
           </div>

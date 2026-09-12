@@ -48,15 +48,15 @@ const categories = [
 
 export const ProductCategories = () => {
   return (
-    <section id="product-categories" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="product-categories" className="bg-background border-t border-grey700 overflow-hidden">
       {/* Catalogue link: at top */}
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-grey100 tracking-tight leading-[1.05] mb-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-grey100 tracking-tight leading-[1.05] mb-3">
               Our Full Range. <span className="text-gold font-figure">613</span> Styles.
             </h2>
-            <p className="text-grey500 text-base font-light">
+            <p className="text-grey500 text-base font-medium">
               Every build, covered.
             </p>
           </div>
@@ -89,12 +89,12 @@ export const ProductCategories = () => {
                 alt={categories[0].label}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8">
                 <p className="text-grey300 text-xs font-semibold tracking-[0.15em] uppercase mb-2">
                   {categories[0].label}
                 </p>
-                <h3 className="text-grey100 text-2xl lg:text-3xl font-semibold tracking-tight mb-2">
+                <h3 className="text-grey100 text-2xl lg:text-3xl font-bold tracking-tight mb-2">
                   {categories[0].description}
                 </h3>
               </div>
@@ -117,7 +117,7 @@ export const ProductCategories = () => {
                   alt={cat.label}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-5">
                   <p className="text-grey300 text-[10px] font-semibold tracking-[0.15em] uppercase mb-1">
                     {cat.label}

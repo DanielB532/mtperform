@@ -43,7 +43,7 @@ const CellMark = ({ value }: { value: string }) => {
 
 export const ForgedComparison = () => {
   return (
-    <section id="forged-comparison" className="paper bg-background border-t border-grey700 overflow-hidden">
+    <section id="forged-comparison" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -130,10 +130,10 @@ export const ForgedComparison = () => {
               transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
               className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}
             >
-              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-3">
+              <h3 className="text-foreground font-bold text-xl tracking-tight mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground font-light leading-relaxed">
+              <p className="text-muted-foreground font-medium leading-relaxed">
                 {benefit.text}
               </p>
             </motion.div>

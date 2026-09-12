@@ -4,9 +4,9 @@ import { ArrowRight, Mail } from "lucide-react";
 import { openWhatsApp, sendEnquiryEmail, type EnquiryFields } from "@/lib/enquiries";
 
 const inputCls =
-  "w-full bg-transparent border-b border-grey700 text-grey100 placeholder:text-grey500 pb-3 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300";
+  "w-full bg-transparent border-b border-border text-foreground placeholder:text-muted-foreground/60 pb-3 text-base focus:outline-none focus:border-[hsl(var(--gold-dim))] transition-colors duration-300";
 const labelCls =
-  "block text-[11px] font-semibold tracking-[0.15em] uppercase text-grey300 mb-3";
+  "block text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-3";
 
 export const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +50,7 @@ export const QuoteForm = () => {
   };
 
   return (
-    <section id="quote" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="quote" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left: copy */}
@@ -58,13 +58,13 @@ export const QuoteForm = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Get Started
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0] mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] mb-8">
               Request a Sourcing Quote
             </h2>
-            <p className="text-grey300 text-lg font-light leading-relaxed mb-8 max-w-sm">
+            <p className="text-muted-foreground text-lg font-medium leading-relaxed mb-8 max-w-sm">
               Tell us who you are and what the job is. We'll come back to you directly with options and our sourcing fee, agreed upfront. Fees are quoted excluding VAT, which is reclaimable for VAT-registered businesses.
             </p>
-            <p className="text-grey500 text-sm font-light leading-relaxed mb-12 max-w-sm border-l-2 border-grey700 pl-4">
+            <p className="text-muted-foreground text-sm font-medium leading-relaxed mb-12 max-w-sm border-l-2 border-border pl-4">
               Don't worry about specs at this stage. The vehicle and a rough idea of what you're after is plenty. We'll work out the rest together.
             </p>
 
@@ -76,8 +76,8 @@ export const QuoteForm = () => {
                 "UK-based team, real communication",
               ].map((point, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-1 h-1 bg-grey500 rounded-full flex-shrink-0" />
-                  <span className="text-grey300 font-light">{point}</span>
+                  <div className="w-1 h-1 bg-muted-foreground rounded-full flex-shrink-0" />
+                  <span className="text-muted-foreground font-medium">{point}</span>
                 </div>
               ))}
             </div>
@@ -92,13 +92,13 @@ export const QuoteForm = () => {
           >
             {status === "whatsapp" || status === "emailed" ? (
               <div className="py-20 text-center">
-                <div className="w-12 h-12 bg-grey700/40 flex items-center justify-center mx-auto mb-6">
-                  <ArrowRight className="w-5 h-5 text-grey100" />
+                <div className="w-12 h-12 bg-muted flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-5 h-5 text-foreground" />
                 </div>
-                <h3 className="text-grey100 text-2xl font-semibold tracking-tight mb-3">
+                <h3 className="text-foreground text-2xl font-bold tracking-tight mb-3">
                   {status === "whatsapp" ? "Redirecting to WhatsApp" : "Enquiry sent"}
                 </h3>
-                <p className="text-grey500 text-base font-light">
+                <p className="text-muted-foreground text-base font-medium">
                   {status === "whatsapp"
                     ? "Hit send in WhatsApp to complete your enquiry. We'll get back to you shortly."
                     : "Your enquiry has landed in our inbox. We'll get back to you shortly."}
@@ -133,19 +133,19 @@ export const QuoteForm = () => {
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-all duration-200">
+                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-white transition-all duration-200">
                     Send via WhatsApp
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
-                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-grey100 text-sm font-semibold tracking-wide px-8 py-4 border border-grey700 hover:bg-white/10 transition-colors duration-200 disabled:opacity-50">
+                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-foreground text-sm font-semibold tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200 disabled:opacity-50">
                     {status === "sending" ? "Sending..." : "Send via Email"}
                     <Mail className="w-4 h-4" />
                   </button>
                 </div>
                 {status === "error" && (
-                  <p className="text-grey100 text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
+                  <p className="text-foreground text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
                 )}
-                <p className="text-grey500 text-xs font-light">
+                <p className="text-muted-foreground text-xs font-medium">
                   WhatsApp opens a prefilled chat for you to send. Email goes straight to our inbox.
                 </p>
               </form>

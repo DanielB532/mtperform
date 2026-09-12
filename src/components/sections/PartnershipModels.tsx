@@ -18,7 +18,7 @@ const models = [
 
 export const PartnershipModels = () => {
   return (
-    <section id="partnership" className="bg-secondary border-t border-grey700 overflow-hidden">
+    <section id="partnership" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -32,10 +32,10 @@ export const PartnershipModels = () => {
             Sourcing Model
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
               Flexible sourcing options.
             </h2>
-            <p className="text-muted-foreground text-base font-light max-w-sm leading-relaxed">
+            <p className="text-muted-foreground text-base font-medium max-w-sm leading-relaxed">
               We adapt to how you work, whether that's per-vehicle sourcing or holding fast-moving fitments in stock.
             </p>
           </div>
@@ -49,10 +49,10 @@ export const PartnershipModels = () => {
               className="group p-10 lg:p-16 border-r-0 md:border-r border-border last:border-r-0 hover:bg-muted/30 transition-colors duration-300"
             >
               <model.icon className="w-5 h-5 text-muted-foreground mb-10" strokeWidth={1.5} />
-              <h3 className="text-foreground font-semibold text-2xl tracking-tight mb-4">
+              <h3 className="text-foreground font-bold text-2xl tracking-tight mb-4">
                 {model.title}
               </h3>
-              <p className="text-foreground/80 font-light leading-relaxed">
+              <p className="text-foreground/80 font-medium leading-relaxed">
                 {model.description}
               </p>
             </div>

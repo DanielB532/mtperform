@@ -33,7 +33,7 @@ const objections = [
 
 export const WorkshopObjections = () => {
   return (
-    <section id="working-with-us" className="bg-background border-t border-grey700 overflow-hidden">
+    <section id="working-with-us" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
         <motion.div
@@ -46,13 +46,13 @@ export const WorkshopObjections = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Straight Answers
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-grey100 tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
             What workshop owners ask us first.
           </h2>
         </motion.div>
 
         {/* Objections */}
-        <div className="grid md:grid-cols-2 gap-0 border border-grey700/60">
+        <div className="grid md:grid-cols-2 gap-0 border border-border">
           {objections.map((objection, index) => (
             <motion.div
               key={index}
@@ -60,18 +60,18 @@ export const WorkshopObjections = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b border-grey700/60 md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-white/5 transition-colors duration-300 group"
+              className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group"
             >
               <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {objection.number}
               </span>
-              <p className="text-grey300 italic text-sm font-light leading-relaxed mb-4 border-l-2 border-grey700 pl-4">
+              <p className="text-muted-foreground italic text-sm font-medium leading-relaxed mb-4 border-l-2 border-border pl-4">
                 "{objection.quote}"
               </p>
-              <h3 className="text-grey100 font-semibold text-xl tracking-tight mb-4 leading-snug">
+              <h3 className="text-foreground font-bold text-xl tracking-tight mb-4 leading-snug">
                 {objection.title}
               </h3>
-              <p className="text-grey300 text-sm font-light leading-relaxed">
+              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 {objection.answer}
               </p>
             </motion.div>
