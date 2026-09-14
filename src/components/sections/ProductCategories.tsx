@@ -74,7 +74,8 @@ export const ProductCategories = () => {
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pb-28">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+        {/* Fixed row height on desktop so tiles fill their cell exactly and captions never clip */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 lg:auto-rows-[300px]">
           {/* Featured - Monoblock takes 2 cols + 2 rows on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
@@ -83,7 +84,7 @@ export const ProductCategories = () => {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative group overflow-hidden lg:col-span-2 lg:row-span-2 col-span-2"
           >
-            <div className="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] lg:min-h-[520px] relative overflow-hidden">
+            <div className="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] relative overflow-hidden">
               <img
                 src={categories[0].image}
                 alt={categories[0].label}
@@ -111,7 +112,7 @@ export const ProductCategories = () => {
               transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="relative group overflow-hidden"
             >
-              <div className="aspect-square relative overflow-hidden min-h-[200px]">
+              <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden min-h-[200px]">
                 <img
                   src={cat.image}
                   alt={cat.label}

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 import { openWhatsApp, sendEnquiryEmail, type EnquiryFields } from "@/lib/enquiries";
 
@@ -83,13 +82,8 @@ export const QuoteForm = () => {
             </div>
           </div>
 
-          {/* Right: form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          >
+          {/* Right: form. Static render so it is always fully visible. */}
+          <div>
             {status === "whatsapp" || status === "emailed" ? (
               <div className="py-20 text-center">
                 <div className="w-12 h-12 bg-muted flex items-center justify-center mx-auto mb-6">
@@ -150,7 +144,7 @@ export const QuoteForm = () => {
                 </p>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

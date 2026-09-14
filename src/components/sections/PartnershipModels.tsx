@@ -4,7 +4,7 @@ import { Package, Warehouse } from "lucide-react";
 const models = [
   {
     icon: Package,
-    title: "Per-Vehicle Sourcing",
+    title: "Per-Set Sourcing",
     description:
       "Specify wheels as you need them and each one is sourced, specified with the factory, and dispatched directly to your workshop or customer. There's no minimum batch size and no stock risk.",
   },
@@ -36,7 +36,7 @@ export const PartnershipModels = () => {
               Flexible sourcing options.
             </h2>
             <p className="text-muted-foreground text-base font-medium max-w-sm leading-relaxed">
-              We adapt to how you work, whether that's per-vehicle sourcing or holding fast-moving fitments in stock.
+              We adapt to how you work, whether that's per-set sourcing or holding fast-moving fitments in stock.
             </p>
           </div>
         </motion.div>

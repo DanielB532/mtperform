@@ -51,15 +51,11 @@ export const WorkshopObjections = () => {
           </h2>
         </motion.div>
 
-        {/* Objections */}
+        {/* Objections: static render so every card is always fully visible */}
         <div className="grid md:grid-cols-2 gap-0 border border-border">
           {objections.map((objection, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group"
             >
               <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
@@ -74,7 +70,7 @@ export const WorkshopObjections = () => {
               <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 {objection.answer}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

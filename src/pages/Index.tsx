@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { Manufacturer } from "@/components/sections/Manufacturer";
 import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { UseCases } from "@/components/sections/UseCases";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -12,44 +13,6 @@ import { PartnershipModels } from "@/components/sections/PartnershipModels";
 import { WorkshopObjections } from "@/components/sections/WorkshopObjections";
 import { FAQ } from "@/components/sections/FAQ";
 import { QuoteForm } from "@/components/sections/QuoteForm";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const FloatingCTA = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > window.innerHeight * 0.6);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-8 right-8 z-50"
-        >
-          <a
-            href="#quote"
-            className="inline-flex items-center gap-2.5 bg-ink text-white border border-grey700 text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-[hsl(var(--gold-dim))] hover:text-white transition-all duration-200"
-          >
-            Request a Sourcing Quote
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
 
 const Index = () => {
   return (
@@ -58,31 +21,32 @@ const Index = () => {
       <main>
         {/* 1. Hero */}
         <Hero />
-        {/* 2. Intro / Who We Work With */}
+        {/* 2. The Manufacturer */}
+        <Manufacturer />
+        {/* 3. Intro / Who We Work With */}
         <WhoWeWorkWith />
-        {/* 3. Use Cases */}
+        {/* 4. Use Cases */}
         <UseCases />
-        {/* 4. Quality section */}
+        {/* 5. Quality section */}
         <TheWheels />
-        {/* 5. Why 6061-T6 Forged comparison */}
+        {/* 6. Why 6061-T6 Forged comparison */}
         <ForgedComparison />
-        {/* 6. Why MT Sourcing Partners */}
+        {/* 7. Why MT Sourcing Partners */}
         <WhyMT />
-        {/* 7. Process */}
+        {/* 8. Process */}
         <HowItWorks />
-        {/* 8. Sourcing Model */}
+        {/* 9. Sourcing Model */}
         <PartnershipModels />
-        {/* 9. Workshop objections: working with us */}
+        {/* 10. Workshop objections: working with us */}
         <WorkshopObjections />
-        {/* 10. Product Categories / Catalogue */}
+        {/* 11. Product Categories / Catalogue */}
         <ProductCategories />
-        {/* 10. FAQ */}
+        {/* 12. FAQ */}
         <FAQ />
-        {/* 11. Request a Quote Form */}
+        {/* 13. Request a Quote Form */}
         <QuoteForm />
       </main>
       <Footer />
-      <FloatingCTA />
     </div>
   );
 };
