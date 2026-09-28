@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Eye } from "lucide-react";
 
 const categories = [
@@ -74,21 +73,15 @@ export const ProductCategories = () => {
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pb-28">
-        {/* Fixed row height on desktop so tiles fill their cell exactly and captions never clip */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 lg:auto-rows-[300px]">
+        {/* Small tiles are square to match the square product photos, so nothing is cropped; the featured tile stretches to fill two rows */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
           {/* Featured - Monoblock takes 2 cols + 2 rows on desktop */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative group overflow-hidden lg:col-span-2 lg:row-span-2 col-span-2"
-          >
-            <div className="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] relative overflow-hidden">
+          <div className="relative group overflow-hidden lg:col-span-2 lg:row-span-2 col-span-2">
+            <div className="aspect-[4/3] lg:aspect-auto lg:h-full relative overflow-hidden">
               <img
                 src={categories[0].image}
                 alt={categories[0].label}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8">
@@ -100,23 +93,16 @@ export const ProductCategories = () => {
                 </h3>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Remaining 4 categories */}
           {categories.slice(1).map((cat, index) => (
-            <motion.div
-              key={cat.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group overflow-hidden"
-            >
-              <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden min-h-[200px]">
+            <div key={cat.id} className="relative group overflow-hidden">
+              <div className="aspect-square relative overflow-hidden">
                 <img
                   src={cat.image}
                   alt={cat.label}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-5">
@@ -128,7 +114,7 @@ export const ProductCategories = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

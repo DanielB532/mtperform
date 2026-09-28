@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Wrench, Settings, Car, Building2 } from "lucide-react";
 
 const businessTypes = [
@@ -49,13 +48,7 @@ export const WhoWeWorkWith = () => {
     <section id="who-we-work-with" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 lg:mb-24"
-        >
+        <div className="mb-16 lg:mb-24">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Built for Trade
           </p>
@@ -72,19 +65,12 @@ export const WhoWeWorkWith = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Business Type Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-border">
           {businessTypes.map((business, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group p-8 lg:p-10 border-b lg:border-b-0 last:border-b-0 border-r-0 md:border-r border-border hover:bg-muted/30 transition-colors duration-300"
-            >
+            <div key={index} className="group p-8 lg:p-10 border-b lg:border-b-0 last:border-b-0 border-r-0 md:border-r border-border hover:bg-muted/30 transition-colors duration-300">
               <business.icon
                 className="w-5 h-5 text-muted-foreground mb-8"
                 strokeWidth={1.5}
@@ -108,18 +94,12 @@ export const WhoWeWorkWith = () => {
                   {business.idealFor}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Catch-all */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-10 text-muted-foreground text-sm font-medium"
-        >
+        <p className="mt-10 text-muted-foreground text-sm font-medium">
           Can't see your business here?{" "}
           <a
             href="https://wa.me/qr/TRWCW5YU5KKIP1"
@@ -130,7 +110,7 @@ export const WhoWeWorkWith = () => {
             Message us on WhatsApp
           </a>{" "}
           anyway. We can probably accommodate you.
-        </motion.p>
+        </p>
       </div>
     </section>
   );

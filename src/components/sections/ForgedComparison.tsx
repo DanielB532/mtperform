@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Check, X, Minus, AlertTriangle } from "lucide-react";
 
 const criteria = [
@@ -46,29 +45,17 @@ export const ForgedComparison = () => {
     <section id="forged-comparison" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14 lg:mb-20"
-        >
+        <div className="mb-14 lg:mb-20">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-[0.95] max-w-3xl">
             Why 6061-T6 forged?
           </h2>
-        </motion.div>
+        </div>
 
         {/* Comparison table: dark on light */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-x-auto mb-16 lg:mb-24"
-        >
+        <div className="overflow-x-auto mb-16 lg:mb-24">
           <table className="w-full min-w-[640px] border-collapse text-sm">
             <thead>
               <tr className="border-b border-border">
@@ -117,37 +104,24 @@ export const ForgedComparison = () => {
           <p className="text-muted-foreground text-xs mt-4">
             Partial marks: flow-formed wheels only strengthen the outer barrel. The centre of the wheel is still cast.
           </p>
-        </motion.div>
+        </div>
 
         {/* Benefits */}
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
           {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}
-            >
+            <div key={index} className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}>
               <h3 className="text-foreground font-bold text-xl tracking-tight mb-3">
                 {benefit.title}
               </h3>
               <p className="text-muted-foreground font-medium leading-relaxed">
                 {benefit.text}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Link to catalogue */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16"
-        >
+        <div className="mt-16">
           <a
             href="/catalogue.html"
             target="_blank"
@@ -156,7 +130,7 @@ export const ForgedComparison = () => {
           >
             Convinced? See the full range
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

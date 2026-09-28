@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const qualityPoints = [
@@ -32,28 +31,16 @@ export const TheWheels = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative order-2 lg:order-1 overflow-hidden"
-          >
+          <div className="relative order-2 lg:order-1 overflow-hidden">
             <img
               src="/mtp-wheel-front.jpg"
               alt="Premium forged wheel detail"
               className="w-full h-auto max-h-[400px] md:max-h-[500px] object-contain mx-auto"
             />
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="order-1 lg:order-2"
-          >
+          <div className="order-1 lg:order-2">
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Quality
             </p>
@@ -86,17 +73,11 @@ export const TheWheels = () => {
                 ))}
               </ul>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Forged Stamp */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-24 lg:mt-32 grid lg:grid-cols-2 gap-16 lg:gap-28 items-center"
-        >
+        <div className="mt-24 lg:mt-32 grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           <div className="overflow-hidden">
             <img
               src="/mtp-forged-stamp.jpg"
@@ -124,16 +105,10 @@ export const TheWheels = () => {
               Mill test reports available on request.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Build Quality */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-24 lg:mt-32"
-        >
+        <div className="mt-24 lg:mt-32">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6 text-center">
             Build Quality
           </p>
@@ -153,7 +128,7 @@ export const TheWheels = () => {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

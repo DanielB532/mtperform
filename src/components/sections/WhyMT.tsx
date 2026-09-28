@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Award, TrendingDown, MapPin } from "lucide-react";
 
 const pillars = [
@@ -31,32 +30,19 @@ export const WhyMT = () => {
     <section id="why-mt" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 lg:mb-24"
-        >
+        <div className="mb-16 lg:mb-24">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Why MT Sourcing Partners
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
             Premium product. Simple sourcing.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Pillars */}
         <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
           {pillars.map((pillar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="group px-0 md:px-12 first:pl-0 last:pr-0 py-12 md:py-0"
-            >
+            <div key={index} className="group px-0 md:px-12 first:pl-0 last:pr-0 py-12 md:py-0">
               <div className="mb-8">
                 <pillar.icon className="w-6 h-6 text-muted-foreground mb-6" strokeWidth={1.5} />
                 {/* Headline stat, one of the four permitted places for gold */}
@@ -76,7 +62,7 @@ export const WhyMT = () => {
               <p className="text-muted-foreground text-base leading-relaxed font-medium">
                 {pillar.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 const objections = [
   {
@@ -36,28 +35,19 @@ export const WorkshopObjections = () => {
     <section id="working-with-us" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 lg:mb-24"
-        >
+        <div className="mb-16 lg:mb-24">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Straight Answers
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
             What workshop owners ask us first.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Objections: static render so every card is always fully visible */}
         <div className="grid md:grid-cols-2 gap-0 border border-border">
           {objections.map((objection, index) => (
-            <div
-              key={index}
-              className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group"
-            >
+            <div key={index} className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group">
               <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {objection.number}
               </span>

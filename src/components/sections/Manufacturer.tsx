@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 const proofPoints = [
   {
@@ -32,13 +31,7 @@ export const Manufacturer = () => {
     <section id="manufacturer" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 lg:mb-24"
-        >
+        <div className="mb-16 lg:mb-24">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Manufacturer
           </p>
@@ -50,15 +43,12 @@ export const Manufacturer = () => {
               We work with a single forge in China with over 15 years in the industry, chosen after checking the things that actually matter. Here is what sits behind every set we source.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Proof point grid: static render so every card is always visible */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border border-border">
           {proofPoints.map((point, index) => (
-            <div
-              key={index}
-              className="p-8 lg:p-10 border-b border-border md:[&:nth-child(odd)]:border-r lg:[&:nth-child(3n+1)]:border-r lg:[&:nth-child(3n+2)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+4)]:border-b-0 md:[&:nth-child(n+5)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300"
-            >
+            <div key={index} className="p-8 lg:p-10 border-b border-border md:[&:nth-child(odd)]:border-r lg:[&:nth-child(3n+1)]:border-r lg:[&:nth-child(3n+2)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+4)]:border-b-0 md:[&:nth-child(n+5)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300">
               <h3 className="text-foreground font-bold text-lg tracking-tight mb-3 leading-snug">
                 {point.title}
               </h3>

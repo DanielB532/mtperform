@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -39,28 +38,19 @@ export const HowItWorks = () => {
     <section id="how-it-works" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 lg:mb-28"
-        >
+        <div className="mb-20 lg:mb-28">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0]">
             A specified process, start to finish.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Steps: static render, no per-card animation to guarantee visibility */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-border">
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-border last:border-r-0"
-            >
+            <div key={index} className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-border last:border-r-0">
               <span className="text-gold font-figure text-xs font-semibold tracking-[0.2em] block mb-8">
                 {step.number}
               </span>

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 const useCases = [
@@ -37,32 +36,19 @@ export const UseCases = () => {
     <section id="use-cases" className="paper bg-background border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 lg:mb-24"
-        >
+        <div className="mb-16 lg:mb-24">
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
             When your customer walks in with this.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Use Cases */}
         <div className="grid md:grid-cols-2 gap-0 border border-border">
           {useCases.map((useCase, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group"
-            >
+            <div key={index} className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group">
               <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
@@ -75,18 +61,12 @@ export const UseCases = () => {
               <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 {useCase.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Link to forged comparison */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12"
-        >
+        <div className="mt-12">
           <a
             href="#forged-comparison"
             className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
@@ -94,7 +74,7 @@ export const UseCases = () => {
             Not sure why forged is worth it long term? See how it stacks up
             <ArrowDown className="w-4 h-4" />
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
