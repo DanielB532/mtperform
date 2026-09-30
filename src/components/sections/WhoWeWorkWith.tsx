@@ -98,6 +98,16 @@ export const WhoWeWorkWith = () => {
           ))}
         </div>
 
+        {/* Branded centre caps */}
+        <div className="border border-t-0 border-border p-8 lg:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-12">
+          <h3 className="text-foreground font-bold text-xl lg:text-2xl tracking-tight leading-snug">
+            Your brand, on every wheel.
+          </h3>
+          <p className="text-muted-foreground text-sm font-medium leading-relaxed max-w-xl">
+            Custom centre caps with your logo, so the wheels your customers drive away on carry your name.
+          </p>
+        </div>
+
         {/* Catch-all */}
         <p className="mt-10 text-muted-foreground text-sm font-medium">
           Can't see your business here?{" "}

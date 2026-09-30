@@ -21,7 +21,6 @@ const features = [
   '15" to 26" rim sizes available',
   "Vehicle-specific fitments",
   "Multiple designs and finishes",
-  "OEM+ quality standards",
   "Construction options: Monoblock, 2-piece, 3-piece, wrapped carbon fibre, full carbon fibre.",
 ];
 

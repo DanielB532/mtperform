@@ -18,9 +18,9 @@ const useCases = [
   {
     number: "03",
     quote: "I've seen this exact wheel and I want it on my car.",
-    title: "Build Something Specific",
+    title: "Build something specific.",
     description:
-      "You're no longer limited to like-for-like replacements. Take a photo of any design your customer wants, send it over, and we'll take it to the factory to have it replicated and adapted to fit their vehicle. It means you can say yes to the bespoke jobs you'd normally have to turn away.",
+      "Have a customer who wants something nobody else has? Send us a reference photo and the car, and we'll work with the factory on a custom design. The manufacturer signs an NDA on your design, so it's never made for anyone else.",
   },
   {
     number: "04",
