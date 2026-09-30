@@ -2,6 +2,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Manufacturer } from "@/components/sections/Manufacturer";
+import { BuiltToSpec } from "@/components/sections/BuiltToSpec";
+import { Testing } from "@/components/sections/Testing";
 import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { UseCases } from "@/components/sections/UseCases";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -23,6 +25,8 @@ const Index = () => {
         <Hero />
         {/* 2. The Manufacturer */}
         <Manufacturer />
+        {/* 2b. Built to your spec */}
+        <BuiltToSpec />
         {/* 3. Intro / Who We Work With */}
         <WhoWeWorkWith />
         {/* 4. Use Cases */}
@@ -31,6 +35,8 @@ const Index = () => {
         <TheWheels />
         {/* 6. Why 6061-T6 Forged comparison */}
         <ForgedComparison />
+        {/* 6b. Testing */}
+        <Testing />
         {/* 7. Why MT Sourcing Partners */}
         <WhyMT />
         {/* 8. Process */}

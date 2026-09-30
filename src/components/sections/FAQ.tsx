@@ -34,7 +34,7 @@ const faqs = [
   {
     question: "What if the design I want isn't in the catalogue?",
     answer:
-      "Send us an image of the design you're after and we'll take it to the factory to have it replicated to your specification.",
+      "Send us a reference photo and the car, and we'll work with the factory on a custom design to your specification. The manufacturer signs an NDA on your design, so it's never made for anyone else.",
   },
   {
     question: "What are the lead times?",

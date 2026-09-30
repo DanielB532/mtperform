@@ -10,22 +10,17 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="max-w-4xl"
         >
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-8"
-          >
-            Sourcing for the Automotive Trade
-          </motion.p>
-
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.0] mb-8 uppercase">
+          <p className="text-xl md:text-2xl font-bold tracking-tight uppercase mb-6">
             <span className="text-grey100">MT </span>
             <span className="text-gold">Sourcing Partners</span>
+          </p>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-8 text-grey100">
+            Forged wheels, specified for your customer's car and sourced direct from a vetted factory.
           </h1>
 
           <p className="text-grey300 text-lg font-medium leading-relaxed mb-10 max-w-2xl">
-            Currently specialising in forged wheels. We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
+            We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
           </p>
 
           {/* Specification detail, small mono type */}
@@ -35,7 +30,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="font-figure text-grey500 text-xs sm:text-sm tracking-[0.12em] uppercase mb-12"
           >
-            Forged &middot; 19 &times; 8.5J &middot; ET 45 &middot; PCD 5&times;112 &middot; CB 57.1 &middot; Max load 750 kg
+            Example spec: 19 &times; 8.5J &middot; ET45 &middot; PCD 5&times;112 &middot; CB 57.1 &middot; Max load 750kg
           </motion.p>
 
           <motion.div

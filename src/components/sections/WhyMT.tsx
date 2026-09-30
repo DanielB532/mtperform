@@ -1,12 +1,12 @@
-import { Award, TrendingDown, MapPin } from "lucide-react";
+import { Crosshair, TrendingDown, MapPin } from "lucide-react";
 
 const pillars = [
   {
-    icon: Award,
-    stat: "OEM+",
-    label: "Quality Standards",
+    icon: Crosshair,
+    stat: "50µm",
+    label: "Tolerances",
     description:
-      "Every wheel is manufactured from forged 6061-T6 aluminium alloy to exceed OEM tolerances, so you get consistent quality on every specification we source.",
+      "Every wheel is held to 50 microns, against the 80-micron industry standard, and vibration tested before it leaves the factory.",
   },
   {
     icon: TrendingDown,
