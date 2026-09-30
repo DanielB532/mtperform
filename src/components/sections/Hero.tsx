@@ -15,9 +15,13 @@ export const Hero = () => {
             <span className="text-gold">Sourcing Partners</span>
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-8 text-grey100">
-            Forged wheels, specified for your customer's car and sourced direct from a vetted factory.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-grey100">
+            We connect you to a trusted forged wheel supplier.
           </h1>
+
+          <p className="text-grey100 text-xl md:text-2xl font-semibold tracking-tight leading-snug mb-6 max-w-3xl">
+            Forged wheels, specified for your customer's car and sourced direct from a vetted factory.
+          </p>
 
           <p className="text-grey300 text-lg font-medium leading-relaxed mb-10 max-w-2xl">
             We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
