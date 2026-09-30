@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm",
+        default: "bg-foreground text-background hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 rounded-sm",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-sm",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-sm",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-sm",
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-sm",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-foreground underline-offset-4 hover:underline hover:text-[hsl(var(--gold-dim))]",
         // Premium B2B variants
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-none uppercase tracking-wider font-semibold",
-        heroOutline: "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-none uppercase tracking-wider font-semibold",
+        hero: "bg-foreground text-background hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 rounded-none uppercase tracking-wider font-semibold",
+        heroOutline: "border-2 border-foreground text-foreground hover:bg-foreground hover:text-background rounded-none uppercase tracking-wider font-semibold",
         heroDark: "bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-none uppercase tracking-wider font-semibold",
         subtle: "bg-muted text-foreground hover:bg-muted/80 rounded-sm",
       },

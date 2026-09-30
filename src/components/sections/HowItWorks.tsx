@@ -1,73 +1,76 @@
-import { motion } from "framer-motion";
 
 const steps = [
   {
     number: "01",
-    title: "Replacement Required",
+    title: "Tell Us What They're After",
     description:
-      "Your customer needs a wheel replacement due to damage, safety, or upgrade.",
+      "Bring us the request, whether it's a damaged wheel, a design a customer wants, or an upgrade you'd like to offer. We take it from there.",
   },
   {
     number: "02",
-    title: "Select Vehicle-Specific Fit",
+    title: "We Confirm the Fit",
     description:
-      "Choose the correct specification for popular platforms including Audi, BMW, Mercedes.",
+      "Send the vehicle details, or the diameter, width and offset if you have them. The exact specification is confirmed before anything is costed.",
   },
   {
     number: "03",
-    title: "Confirm Spec & Finish",
+    title: "Pick the Design",
     description:
-      "Finalise size, finish, and delivery. Build-to-order or from stock options available.",
+      "Browse the catalogue or send us an image. We match it to the specification and confirm what's possible with the factory.",
+    link: { href: "/catalogue.html", label: "Browse the catalogue" },
   },
   {
     number: "04",
-    title: "Fulfilment & Delivery",
+    title: "We Confirm the Fee",
     description:
-      "Wheels delivered to your workshop. You fit, balance, and retain the customer relationship.",
+      "Finish, freight choice of air or sea, lead time and our sourcing fee, all confirmed in writing before anything goes to production.",
+  },
+  {
+    number: "05",
+    title: "Delivered, Fitted, Invoiced",
+    description:
+      "Wheels are dispatched from the factory to your workshop. You fit, invoice your customer, and keep the relationship.",
   },
 ];
 
 export const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="bg-secondary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+    <section id="how-it-works" className="paper bg-background border-t border-border overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 lg:mb-28"
-        >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+        <div className="mb-20 lg:mb-28">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.0]">
-            Four steps to supply.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0]">
+            A specified process, start to finish.
           </h2>
-        </motion.div>
+        </div>
 
-        {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/8">
+        {/* Steps: static render, no per-card animation to guarantee visibility */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0 border border-border">
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-white/8 last:border-r-0"
-            >
-              <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
+            <div key={index} className="p-8 lg:p-10 border-b lg:border-b-0 border-r-0 md:border-r border-border last:border-r-0">
+              <span className="text-gold font-figure text-xs font-semibold tracking-[0.2em] block mb-8">
                 {step.number}
               </span>
-              <h3 className="text-white font-semibold text-lg tracking-tight mb-4 leading-snug">
+              <h3 className="text-foreground font-bold text-lg tracking-tight mb-4 leading-snug">
                 {step.title}
               </h3>
-              <p className="text-white/35 text-sm font-light leading-relaxed">
+              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 {step.description}
               </p>
-            </motion.div>
+              {"link" in step && step.link && (
+                <a
+                  href={step.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-muted-foreground text-sm font-medium hover:text-[hsl(var(--gold-dim))] hover:underline"
+                >
+                  {step.link.label} &rarr;
+                </a>
+              )}
+            </div>
           ))}
         </div>
       </div>

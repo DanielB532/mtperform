@@ -1,0 +1,137 @@
+import { Check, X, Minus, AlertTriangle } from "lucide-react";
+
+const criteria = [
+  { label: "Stands up to UK potholes", forged: "yes", cast: "no", flow: "partial", highlight: true },
+  { label: "Better fuel economy and EV range", forged: "yes", cast: "no", flow: "partial" },
+  { label: "Up to 30% lighter at the same size", forged: "yes", cast: "no", flow: "partial" },
+  { label: "Bends rather than cracks on impact", forged: "yes", cast: "no", flow: "partial" },
+  { label: "No internal air pockets (zero porosity)", forged: "yes", cast: "no", flow: "no" },
+  { label: "Strong under repeated everyday stress", forged: "yes", cast: "no", flow: "partial" },
+  { label: "Strengthened through the whole wheel", forged: "yes", cast: "no", flow: "no" },
+  { label: "Slim spoke designs without losing strength", forged: "yes", cast: "no", flow: "no" },
+];
+
+const benefits = [
+  {
+    title: "Built for British roads.",
+    text: "UK roads are rough on wheels and everyone knows it. When a cast wheel hits a bad pothole it can crack, and a cracked wheel is finished. Forged 6061-T6 bends before it breaks, so it can usually be repaired and you keep driving.",
+  },
+  {
+    title: "Lighter wheels save you money every mile.",
+    text: "Forged wheels are up to 30% lighter than cast, so your car uses less energy to keep them turning. That means better fuel economy, extra range in an EV, and a car that feels sharper to drive and quicker to stop.",
+  },
+  {
+    title: "Protect your finance deal.",
+    text: "On PCP or a lease, you can store your factory wheels at home and run these instead. Refit the originals in perfect condition at handback and avoid any charges, because scraped alloys are one of the first things that get noticed on a used car. The forged set holds its value well enough to recoup a good chunk of what you paid for it.",
+  },
+  {
+    title: "Add value when you move the car on.",
+    text: "Keep the wheels on and your car presents better and holds its price in any negotiation. Or pass the set on separately, because good forged wheels keep real value on the used market in a way cast and replica wheels don't.",
+  },
+  {
+    title: "They look incredible too.",
+    text: "Forging lets us specify slimmer, sharper spoke designs that cast wheels can't match at the same strength. The looks are the bonus rather than the whole point, because the same properties that make them look aggressive also make them stronger and lighter.",
+  },
+];
+
+const CellMark = ({ value }: { value: string }) => {
+  if (value === "yes") return <Check className="w-5 h-5 text-foreground mx-auto" strokeWidth={2.5} />;
+  if (value === "partial") return <Minus className="w-4 h-4 text-foreground/40 mx-auto" strokeWidth={2.5} />;
+  return <X className="w-4 h-4 text-foreground/40 mx-auto" strokeWidth={2.5} />;
+};
+
+export const ForgedComparison = () => {
+  return (
+    <section id="forged-comparison" className="paper bg-background border-t border-border overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
+        {/* Header */}
+        <div className="mb-14 lg:mb-20">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+            The Material Matters
+          </p>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-[0.95] max-w-3xl">
+            Why 6061-T6 forged?
+          </h2>
+        </div>
+
+        {/* Comparison table: dark on light */}
+        <div className="overflow-x-auto mb-16 lg:mb-24">
+          <table className="w-full min-w-[640px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-4 pr-4 font-medium text-muted-foreground text-xs tracking-wide uppercase w-[38%]">
+                  Criteria
+                </th>
+                <th className="text-center py-4 px-3 bg-muted/70 border-t-2 border-t-foreground">
+                  <span className="block text-foreground font-semibold">6061-T6 Forged</span>
+                  <span className="block text-muted-foreground text-[11px] font-medium mt-0.5">What we source</span>
+                </th>
+                <th className="text-center py-4 px-3">
+                  <span className="block text-foreground/80 font-medium">Cast</span>
+                  <span className="block text-muted-foreground text-[11px] mt-0.5">Most OEM &amp; budget</span>
+                </th>
+                <th className="text-center py-4 px-3">
+                  <span className="block text-foreground/80 font-medium">Flow-formed</span>
+                  <span className="block text-muted-foreground text-[11px] mt-0.5">Mid-tier</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {criteria.map((row, i) => (
+                <tr
+                  key={i}
+                  className={`border-b border-border ${row.highlight ? "bg-muted/40" : ""}`}
+                >
+                  <td className={`py-4 pr-4 ${row.highlight ? "text-foreground font-semibold" : "text-muted-foreground"}`}>
+                    {row.highlight && (
+                      <AlertTriangle className="w-4 h-4 text-foreground/50 inline-block mr-2 -mt-0.5" strokeWidth={2} />
+                    )}
+                    {row.label}
+                  </td>
+                  <td className="py-4 px-3 bg-muted/50">
+                    <CellMark value={row.forged} />
+                  </td>
+                  <td className="py-4 px-3">
+                    <CellMark value={row.cast} />
+                  </td>
+                  <td className="py-4 px-3">
+                    <CellMark value={row.flow} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-muted-foreground text-xs mt-4">
+            Partial marks: flow-formed wheels only strengthen the outer barrel. The centre of the wheel is still cast.
+          </p>
+        </div>
+
+        {/* Benefits */}
+        <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+          {benefits.map((benefit, index) => (
+            <div key={index} className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}>
+              <h3 className="text-foreground font-bold text-xl tracking-tight mb-3">
+                {benefit.title}
+              </h3>
+              <p className="text-muted-foreground font-medium leading-relaxed">
+                {benefit.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Link to catalogue */}
+        <div className="mt-16">
+          <a
+            href="/catalogue.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
+          >
+            Convinced? See the full range
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};

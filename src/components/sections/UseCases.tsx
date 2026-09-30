@@ -1,68 +1,79 @@
-import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 const useCases = [
   {
     number: "01",
-    title: "Beyond Repair",
+    quote: "I'm on PCP and I'm scared of getting charged for wheel damage when I hand it back.",
+    title: "Protect a Finance Deal",
     description:
-      "When a wheel is structurally compromised or cosmetically beyond economical repair, offer a premium replacement instead of referring the customer elsewhere.",
+      "Use this angle with your customers. Offer them a forged set to run day-to-day while the original wheels stay boxed and pristine for handback, so they dodge the end-of-deal damage charges entirely. At the end of the finance deal they can take the forged set off and pass it on, recouping a good chunk of what they paid. It's an add-on most of your competitors won't be offering.",
   },
   {
     number: "02",
-    title: "Premium Over Aftermarket",
+    quote: "I've cracked another wheel on a pothole and I'm sick of replacing them.",
+    title: "Survive UK Roads",
     description:
-      "Low-quality aftermarket wheels carry reputation risk. Offer OEM+ forged alternatives that reflect your professional standards.",
+      "Cast wheels crack on a hard pothole hit, and a cracked wheel is scrap. Forged 6061-T6 bends before it breaks, so it takes the punishment UK roads dish out and usually survives repairable. For any customer tired of the pothole lottery, this is the practical fix.",
   },
   {
     number: "03",
-    title: "OEM+ Upgrades",
+    quote: "I've seen this exact wheel and I want it on my car.",
+    title: "Build something specific.",
     description:
-      "Vehicle-specific fitments at competitive lead times, with quality that meets or exceeds original specifications. No main dealer wait times.",
+      "Have a customer who wants something nobody else has? Send us a reference photo and the car, and we'll work with the factory on a custom design. The manufacturer signs an NDA on your design, so it's never made for anyone else.",
+  },
+  {
+    number: "04",
+    quote: "I just want my car to look sharper and hold its value.",
+    title: "Upgrade & Add Value",
+    description:
+      "Some customers aren't replacing anything, they simply want an upgrade. A clean forged set makes a car present better and hold its value stronger, whether they keep them on or move the set on separately down the line.",
   },
 ];
 
 export const UseCases = () => {
   return (
-    <section id="use-cases" className="bg-muted/20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-32 lg:py-40">
+    <section id="use-cases" className="paper bg-background border-t border-border overflow-hidden">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 py-24 lg:py-32">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 lg:mb-28"
-        >
-          <p className="text-primary text-xs font-semibold tracking-[0.2em] uppercase mb-5">
+        <div className="mb-16 lg:mb-24">
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
-            When premium replacement makes sense.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            When your customer walks in with this.
           </h2>
-        </motion.div>
+        </div>
 
         {/* Use Cases */}
-        <div className="grid md:grid-cols-3 gap-0 border border-border">
+        <div className="grid md:grid-cols-2 gap-0 border border-border">
           {useCases.map((useCase, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="p-8 lg:p-12 border-b md:border-b-0 border-r-0 md:border-r border-border last:border-r-0 hover:bg-background transition-colors duration-300 group"
-            >
-              <span className="text-primary text-xs font-semibold tracking-[0.2em] block mb-8">
+            <div key={index} className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group">
+              <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
-              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">
+              <p className="text-muted-foreground italic text-sm font-medium leading-relaxed mb-4 border-l-2 border-border pl-4">
+                Your customer says: "{useCase.quote}"
+              </p>
+              <h3 className="text-foreground font-bold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-light leading-relaxed">
+              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
                 {useCase.description}
               </p>
-            </motion.div>
+            </div>
           ))}
+        </div>
+
+        {/* Link to forged comparison */}
+        <div className="mt-12">
+          <a
+            href="#forged-comparison"
+            className="inline-flex items-center gap-3 text-foreground text-sm font-medium tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200"
+          >
+            Not sure why forged is worth it long term? See how it stacks up
+            <ArrowDown className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

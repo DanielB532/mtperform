@@ -1,85 +1,58 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { Manufacturer } from "@/components/sections/Manufacturer";
+import { BuiltToSpec } from "@/components/sections/BuiltToSpec";
+import { Testing } from "@/components/sections/Testing";
 import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { UseCases } from "@/components/sections/UseCases";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TheWheels } from "@/components/sections/TheWheels";
+import { ForgedComparison } from "@/components/sections/ForgedComparison";
 import { ProductCategories } from "@/components/sections/ProductCategories";
 import { WhyMT } from "@/components/sections/WhyMT";
 import { PartnershipModels } from "@/components/sections/PartnershipModels";
+import { WorkshopObjections } from "@/components/sections/WorkshopObjections";
 import { FAQ } from "@/components/sections/FAQ";
-import { GeneralEnquiries } from "@/components/sections/GeneralEnquiries";
 import { QuoteForm } from "@/components/sections/QuoteForm";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const FloatingCTA = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > window.innerHeight * 0.6);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {visible && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-8 right-8 z-50"
-        >
-          <a
-            href="#quote"
-            className="inline-flex items-center gap-2.5 bg-primary text-white text-[13px] font-semibold tracking-wide px-6 py-3.5 shadow-xl hover:bg-primary/90 transition-all duration-200"
-          >
-            Request a Quote
-            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <Header />
       <main>
         {/* 1. Hero */}
         <Hero />
-        {/* 2. Intro / Who We Work With */}
+        {/* 2. The Manufacturer */}
+        <Manufacturer />
+        {/* 2b. Built to your spec */}
+        <BuiltToSpec />
+        {/* 3. Intro / Who We Work With */}
         <WhoWeWorkWith />
-        {/* 3. Use Cases */}
+        {/* 4. Use Cases */}
         <UseCases />
-        {/* 4. Product Categories Grid */}
-        <ProductCategories />
         {/* 5. Quality section */}
         <TheWheels />
-        {/* 6. Why MT Performance */}
+        {/* 6. Why 6061-T6 Forged comparison */}
+        <ForgedComparison />
+        {/* 6b. Testing */}
+        <Testing />
+        {/* 7. Why MT Sourcing Partners */}
         <WhyMT />
-        {/* 7. Process */}
+        {/* 8. Process */}
         <HowItWorks />
-        {/* 8. Supply/Partnership Options */}
+        {/* 9. Sourcing Model */}
         <PartnershipModels />
-        {/* 9. Request a Quote Form */}
-        <QuoteForm />
-        {/* 10. FAQ */}
+        {/* 10. Workshop objections: working with us */}
+        <WorkshopObjections />
+        {/* 11. Product Categories / Catalogue */}
+        <ProductCategories />
+        {/* 12. FAQ */}
         <FAQ />
-        {/* 11. Personal Enquiries */}
-        <GeneralEnquiries />
+        {/* 13. Request a Quote Form */}
+        <QuoteForm />
       </main>
       <Footer />
-      <FloatingCTA />
     </div>
   );
 };
