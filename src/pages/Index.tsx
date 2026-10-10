@@ -8,6 +8,7 @@ import { WhoWeWorkWith } from "@/components/sections/WhoWeWorkWith";
 import { UseCases } from "@/components/sections/UseCases";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { TheWheels } from "@/components/sections/TheWheels";
+import { FactoryGallery } from "@/components/sections/FactoryGallery";
 import { ForgedComparison } from "@/components/sections/ForgedComparison";
 import { ProductCategories } from "@/components/sections/ProductCategories";
 import { WhyMT } from "@/components/sections/WhyMT";
@@ -33,6 +34,8 @@ const Index = () => {
         <UseCases />
         {/* 5. Quality section */}
         <TheWheels />
+        {/* 5b. Factory gallery */}
+        <FactoryGallery />
         {/* 6. Why 6061-T6 Forged comparison */}
         <ForgedComparison />
         {/* 6b. Testing */}
