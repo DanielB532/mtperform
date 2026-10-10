@@ -1,3 +1,4 @@
+import { Logo } from "@/components/Logo";
 import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
@@ -17,11 +18,9 @@ export const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <a href="#" className="inline-block mb-6">
-              <span className="font-semibold text-xl text-grey100 tracking-tight">
-                MT <span className="text-gold">SOURCING PARTNERS</span>
-              </span>
+<Logo size={22} />
             </a>
-            <p className="text-grey500 text-sm font-medium leading-relaxed max-w-xs">
+            <p className="text-grey500 text-sm font-normal leading-relaxed max-w-xs">
               A sourcing partner for the automotive trade, currently specialising in forged wheels. Every specification is confirmed before production. We never take title to the goods.
             </p>
           </div>

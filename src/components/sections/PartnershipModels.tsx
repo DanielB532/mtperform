@@ -25,7 +25,7 @@ export const PartnershipModels = () => {
             Sourcing Model
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
               Flexible sourcing options.
             </h2>
             <p className="text-muted-foreground text-base font-medium max-w-sm leading-relaxed">
@@ -39,10 +39,10 @@ export const PartnershipModels = () => {
           {models.map((model, index) => (
             <div key={index} className="group p-10 lg:p-16 border-r-0 md:border-r border-border last:border-r-0 hover:bg-muted/30 transition-colors duration-300">
               <model.icon className="w-5 h-5 text-muted-foreground mb-10" strokeWidth={1.5} />
-              <h3 className="text-foreground font-bold text-2xl tracking-tight mb-4">
+              <h3 className="text-foreground font-semibold text-2xl tracking-tight mb-4">
                 {model.title}
               </h3>
-              <p className="text-foreground/80 font-medium leading-relaxed">
+              <p className="text-foreground/80 font-normal leading-relaxed">
                 {model.description}
               </p>
             </div>

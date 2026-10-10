@@ -40,7 +40,7 @@ export const UseCases = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Use Cases
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
             When your customer walks in with this.
           </h2>
         </div>
@@ -49,16 +49,16 @@ export const UseCases = () => {
         <div className="grid md:grid-cols-2 gap-0 border border-border">
           {useCases.map((useCase, index) => (
             <div key={index} className="p-8 lg:p-12 border-b border-border md:[&:nth-child(odd)]:border-r md:[&:nth-child(n+3)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300 group">
-              <span className="text-grey500 font-figure text-5xl font-bold block mb-6 leading-none tracking-tight">
+              <span className="text-grey500 font-figure text-5xl font-semibold block mb-6 leading-none tracking-tight">
                 {useCase.number}
               </span>
-              <p className="text-muted-foreground italic text-sm font-medium leading-relaxed mb-4 border-l-2 border-border pl-4">
+              <p className="text-muted-foreground italic text-sm font-normal leading-relaxed mb-4 border-l-2 border-border pl-4">
                 Your customer says: "{useCase.quote}"
               </p>
-              <h3 className="text-foreground font-bold text-xl tracking-tight mb-4 leading-snug">
+              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-4 leading-snug">
                 {useCase.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
+              <p className="text-muted-foreground text-sm font-normal leading-relaxed">
                 {useCase.description}
               </p>
             </div>

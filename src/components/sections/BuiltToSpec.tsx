@@ -18,7 +18,7 @@ export const BuiltToSpec = () => {
             Fully Customisable
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
               Every measurement is set per order.
             </h2>
             <p className="text-muted-foreground text-base font-medium max-w-md leading-relaxed">
@@ -34,8 +34,8 @@ export const BuiltToSpec = () => {
               key={index}
               className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-2 md:gap-12 p-6 lg:px-10 border-b border-border last:border-b-0 hover:bg-muted/40 transition-colors duration-300"
             >
-              <dt className="text-foreground font-bold text-base tracking-tight">{spec.label}</dt>
-              <dd className="text-muted-foreground text-sm font-medium leading-relaxed">{spec.text}</dd>
+              <dt className="text-foreground font-semibold text-base tracking-tight">{spec.label}</dt>
+              <dd className="text-muted-foreground text-sm font-normal leading-relaxed">{spec.text}</dd>
             </div>
           ))}
         </dl>

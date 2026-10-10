@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Wheel Catalogue | MT Sourcing Partners</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Michroma&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -21,7 +21,7 @@
 }
 html{scroll-behavior:smooth}
 body{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   background:var(--black);
   color:var(--white);
   min-height:100vh;
@@ -38,13 +38,15 @@ nav{
   height:60px;
 }
 .nav-brand{
-  font-family:'Archivo',sans-serif;
-  font-weight:900;font-size:20px;letter-spacing:1px;
+  font-family:'Michroma','Barlow',sans-serif;
+  font-weight:400;font-size:18px;letter-spacing:1.2px;
+  -webkit-text-stroke:0.36px currentColor;
   color:var(--white);text-decoration:none;
+  padding-bottom:5px;border-bottom:1.5px solid var(--gold);
 }
 .nav-brand span{color:var(--gold)}
 .nav-back{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:12px;font-weight:600;letter-spacing:2px;
   color:var(--mid);text-transform:uppercase;text-decoration:none;
   display:flex;align-items:center;gap:8px;
@@ -65,7 +67,7 @@ nav{
   pointer-events:none;
 }
 .hero-eyebrow{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:11px;font-weight:700;letter-spacing:5px;
   color:var(--gold);text-transform:uppercase;
   display:flex;align-items:center;gap:12px;
@@ -73,8 +75,8 @@ nav{
 }
 .hero-eyebrow::before{content:'';display:inline-block;width:28px;height:2px;background:var(--gold)}
 .hero h1{
-  font-family:'Archivo',sans-serif;
-  font-weight:900;font-size:clamp(48px,6vw,72px);
+  font-family:'Barlow',sans-serif;
+  font-weight:700;font-size:clamp(48px,6vw,72px);
   line-height:0.95;text-transform:uppercase;
   color:var(--white);margin-bottom:8px;position:relative;
 }
@@ -103,12 +105,12 @@ nav{
   backdrop-filter:blur(8px);
 }
 .filter-label{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:10px;font-weight:700;letter-spacing:3px;
   color:var(--mid);text-transform:uppercase;margin-right:8px;
 }
 .filter-btn{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:11px;font-weight:700;letter-spacing:2px;
   text-transform:uppercase;
   background:transparent;
@@ -121,7 +123,7 @@ nav{
 .filter-btn.active{background:var(--gold-dim);border-color:var(--gold-dim);color:#fff}
 .filter-count{
   margin-left:auto;
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:11px;color:var(--mid);letter-spacing:1px;
 }
 
@@ -132,13 +134,13 @@ nav{
 }
 .sl-tag{
   background:var(--border);color:var(--white);
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:9px;font-weight:700;letter-spacing:2px;
   text-transform:uppercase;padding:4px 10px;
 }
 .sl-name{
-  font-family:'Archivo',sans-serif;
-  font-size:16px;font-weight:800;
+  font-family:'Barlow',sans-serif;
+  font-size:16px;font-weight:600;
   color:var(--white);text-transform:uppercase;letter-spacing:.5px;
 }
 .sl-line{flex:1;height:1px;background:var(--border)}
@@ -179,7 +181,7 @@ nav{
 }
 .card:hover .cimg img{transform:scale(1.04)}
 .clabel{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:11px;font-weight:700;letter-spacing:1px;
   text-transform:uppercase;color:var(--white);
   background:var(--dark);
@@ -199,13 +201,13 @@ nav{
   flex-wrap:wrap;
 }
 .es-text h3{
-  font-family:'Archivo',sans-serif;
-  font-weight:800;font-size:22px;text-transform:uppercase;
+  font-family:'Barlow',sans-serif;
+  font-weight:600;font-size:22px;text-transform:uppercase;
   color:var(--white);margin-bottom:4px;
 }
 .es-text p{font-size:13px;color:var(--light);line-height:1.6}
 .es-btn{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:13px;font-weight:700;letter-spacing:2px;
   text-transform:uppercase;
   background:var(--white);color:var(--black);
@@ -224,8 +226,8 @@ footer{
   flex-wrap:wrap;gap:16px;
 }
 .footer-brand{
-  font-family:'Archivo',sans-serif;
-  font-weight:900;font-size:16px;letter-spacing:1px;color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-weight:700;font-size:16px;letter-spacing:1px;color:var(--white);
 }
 .footer-brand span{color:var(--gold)}
 .footer-copy{font-size:12px;color:var(--mid)}
@@ -245,7 +247,7 @@ table.ptable{
   font-size:12px;background:var(--card);
 }
 .ptable th{
-  font-family:'Archivo',sans-serif;
+  font-family:'Barlow',sans-serif;
   font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
   color:var(--white);background:var(--dark);
   border-bottom:2px solid var(--border);
@@ -256,7 +258,7 @@ table.ptable{
   padding:9px 12px;vertical-align:top;color:var(--light);
 }
 .ptable td:first-child{
-  font-family:'Archivo',sans-serif;font-weight:800;
+  font-family:'Barlow',sans-serif;font-weight:600;
   color:var(--white);font-size:14px;letter-spacing:.5px;
 }
 .ptable .from{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--mid)}
@@ -267,12 +269,12 @@ table.ptable{
 .pfoot .red{color:var(--white);font-weight:600}
 .addons{margin-top:32px}
 .addons h3,.pricing-h3{
-  font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;
+  font-family:'Barlow',sans-serif;font-weight:600;font-size:18px;
   text-transform:uppercase;color:var(--white);margin-bottom:12px;letter-spacing:.5px;
 }
 table.atable{width:100%;max-width:680px;border-collapse:collapse;font-size:12px;background:var(--card);border:1px solid var(--border)}
 .atable th{
-  font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;
+  font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;
   letter-spacing:1.5px;text-transform:uppercase;color:var(--white);
   background:var(--dark);border-bottom:2px solid var(--border);
   padding:10px 12px;text-align:left;
@@ -280,12 +282,14 @@ table.atable{width:100%;max-width:680px;border-collapse:collapse;font-size:12px;
 .atable td{border-bottom:1px solid var(--border);padding:9px 12px;color:var(--light)}
 .atable td:last-child{color:var(--white);font-weight:600;white-space:nowrap}
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-brand">MT <span>SOURCING PARTNERS</span></a>
+  <a href="/" class="nav-brand" aria-label="MTSP, MT Sourcing Partners">MT<span>SP</span></a>
   <a href="/" class="nav-back">Back to site</a>
 </nav>
 
@@ -304,16 +308,16 @@ table.atable{width:100%;max-width:680px;border-collapse:collapse;font-size:12px;
 
 <!-- WHY FORGED COMPARISON -->
 <div style="padding:48px 40px;border-bottom:1px solid var(--border);background:var(--dark)">
-  <div style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="display:inline-block;width:28px;height:2px;background:var(--gold)"></span>The Material Matters</div>
-  <h2 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(30px,4vw,44px);line-height:1;text-transform:uppercase;color:var(--white);margin-bottom:24px">Why 6061-T6 <span style="color:var(--white)">Forged?</span></h2>
+  <div style="font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:5px;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="display:inline-block;width:28px;height:2px;background:var(--gold)"></span>The Material Matters</div>
+  <h2 style="font-family:'Barlow',sans-serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1;text-transform:uppercase;color:var(--white);margin-bottom:24px">Why 6061-T6 <span style="color:var(--white)">Forged?</span></h2>
   <div style="overflow-x:auto">
     <table style="width:100%;min-width:600px;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--border)">
       <thead>
         <tr>
-          <th style="font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:left;width:40%">Criteria</th>
-          <th style="font-family:'Archivo',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:#1f1f1f;border-bottom:2px solid var(--white);padding:12px;text-align:center">6061-T6 Forged<br><span style="color:var(--gold);font-size:10px;letter-spacing:1.5px">What we source</span></th>
-          <th style="font-family:'Archivo',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:center">Cast<br><span style="font-size:10px;letter-spacing:1.5px;font-weight:400">Most OEM &amp; budget</span></th>
-          <th style="font-family:'Archivo',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:center">Flow-Formed<br><span style="font-size:10px;letter-spacing:1.5px;font-weight:400">Mid-tier</span></th>
+          <th style="font-family:'Barlow',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:left;width:40%">Criteria</th>
+          <th style="font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:#1f1f1f;border-bottom:2px solid var(--white);padding:12px;text-align:center">6061-T6 Forged<br><span style="color:var(--gold);font-size:10px;letter-spacing:1.5px">What we source</span></th>
+          <th style="font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:center">Cast<br><span style="font-size:10px;letter-spacing:1.5px;font-weight:400">Most OEM &amp; budget</span></th>
+          <th style="font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--light);background:var(--dark);border-bottom:2px solid var(--border);padding:12px;text-align:center">Flow-Formed<br><span style="font-size:10px;letter-spacing:1.5px;font-weight:400">Mid-tier</span></th>
         </tr>
       </thead>
       <tbody>

@@ -43,7 +43,7 @@ export const TheWheels = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Quality
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] mb-12">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-12">
               Quality without compromise.
             </h2>
 
@@ -54,7 +54,7 @@ export const TheWheels = () => {
                   <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-2">
                     {point.label}
                   </p>
-                  <p className="text-muted-foreground font-medium leading-relaxed">
+                  <p className="text-muted-foreground font-normal leading-relaxed">
                     {point.text}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export const TheWheels = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Certified Forged
             </p>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight mb-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight leading-tight mb-6">
               Every wheel is stamped and traceable.
             </h3>
             {/* Highlighted spec figures: one of the four permitted places for gold */}
