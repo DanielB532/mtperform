@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Process", href: "#how-it-works" },
   { label: "Sourcing Model", href: "#partnership" },
   { label: "FAQ", href: "#faq" },
+  { label: "Personal Buyers", href: "#individuals" },
 ];
 
 export const Header = () => {

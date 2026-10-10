@@ -22,6 +22,19 @@ export const Hero = () => {
             Forged wheels, specified for your customer's car and sourced direct from a vetted factory.
           </p>
 
+          <a
+            href="#individuals"
+            className="sm:hidden flex items-center justify-between gap-3 border border-grey700 px-4 py-3 mb-6 text-sm"
+          >
+            <span>
+              <span className="text-gold font-semibold">Buying for your own car?</span>{" "}
+              <span className="text-grey300">Start here</span>
+            </span>
+            <svg className="shrink-0 text-grey300" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+
           <p className="text-grey300 text-lg font-normal leading-relaxed mb-10 max-w-2xl">
             We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
           </p>
@@ -63,6 +76,22 @@ export const Hero = () => {
               </svg>
             </a>
           </motion.div>
+
+          <motion.a
+            href="#individuals"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.95 }}
+            className="group mt-8 hidden sm:flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 max-w-2xl border border-grey700 px-5 py-4 hover:bg-white/5 transition-colors duration-200"
+          >
+            <span className="text-gold text-sm font-semibold whitespace-nowrap">Buying for your own car?</span>
+            <span className="text-grey300 text-sm font-normal flex-1">
+              Send us your car and we'll point you to a partner shop to supply and fit them.
+            </span>
+            <svg className="hidden sm:block shrink-0 text-grey300 group-hover:translate-x-0.5 transition-transform" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </motion.a>
         </motion.div>
       </div>
 
