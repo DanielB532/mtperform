@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 import { Logo } from "@/components/Logo";
 import { ArrowUpRight } from "lucide-react";
 
@@ -7,7 +8,7 @@ const footerLinks = [
   { label: "Process", href: "#how-it-works" },
   { label: "Sourcing Model", href: "#partnership" },
   { label: "FAQ", href: "#faq" },
-  { label: "Request a Sourcing Quote", href: "#quote" },
+  { label: "Email Enquiry", href: "#quote" },
 ];
 
 export const Footer = () => {
@@ -53,10 +54,12 @@ export const Footer = () => {
               <div>
                 <p className="text-grey500 text-xs mb-2">Workshop sourcing enquiries</p>
                 <a
-                  href="#quote"
+                  href={TRADE_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-grey100 text-sm hover:text-[hsl(var(--gold-dim))] transition-colors duration-200"
                 >
-                  Request a Sourcing Quote
+                  Enquire on WhatsApp
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </div>

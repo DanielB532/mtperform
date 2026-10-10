@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
@@ -56,10 +57,12 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="#quote"
+              href={TRADE_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-grey100 text-ink text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
             >
-              Request a Sourcing Quote
+              Enquire on WhatsApp
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 const specs = [
   { label: "Diameter", text: '15" to 26"' },
   { label: "Width (J)", text: "How wide the rim is, set to suit the tyre and arch." },
@@ -44,7 +45,9 @@ export const BuiltToSpec = () => {
         <p className="mt-10 text-muted-foreground text-sm font-medium">
           Not sure what your customer needs?{" "}
           <a
-            href="#quote"
+            href={TRADE_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-foreground underline underline-offset-4 hover:text-[hsl(var(--gold-dim))] transition-colors duration-200"
           >
             Send us the car and we'll specify it.

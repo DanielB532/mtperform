@@ -55,7 +55,7 @@ const Index = () => {
         <FAQ />
         {/* 12b. Individuals: routed to partner shops */}
         <ForIndividuals />
-        {/* 13. Request a Quote Form */}
+        {/* 13. Email enquiry form (backup to WhatsApp) */}
         <QuoteForm />
       </main>
       <Footer />

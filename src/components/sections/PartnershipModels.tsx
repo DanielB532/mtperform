@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 import { Package, Warehouse } from "lucide-react";
 
 const models = [
@@ -52,10 +53,12 @@ export const PartnershipModels = () => {
         {/* CTA */}
         <div className="mt-12 flex flex-col sm:flex-row gap-4">
           <a
-            href="#quote"
+            href={TRADE_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-grey100 transition-colors duration-200"
           >
-            Request a Sourcing Quote
+            Enquire on WhatsApp
           </a>
         </div>
       </div>

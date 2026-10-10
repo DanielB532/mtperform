@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 import { Logo } from "@/components/Logo";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -60,10 +61,12 @@ export const Header = () => {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-6">
             <a
-              href="#quote"
+              href={TRADE_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden lg:inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide text-grey100 border border-grey700 px-5 py-2.5 hover:bg-grey100 hover:text-ink transition-all duration-300"
             >
-              Request a Sourcing Quote
+              Enquire on WhatsApp
             </a>
 
             <button
@@ -105,11 +108,13 @@ export const Header = () => {
                 </a>
               ))}
               <a
-                href="#quote"
+                href={TRADE_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 inline-flex items-center text-base font-semibold tracking-wide text-grey100 border border-grey700 px-8 py-4 hover:bg-grey100 hover:text-ink transition-all duration-300"
               >
-                Request a Sourcing Quote
+                Enquire on WhatsApp
               </a>
             </nav>
           </motion.div>
