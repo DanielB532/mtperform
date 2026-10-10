@@ -3,6 +3,11 @@
 export const ENQUIRY_EMAIL = "danielboadu03@gmail.com";
 export const WHATSAPP_NUMBER = "447508855696";
 
+// Main trade enquiry: opens WhatsApp with a few prompts already filled in.
+export const TRADE_WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "*Trade enquiry*\n\nBusiness name:\nCar (make, model, year):\nSizes, if known:\nFinish or design:"
+)}`;
+
 export type EnquiryFields = Record<string, string>;
 
 export const buildLines = (fields: EnquiryFields): string =>

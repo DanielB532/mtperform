@@ -34,17 +34,16 @@ export const QuoteForm = () => {
   const requiredOk = () =>
     formData.name && formData.businessName && formData.email;
 
-  const submitWhatsApp = (e: React.FormEvent) => {
-    e.preventDefault();
+  const submitWhatsApp = () => {
     if (!requiredOk()) return;
-    openWhatsApp("New Trade Sourcing Quote Request", collectFields());
+    openWhatsApp("New Trade Enquiry", collectFields());
     setStatus("whatsapp");
   };
 
   const submitEmail = async () => {
     if (!requiredOk()) return;
     setStatus("sending");
-    const ok = await sendEnquiryEmail("New Trade Sourcing Quote Request - MT Sourcing Partners", collectFields());
+    const ok = await sendEnquiryEmail("New Trade Enquiry - MT Sourcing Partners", collectFields());
     setStatus(ok ? "emailed" : "error");
   };
 
@@ -55,13 +54,13 @@ export const QuoteForm = () => {
           {/* Left: copy */}
           <div className="lg:sticky lg:top-28">
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
-              Get Started
+              Email Enquiry
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-8">
-              Request a Sourcing Quote
+              Prefer email? Send us the details.
             </h2>
             <p className="text-muted-foreground text-lg font-normal leading-relaxed mb-8 max-w-sm">
-              Tell us who you are and what the job is. We'll come back to you directly with options and our sourcing fee, agreed upfront. Fees are quoted excluding VAT, which is reclaimable for VAT-registered businesses.
+              WhatsApp is the quickest way to reach us, but if you'd rather keep it on email, tell us who you are and what the job is. We'll come back to you directly with options and our sourcing fee, agreed upfront. Fees are quoted excluding VAT, which is reclaimable for VAT-registered businesses.
             </p>
             <p className="text-muted-foreground text-sm font-normal leading-relaxed mb-12 max-w-sm border-l-2 border-border pl-4">
               Don't worry about specs at this stage. The vehicle and a rough idea of what you're after is plenty. We'll work out the rest together.
@@ -99,7 +98,7 @@ export const QuoteForm = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={submitWhatsApp} className="space-y-10">
+              <form onSubmit={(e) => { e.preventDefault(); submitEmail(); }} className="space-y-10">
                 <div className="grid sm:grid-cols-2 gap-10">
                   <div>
                     <label className={labelCls}>Name *</label>
@@ -127,20 +126,20 @@ export const QuoteForm = () => {
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                  <button type="submit" className="group inline-flex items-center justify-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-white transition-all duration-200">
-                    Send via WhatsApp
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
-                  <button type="button" onClick={submitEmail} disabled={status === "sending"} className="inline-flex items-center justify-center gap-3 text-foreground text-sm font-semibold tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200 disabled:opacity-50">
+                  <button type="submit" disabled={status === "sending"} className="group inline-flex items-center justify-center gap-3 bg-foreground text-background text-sm font-semibold tracking-wide px-8 py-4 hover:bg-[hsl(var(--gold-dim))] hover:text-white transition-all duration-200 disabled:opacity-50">
                     {status === "sending" ? "Sending..." : "Send via Email"}
                     <Mail className="w-4 h-4" />
+                  </button>
+                  <button type="button" onClick={submitWhatsApp} className="group inline-flex items-center justify-center gap-3 text-foreground text-sm font-semibold tracking-wide px-8 py-4 border border-border hover:bg-muted/50 transition-colors duration-200">
+                    Send via WhatsApp
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </div>
                 {status === "error" && (
                   <p className="text-foreground text-sm">Something went wrong sending the email. Please try WhatsApp instead.</p>
                 )}
                 <p className="text-muted-foreground text-xs font-medium">
-                  WhatsApp opens a prefilled chat for you to send. Email goes straight to our inbox.
+                  Email goes straight to our inbox. WhatsApp opens a prefilled chat for you to send.
                 </p>
               </form>
             )}

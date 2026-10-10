@@ -1,3 +1,4 @@
+import { TRADE_WHATSAPP_URL } from "@/lib/enquiries";
 const photos = [
   { src: "/gallery/gloss-black-monoblock.jpg", label: "Monoblock", finish: "Gloss black" },
   { src: "/gallery/two-piece-bronze-carbon-lip.jpg", label: "Two-piece", finish: "Brushed bronze centre, carbon fibre lip" },
@@ -50,7 +51,9 @@ export const FactoryGallery = () => {
         <p className="mt-12 text-muted-foreground text-sm font-normal">
           Seen a finish you like?{" "}
           <a
-            href="#quote"
+            href={TRADE_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-foreground underline underline-offset-4 hover:text-[hsl(var(--gold-dim))] transition-colors duration-200"
           >
             Send us the car and we'll spec it.
