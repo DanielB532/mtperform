@@ -15,6 +15,7 @@ import { WhyMT } from "@/components/sections/WhyMT";
 import { PartnershipModels } from "@/components/sections/PartnershipModels";
 import { WorkshopObjections } from "@/components/sections/WorkshopObjections";
 import { FAQ } from "@/components/sections/FAQ";
+import { ForIndividuals } from "@/components/sections/ForIndividuals";
 import { QuoteForm } from "@/components/sections/QuoteForm";
 
 const Index = () => {
@@ -52,6 +53,8 @@ const Index = () => {
         <ProductCategories />
         {/* 12. FAQ */}
         <FAQ />
+        {/* 12b. Individuals: routed to partner shops */}
+        <ForIndividuals />
         {/* 13. Request a Quote Form */}
         <QuoteForm />
       </main>
