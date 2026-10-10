@@ -80,9 +80,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ['Archivo', 'sans-serif'],
-        body: ['Archivo', 'sans-serif'],
-        sans: ['Archivo', 'sans-serif'],
+        display: ['Barlow', 'sans-serif'],
+        body: ['Barlow', 'sans-serif'],
+        sans: ['Barlow', 'sans-serif'],
         figure: ['Roboto Mono', 'ui-monospace', 'monospace'],
         mono: ['Roboto Mono', 'ui-monospace', 'monospace'],
       },

@@ -84,7 +84,7 @@ export const FAQ = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
               FAQ
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight leading-snug">
+            <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight leading-snug">
               Common questions.
             </h2>
           </div>
@@ -101,7 +101,7 @@ export const FAQ = () => {
                   <AccordionTrigger className="text-base font-medium text-foreground hover:text-[hsl(var(--gold-dim))] text-left py-6 tracking-tight">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground font-medium leading-relaxed pb-6">
+                  <AccordionContent className="text-muted-foreground font-normal leading-relaxed pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

@@ -52,7 +52,7 @@ export const ProductCategories = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-16 pt-28 pb-16">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-grey100 tracking-tight leading-[1.05] mb-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-grey100 tracking-tight leading-[1.05] mb-3">
               Our Full Range. <span className="text-gold font-figure">613</span> Styles.
             </h2>
             <p className="text-grey500 text-base font-medium">
@@ -88,7 +88,7 @@ export const ProductCategories = () => {
                 <p className="text-grey300 text-xs font-semibold tracking-[0.15em] uppercase mb-2">
                   {categories[0].label}
                 </p>
-                <h3 className="text-grey100 text-2xl lg:text-3xl font-bold tracking-tight mb-2">
+                <h3 className="text-grey100 text-2xl lg:text-3xl font-semibold tracking-tight mb-2">
                   {categories[0].description}
                 </h3>
               </div>

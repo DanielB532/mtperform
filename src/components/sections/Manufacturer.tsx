@@ -36,7 +36,7 @@ export const Manufacturer = () => {
             The Manufacturer
           </p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
               We vet the factory so you don't have to.
             </h2>
             <p className="text-muted-foreground text-base font-medium max-w-md leading-relaxed">
@@ -49,10 +49,10 @@ export const Manufacturer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border border-border">
           {proofPoints.map((point, index) => (
             <div key={index} className="p-8 lg:p-10 border-b border-border md:[&:nth-child(odd)]:border-r lg:[&:nth-child(3n+1)]:border-r lg:[&:nth-child(3n+2)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+4)]:border-b-0 md:[&:nth-child(n+5)]:border-b-0 [&:last-child]:border-b-0 hover:bg-muted/40 transition-colors duration-300">
-              <h3 className="text-foreground font-bold text-lg tracking-tight mb-3 leading-snug">
+              <h3 className="text-foreground font-semibold text-lg tracking-tight mb-3 leading-snug">
                 {point.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
+              <p className="text-muted-foreground text-sm font-normal leading-relaxed">
                 {point.text}
               </p>
             </div>

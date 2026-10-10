@@ -57,13 +57,13 @@ export const QuoteForm = () => {
             <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
               Get Started
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] mb-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] mb-8">
               Request a Sourcing Quote
             </h2>
-            <p className="text-muted-foreground text-lg font-medium leading-relaxed mb-8 max-w-sm">
+            <p className="text-muted-foreground text-lg font-normal leading-relaxed mb-8 max-w-sm">
               Tell us who you are and what the job is. We'll come back to you directly with options and our sourcing fee, agreed upfront. Fees are quoted excluding VAT, which is reclaimable for VAT-registered businesses.
             </p>
-            <p className="text-muted-foreground text-sm font-medium leading-relaxed mb-12 max-w-sm border-l-2 border-border pl-4">
+            <p className="text-muted-foreground text-sm font-normal leading-relaxed mb-12 max-w-sm border-l-2 border-border pl-4">
               Don't worry about specs at this stage. The vehicle and a rough idea of what you're after is plenty. We'll work out the rest together.
             </p>
 
@@ -89,7 +89,7 @@ export const QuoteForm = () => {
                 <div className="w-12 h-12 bg-muted flex items-center justify-center mx-auto mb-6">
                   <ArrowRight className="w-5 h-5 text-foreground" />
                 </div>
-                <h3 className="text-foreground text-2xl font-bold tracking-tight mb-3">
+                <h3 className="text-foreground text-2xl font-semibold tracking-tight mb-3">
                   {status === "whatsapp" ? "Redirecting to WhatsApp" : "Enquiry sent"}
                 </h3>
                 <p className="text-muted-foreground text-base font-medium">

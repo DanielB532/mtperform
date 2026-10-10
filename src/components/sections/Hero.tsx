@@ -10,12 +10,11 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="max-w-4xl"
         >
-          <p className="text-xl md:text-2xl font-bold tracking-tight uppercase mb-6">
-            <span className="text-grey100">MT </span>
-            <span className="text-gold">Sourcing Partners</span>
+          <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+            MT Sourcing Partners
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-6 text-grey100">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.05] mb-6 text-grey100">
             We connect you to a trusted forged wheel supplier.
           </h1>
 
@@ -23,7 +22,7 @@ export const Hero = () => {
             Forged wheels, specified for your customer's car and sourced direct from a vetted factory.
           </p>
 
-          <p className="text-grey300 text-lg font-medium leading-relaxed mb-10 max-w-2xl">
+          <p className="text-grey300 text-lg font-normal leading-relaxed mb-10 max-w-2xl">
             We find and vet the manufacturer, confirm every specification in writing before production, and coordinate the whole process for UK workshops.
           </p>
 

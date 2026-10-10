@@ -34,7 +34,7 @@ export const WhyMT = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Why MT Sourcing Partners
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0] max-w-xl">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0] max-w-xl">
             Premium product. Simple sourcing.
           </h2>
         </div>
@@ -59,7 +59,7 @@ export const WhyMT = () => {
                   {pillar.label}
                 </p>
               </div>
-              <p className="text-muted-foreground text-base leading-relaxed font-medium">
+              <p className="text-muted-foreground text-base leading-relaxed font-normal">
                 {pillar.description}
               </p>
             </div>

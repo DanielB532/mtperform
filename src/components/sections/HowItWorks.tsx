@@ -42,7 +42,7 @@ export const HowItWorks = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             Process
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-[1.0]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground tracking-tight leading-[1.0]">
             A specified process, start to finish.
           </h2>
         </div>
@@ -54,10 +54,10 @@ export const HowItWorks = () => {
               <span className="text-gold font-figure text-xs font-semibold tracking-[0.2em] block mb-8">
                 {step.number}
               </span>
-              <h3 className="text-foreground font-bold text-lg tracking-tight mb-4 leading-snug">
+              <h3 className="text-foreground font-semibold text-lg tracking-tight mb-4 leading-snug">
                 {step.title}
               </h3>
-              <p className="text-muted-foreground text-sm font-medium leading-relaxed">
+              <p className="text-muted-foreground text-sm font-normal leading-relaxed">
                 {step.description}
               </p>
               {"link" in step && step.link && (

@@ -1,3 +1,4 @@
+import { Logo } from "@/components/Logo";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu } from "lucide-react";
@@ -37,9 +38,7 @@ export const Header = () => {
         <div className="max-w-7xl mx-auto px-8 lg:px-16 flex items-center justify-between h-20">
           {/* Logo: one of the four places gold is allowed to appear */}
           <a href="#" className="flex items-center group">
-            <span className="font-semibold text-xl text-grey100 tracking-tight">
-              MT <span className="text-gold">SOURCING PARTNERS</span>
-            </span>
+<Logo size={20} />
           </a>
 
           {/* Desktop Nav */}

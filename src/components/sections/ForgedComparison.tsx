@@ -49,7 +49,7 @@ export const ForgedComparison = () => {
           <p className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-5">
             The Material Matters
           </p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight leading-[0.95] max-w-3xl">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-foreground tracking-tight leading-[0.95] max-w-3xl">
             Why 6061-T6 forged?
           </h2>
         </div>
@@ -110,10 +110,10 @@ export const ForgedComparison = () => {
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
           {benefits.map((benefit, index) => (
             <div key={index} className={index === benefits.length - 1 ? "md:col-span-2 md:max-w-2xl" : ""}>
-              <h3 className="text-foreground font-bold text-xl tracking-tight mb-3">
+              <h3 className="text-foreground font-semibold text-xl tracking-tight mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground font-medium leading-relaxed">
+              <p className="text-muted-foreground font-normal leading-relaxed">
                 {benefit.text}
               </p>
             </div>
