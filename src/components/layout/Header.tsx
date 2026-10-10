@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Process", href: "#how-it-works" },
   { label: "Sourcing Model", href: "#partnership" },
   { label: "FAQ", href: "#faq" },
+  { label: "Personal Buyers", href: "#individuals" },
 ];
 
 export const Header = () => {
@@ -47,7 +48,9 @@ export const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-medium tracking-wide text-grey300 hover:text-grey100 transition-colors duration-200"
+                className={`text-[13px] font-medium tracking-wide transition-colors duration-200 ${
+                  link.href === "#individuals" ? "text-gold hover:text-grey100" : "text-grey300 hover:text-grey100"
+                }`}
               >
                 {link.label}
               </a>
@@ -94,7 +97,9 @@ export const Header = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-semibold text-grey100 hover:text-[hsl(var(--gold-dim))] transition-colors tracking-tight"
+                  className={`text-2xl font-semibold hover:text-[hsl(var(--gold-dim))] transition-colors tracking-tight ${
+                    link.href === "#individuals" ? "text-gold" : "text-grey100"
+                  }`}
                 >
                   {link.label}
                 </a>
