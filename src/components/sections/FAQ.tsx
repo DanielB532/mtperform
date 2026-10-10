@@ -4,7 +4,7 @@ const faqs = [
   {
     question: "Is this trade-only?",
     answer:
-      "Yes. We work exclusively with automotive businesses: workshops, tyre centres, repair specialists and dealers. We don't handle enquiries from private individuals.",
+      "We source exclusively for automotive businesses: workshops, tyre centres, repair specialists and dealers. If you're buying for your own car, send us your car and what you're after, and we'll point you to one of the shops we work with to supply and fit them.",
   },
   {
     question: "What vehicles do you support?",
