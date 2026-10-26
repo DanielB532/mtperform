@@ -17,6 +17,7 @@ import { WorkshopObjections } from "@/components/sections/WorkshopObjections";
 import { FAQ } from "@/components/sections/FAQ";
 import { ForIndividuals } from "@/components/sections/ForIndividuals";
 import { QuoteForm } from "@/components/sections/QuoteForm";
+import { WorkshopServices } from "@/components/sections/WorkshopServices";
 
 const Index = () => {
   return (
@@ -55,6 +56,8 @@ const Index = () => {
         <FAQ />
         {/* 12b. Individuals: routed to partner shops */}
         <ForIndividuals />
+        {/* 12c. Workshop services via our London partner */}
+        <WorkshopServices />
         {/* 13. Email enquiry form (backup to WhatsApp) */}
         <QuoteForm />
       </main>

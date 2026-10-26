@@ -8,6 +8,7 @@ const footerLinks = [
   { label: "Process", href: "#how-it-works" },
   { label: "Sourcing Model", href: "#partnership" },
   { label: "FAQ", href: "#faq" },
+  { label: "Workshop Services", href: "#workshop-services" },
   { label: "Email Enquiry", href: "#quote" },
 ];
 
