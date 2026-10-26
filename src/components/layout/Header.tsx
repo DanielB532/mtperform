@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Sourcing Model", href: "#partnership" },
   { label: "FAQ", href: "#faq" },
   { label: "Personal Buyers", href: "#individuals" },
+  { label: "Workshop Services", href: "#workshop-services", wideOnly: true },
 ];
 
 export const Header = () => {
@@ -44,14 +45,14 @@ export const Header = () => {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-medium tracking-wide transition-colors duration-200 ${
+                className={`whitespace-nowrap text-[13px] font-medium tracking-wide transition-colors duration-200 ${
                   link.href === "#individuals" ? "text-gold hover:text-grey100" : "text-grey300 hover:text-grey100"
-                }`}
+                } ${"wideOnly" in link && link.wideOnly ? "hidden xl:inline" : ""}`}
               >
                 {link.label}
               </a>
@@ -64,7 +65,7 @@ export const Header = () => {
               href={TRADE_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden lg:inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide text-grey100 border border-grey700 px-5 py-2.5 hover:bg-grey100 hover:text-ink transition-all duration-300"
+              className="hidden lg:inline-flex items-center gap-2 whitespace-nowrap text-[13px] font-semibold tracking-wide text-grey100 border border-grey700 px-5 py-2.5 hover:bg-grey100 hover:text-ink transition-all duration-300"
             >
               Enquire on WhatsApp
             </a>

@@ -81,15 +81,27 @@ export const Hero = () => {
             </a>
             <a
               href="#workshop-services"
-              className="group inline-flex items-center gap-2 text-sm text-grey300 hover:text-grey100 transition-colors duration-200"
+              className="group mt-3 w-full sm:w-auto flex flex-col gap-3 border border-grey700 bg-background/70 px-5 py-4 hover:border-[hsl(var(--gold-dim))] transition-colors duration-200"
             >
-              <span>
-                <span className="text-gold font-semibold">Not just wheels.</span>{" "}
-                Refurb, wraps, PPF and more through our workshop partner
+              <span className="flex items-center justify-between gap-4">
+                <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
+                  Not just wheels
+                </span>
+                <span className="text-grey300 group-hover:text-grey100 transition-all group-hover:translate-x-0.5">
+                  <Arrow />
+                </span>
               </span>
-              <span className="transition-transform group-hover:translate-x-0.5">
-                <Arrow />
+              <span className="flex flex-wrap gap-2">
+                {["Wheel refurb", "Wraps", "PPF", "Window tint", "Ceramic coating"].map((s) => (
+                  <span
+                    key={s}
+                    className="text-grey100 text-[13px] font-medium px-3 py-1.5 border border-grey700"
+                  >
+                    {s}
+                  </span>
+                ))}
               </span>
+              <span className="text-grey300 text-xs">Through our London workshop partner</span>
             </a>
           </div>
         </motion.div>
