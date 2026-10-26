@@ -66,18 +66,32 @@ export const Hero = () => {
             </a>
           </div>
 
-          <a
-            href="#individuals"
-            className="group mt-8 inline-flex items-center gap-2 text-sm text-grey300 hover:text-grey100 transition-colors duration-200"
-          >
-            <span>
-              <span className="text-gold font-semibold">Buying for your own car?</span>{" "}
-              We'll point you to a partner shop
-            </span>
-            <span className="transition-transform group-hover:translate-x-0.5">
-              <Arrow />
-            </span>
-          </a>
+          <div className="mt-8 flex flex-col gap-3 items-start">
+            <a
+              href="#individuals"
+              className="group inline-flex items-center gap-2 text-sm text-grey300 hover:text-grey100 transition-colors duration-200"
+            >
+              <span>
+                <span className="text-gold font-semibold">Buying for your own car?</span>{" "}
+                We'll point you to a partner shop
+              </span>
+              <span className="transition-transform group-hover:translate-x-0.5">
+                <Arrow />
+              </span>
+            </a>
+            <a
+              href="#workshop-services"
+              className="group inline-flex items-center gap-2 text-sm text-grey300 hover:text-grey100 transition-colors duration-200"
+            >
+              <span>
+                <span className="text-gold font-semibold">Not just wheels.</span>{" "}
+                Refurb, wraps, PPF and more through our workshop partner
+              </span>
+              <span className="transition-transform group-hover:translate-x-0.5">
+                <Arrow />
+              </span>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
